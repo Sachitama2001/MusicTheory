@@ -94,5 +94,28 @@
       "accessed": "2026-11-26"
     },
     "notes": "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base."
+  },
+  {
+    "id": "RULE-010",
+    "name": "Separate interval role from emotional label",
+    "rule": "The wheel may show scale membership, chord-tone membership and conventional interval role, but must not claim that a pitch or interval always produces a specific emotion. Context, timbre, culture, register and progression affect perception.",
+    "priority": "hard",
+    "evidence_type": "academic-research",
+    "source": {
+      "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+      "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+      "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+      "published": "2022-12",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Based on the critical review of consonance/dissonance perception; the review emphasizes multiple interacting explanations and limitations."
+  },
+  {
+    "id": "RULE-011",
+    "name": "Use independent instructions for harmony and rhythm",
+    "rule": "The arranger accepts harmony and rhythm requests separately and may apply both in one generation. If only harmony is requested, preserve Drum events. If only rhythm is requested, preserve pitch vocabulary per bar while allowing note count changes. If both are requested, apply harmony first conceptually, then design rhythm around the resulting notes.",
+    "priority": "hard",
+    "evidence_type": "product-requirement",
+    "notes": "Implementation contract for combined edits."
   }
 ]

@@ -31,7 +31,7 @@ async function readPrompt(req) {
 }
 
 export function createApp({apiKey, model = "gpt-6-luna", fetchOpenAI = fetch} = {}) {
-  return createServer({requestTimeout: 60_000, headersTimeout: 65_000}, async (req, res) => {
+  return createServer({requestTimeout: 180_000, headersTimeout: 60_000}, async (req, res) => {
     const port = req.socket.localPort;
     const host = req.headers.host;
     if (host !== `127.0.0.1:${port}` && host !== `localhost:${port}`) {

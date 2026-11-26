@@ -26,10 +26,10 @@ Static app, scale-aware Roman numeral progression, three MIDI tracks, preview pl
 ### M1 — Arrangement suggestions
 Harmony: voicing alternatives, chord substitution and passing chords.
 Rhythm: timing-only transformations.
-Preview candidates before applying. Preserve the original as an undoable variant.
+With the local API, apply the first valid candidate automatically, retain the original for undo, and allow the user to switch to another returned candidate. Harmony edits must leave Drums unchanged; rhythm-only edits preserve all pitches and velocities.
 
 ### M2 — Riddim flow
-Input sustained bass/pad MIDI. Request timing variants through the manual or local API workflow. Keep pitches unchanged. Use syncopation, rests, note lengths, triplet/swing grids and call-response. Do not change tempo, meter, harmony or track identity.
+Input sustained bass/pad MIDI. Request timing variants through the page prompt. The local API applies the first valid candidate automatically; the static Pages build keeps a manual fallback. Keep pitches unchanged. Use syncopation, rests, note lengths, triplet/swing grids and call-response. Do not change tempo, meter, harmony or track identity.
 
 ### M3 — Knowledge ingestion
 Store source metadata, author, publication date, URL, concepts, paraphrase and licensing notes. Require human review before merging updates. Preserve provenance and conflicts.

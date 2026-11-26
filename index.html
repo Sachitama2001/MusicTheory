@@ -256,25 +256,34 @@ function loadDraft(state) {
   renderProgression();
 }
 
-$("playOriginal").onclick = withCandidate(() => audition(tracks, "original", "aiStatus"));
-$("playCandidate").onclick = withCandidate(choice => audition(choice.tracks, choice.name, "aiStatus"));
-$("applyCandidate").onclick = withCandidate(choice => {
+function applyChoice(index) {
+  ensureCurrent(review.current);
+  const choice = review.candidates[index];
+  if (!choice) throw new Error("候補が選択されていません。");
+  if (review.appliedIndex === -1) beforeAI = structuredClone(draft());
   stopPlayback();
-  beforeAI = structuredClone(draft());
-  loadDraft({...beforeAI, tracks: choice.tracks});
-  $("review").hidden = true;
+  loadDraft({...draft(), tracks: structuredClone(choice.tracks)});
+  review.current = inputDraft();
+  review.appliedIndex = index;
   $("undoAI").hidden = false;
   manualBaseline = null;
-  $("aiStatus").textContent = `Applied ${choice.name}. The previous draft can be restored.`;
-});
+  updateReview();
+  $("aiStatus").textContent = "「" + choice.name + "」をMIDIに反映しました。";
+}
+
+$("playOriginal").onclick = withCandidate(() => audition(review.originalTracks, "original", "aiStatus"));
+$("playCandidate").onclick = withCandidate(choice => audition(choice.tracks, choice.name, "aiStatus"));
+$("applyCandidate").onclick = withCandidate(() => applyChoice(Number($("candidate").value)));
 $("undoAI").onclick = () => {
-  if (!confirm("Restore the draft saved before the last AI apply? This replaces the current draft, including any later edits.")) return;
+  if (!beforeAI) return;
+  if (!confirm("AIを適用する前のMIDIに戻しますか？現在の編集内容は置き換わります。")) return;
   stopPlayback();
   const previous = beforeAI;
   beforeAI = manualBaseline = null;
+  review = null;
   loadDraft(previous);
   $("undoAI").hidden = $("review").hidden = true;
-  $("aiStatus").textContent = "Restored the pre-AI draft.";
+  $("aiStatus").textContent = "適用前のMIDIに戻しました。";
 };
 
 async function showDb() {

@@ -583,5 +583,154 @@
     "evidence_type": "project-original",
     "confidence": "medium",
     "notes": "A compositional starting point for displaced accents, not a definition of all math rock."
+  },
+  {
+    "id": "ARR-SQ-005",
+    "name": "Shuffle subdivision: triplet 2:1",
+    "category": "rhythm",
+    "tags": [
+      "shuffle",
+      "swing",
+      "triplet",
+      "subdivision",
+      "groove"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Keep the quarter-note pulse and BPM unchanged; divide each beat into three equal triplet slots.",
+      "Use the first and third triplet slots for a long-short 2:1 feel; occasionally use all three slots for a triplet fill.",
+      "Do not force every instrument to play every triplet slot. Let kick/snare anchor the pulse while selected hats, bass or chord attacks carry the bounce."
+    ],
+    "grid_suggestions": [
+      "triplet grid: 0, 1/3, 2/3 of a beat",
+      "long-short pair: first and third triplet slots"
+    ],
+    "variation": "Compare straight and shuffled versions at the same BPM. Add equal-triplet fills sparingly.",
+    "source": {
+      "title": "シャッフルビート",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/rhythm/rhythm-mv2/shuffle-beat/",
+      "published": "2025-07-17",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest explains shuffle as triplet subdivision with a typical 2:1 long-short weighting, sometimes mixed with equal triplets. It distinguishes straight/square from shuffle and notes swing has broader jazz-specific uses."
+  },
+  {
+    "id": "ARR-SQ-006",
+    "name": "Syncopation by offbeat displacement",
+    "category": "rhythm",
+    "tags": [
+      "syncopation",
+      "offbeat",
+      "anticipation",
+      "kick",
+      "snare",
+      "16th-note"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Start with a stable pulse and backbeat, then move selected attacks to eighth-note or sixteenth-note offbeats.",
+      "Use offbeat kick or chord attacks to create forward pull or laid-back tension; do not shift every hit.",
+      "Treat anticipation as an early attack that leads into the next beat or chord. Keep enough strong-beat information for the listener to retain the meter."
+    ],
+    "grid_suggestions": [
+      "1/8 offbeat",
+      "1/16 offbeat",
+      "one 1/8 anticipation before a chord change"
+    ],
+    "variation": "Create sparse, medium and dense variants by moving only a subset of attacks.",
+    "source": {
+      "title": "シンコペーション",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/rhythm/rhythm-mv1/syncopation/",
+      "published": "2026-06-04",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest describes offbeat accents and kick displacement on 1/8 and 1/16 grids, as well as anticipation and its forward/laid-back effects."
+  },
+  {
+    "id": "ARR-SQ-007",
+    "name": "Polyrhythm by independent cycle lengths",
+    "category": "rhythm",
+    "tags": [
+      "polyrhythm",
+      "cross-rhythm",
+      "cycle",
+      "math-rock",
+      "repeating-cell"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Give one part a repeating cell with a different number of subdivisions from the main meter, while the other parts keep the main pulse.",
+      "Distinguish a true independent rhythmic cycle from ordinary syncopation or different accents over the same meter.",
+      "Choose a cell length whose alignment point can be calculated; explain when the parts realign."
+    ],
+    "grid_suggestions": [
+      "4/4 main pulse with a 3-event repeating cell",
+      "3:4 cycle or other explicitly stated ratio"
+    ],
+    "variation": "Keep the drum meter clear and let only Bass or Pad carry the independent cycle at first.",
+    "source": {
+      "title": "ポリリズム",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/rhythm/rhythm-mv2/polyrhythm/",
+      "published": "2024-06-26",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest distinguishes polyrhythm from ordinary simultaneous rhythmic variety: the independent part implies a different beat framework or cycle."
+  },
+  {
+    "id": "ARR-SQ-008",
+    "name": "Half-time / double-time feel without changing tempo",
+    "category": "rhythm",
+    "tags": [
+      "half-time",
+      "double-time",
+      "time-feel",
+      "backbeat",
+      "tempo-illusion"
+    ],
+    "tracks": [
+      "Drums",
+      "Bass"
+    ],
+    "rules": [
+      "Keep the project BPM unchanged and alter the perceived pulse through kick/snare spacing and subdivision density.",
+      "For a half-time feel in 4/4, move the main snare backbeat to beat 3 while maintaining the underlying count.",
+      "For a double-time feel, increase the subdivision activity while the bar and tempo remain the same."
+    ],
+    "grid_suggestions": [
+      "half-time snare on beat 3",
+      "double-time eighth/sixteenth subdivision"
+    ],
+    "variation": "Compare the same melody and chord-change rate over half-time and double-time drum interpretations.",
+    "source": {
+      "title": "タイム・フィール",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/rhythm/rhythm-mv1/timefeel/",
+      "published": "2026-03-20",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest explains time-feel as a perceptual interpretation shaped by the listener's chosen pulse, with half-time and double-time examples. Do not confuse it with changing the MIDI tempo."
   }
 ]

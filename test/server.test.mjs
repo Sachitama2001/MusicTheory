@@ -41,7 +41,7 @@ test("keeps the key server-side, rejects cross-origin calls and filters upstream
     }
   });
 
-  assert.deepEqual(await (await fetch(endpoint)).json(), {available: true});
+  assert.deepEqual(await (await fetch(endpoint)).json(), {available: true, model: "gpt-6-luna"});
   assert.equal((await fetch(`${origin}/server.mjs`)).status, 404);
   assert.equal((await post(endpoint, "https://other.example")).status, 403);
   assert.equal((await post(endpoint, origin, "")).status, 400);
@@ -55,7 +55,7 @@ test("keeps the key server-side, rejects cross-origin calls and filters upstream
 test("a missing key disables API generation without blocking manual mode", async t => {
   const {endpoint, origin} = await runApp(t);
   assert.equal((await fetch(origin)).status, 200);
-  assert.deepEqual(await (await fetch(endpoint)).json(), {available: false});
+  assert.deepEqual(await (await fetch(endpoint)).json(), {available: false, model: "gpt-6-luna"});
   assert.equal((await post(endpoint, origin)).status, 503);
 });
 

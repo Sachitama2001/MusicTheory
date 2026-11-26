@@ -20,7 +20,7 @@ Windows PowerShell:
     $env:OPENAI_API_KEY="your-api-key"
     npm start
 
-The local server listens only on loopback. It keeps the API key on the server and accepts same-origin requests only. The default model is `gpt-6.2-astra`; set `OPENAI_MODEL` to another model with Responses API Structured Outputs support if needed. Set `PORT` if 8000 is occupied.
+The local server listens only on loopback. It keeps the API key on the server and accepts same-origin requests only. The default model is `gpt-6-luna`; set `OPENAI_MODEL` to another model with Responses API Structured Outputs support if needed. Set `PORT` if 8000 is occupied.
 
 The page's **AIで生成して反映** button sends the prompt, current three-track MIDI, project settings and approved knowledge records to the local server. The first valid candidate is applied automatically. The original MIDI is kept for undo, and any additional candidate can be selected and applied.
 

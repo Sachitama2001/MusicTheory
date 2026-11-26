@@ -43,6 +43,9 @@ test("keeps the key server-side, rejects cross-origin calls and filters upstream
 
   assert.deepEqual(await (await fetch(endpoint)).json(), {available: true, model: "gpt-6-luna"});
   assert.equal((await fetch(`${origin}/server.mjs`)).status, 404);
+  const indexResponse = await fetch(`${origin}/data/ai-index.json`);
+  assert.equal(indexResponse.status, 200);
+  assert.ok((await indexResponse.json()).records.length > 0);
   assert.equal((await post(endpoint, "https://other.example")).status, 403);
   assert.equal((await post(endpoint, origin, "")).status, 400);
   assert.equal(calls, 0);

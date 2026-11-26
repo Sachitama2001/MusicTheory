@@ -44,7 +44,7 @@ function renderProgression(){let p=getProgression();$("progression").innerHTML="
 function drawWheel(){let svg=$("wheel");svg.innerHTML="";let cx=120,cy=120,r=80;const order=[0,4,1,5,2,6,3];for(let i=0;i<7;i++){let degreeIndex=order[i],a=(-90+i*360/7)*Math.PI/180,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r,circle=document.createElementNS("http://www.w3.org/2000/svg","circle");circle.setAttribute("cx",x);circle.setAttribute("cy",y);circle.setAttribute("r",17);circle.setAttribute("fill","#fff");circle.setAttribute("stroke","#d9cedd");circle.addEventListener("click",()=>{$("degrees").value=($("degrees").value+" "+ROM[degreeIndex]).trim();renderProgression()});svg.append(circle);let t=document.createElementNS("http://www.w3.org/2000/svg","text");t.setAttribute("x",x);t.setAttribute("y",y);t.setAttribute("font-size","11");t.setAttribute("fill","#554c5d");t.setAttribute("text-anchor","middle");t.setAttribute("dominant-baseline","middle");t.textContent=ROM[degreeIndex];svg.append(t)}}
 function makeDraft(){let prog=getProgression(),nbar=bars(),b=beat();tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();for(let bar=0;bar<nbar;bar++){let ch=prog[bar%prog.length];if(!ch)continue;let start=bar*b;tracks.bass.push({pitch:ch.root+36,start,duration:b*.85,velocity:.78});ch.notes.forEach((pc,i)=>tracks.pad.push({pitch:pc+60,start,duration:b*.92,velocity:.48-i*.04}));for(let x=0;x<b;x++){let t=start+x;if(x===0||x===Math.floor(b/2))tracks.drums.push({pitch:36,start:t,duration:.2,velocity:.85});if(x===Math.floor(b/2))tracks.drums.push({pitch:38,start:t,duration:.2,velocity:.8});for(let h=0;h<4&&x+h/4<b;h++)tracks.drums.push({pitch:42,start:t+h/4,duration:.12,velocity:h%2?.28:.45})}}renderAll();renderProgression();$("status").textContent="MIDIを作成しました。"}
 function canvas(){let c=$("roll"),g=c.getContext("2d"),w=c.width,h=c.height;g.clearRect(0,0,w,h);let n=bars(),unit=w/n;g.fillStyle="#817989";g.font="12px sans-serif";for(let i=0;i<=n;i++){g.strokeStyle=i%4===0?"#d8cedd":"#eee9ef";g.beginPath();g.moveTo(i*unit,0);g.lineTo(i*unit,h);g.stroke();if(i<n)g.fillText(String(i+1),i*unit+5,14)}let arr=tracks[active],dr=active==="drums";if(dr){[36,38,42].forEach((p,i)=>{let y=42+i*78;g.fillStyle="#817989";g.fillText(["KICK","SNARE","HI-HAT"][i],8,y-8);g.strokeStyle="#f0eaf1";g.beginPath();g.moveTo(0,y+6);g.lineTo(w,y+6);g.stroke()});arr.forEach((n,i)=>{let lane=[36,38,42].indexOf(n.pitch),x=n.start/(beat())*unit,y=42+lane*78;g.fillStyle=(i===selected||selectedSet.has(i))?"#ed4d9b":"#55a99d";g.fillRect(x,y,Math.max(8,n.duration/(beat())*unit),18)})}else{let low=active==="bass"?28:48,range=active==="bass"?32:36;for(let p=low;p<=low+range;p+=12){let y=h-(p-low)/range*(h-30)-10;g.strokeStyle="#f0eaf1";g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();g.fillStyle="#aaa";g.fillText(NOTES[p%12],3,y-2)}arr.forEach((n,i)=>{let x=n.start/(beat())*unit,y=h-(n.pitch-low)/range*(h-30)-20;g.fillStyle=(i===selected||selectedSet.has(i))?"#ed4d9b":active==="bass"?"#6e94c5":"#9275bd";g.fillRect(x,y,Math.max(8,n.duration/(beat())*unit),12)})}}
-function renderAll(){canvas();drawWheel();if(selectBox){let g=$("roll").getContext("2d");g.fillStyle="rgba(237,77,155,.12)";g.strokeStyle="#ed4d9b";g.fillRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h);g.strokeRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h)}try{localStorage.setItem("musictheory-draft",JSON.stringify({...draft(),beforeAI}));$("storageStatus").textContent=""}catch{$("storageStatus").textContent="Could not save the draft in this browser. Export MIDI before closing."}}
+function renderAll(){canvas();drawWheel();if(selectBox){let g=$("roll").getContext("2d");g.fillStyle="rgba(237,77,155,.12)";g.strokeStyle="#ed4d9b";g.fillRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h);g.strokeRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h)}try{localStorage.setItem("musictheory-draft",JSON.stringify({...draft(),beforeAI}));$("storageStatus").textContent=""}catch{$("storageStatus").textContent="ブラウザに保存できませんでした。MIDIを書き出してください。"}}
 function pt(e){let r=$("roll").getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*1200,y:(e.clientY-r.top)/r.height*310}}
 function noteY(n){if(active==="drums")return 42+[36,38,42].indexOf(n.pitch)*78;let low=active==="bass"?28:48,range=active==="bass"?32:36;return 310-(n.pitch-low)/range*280-20}
 $("roll").addEventListener("pointerdown",e=>{let p=pt(e),arr=tracks[active],unit=1200/bars(),pos=p.x/unit*beat();let i=arr.findIndex(n=>{let x=n.start/(beat())*unit,y=noteY(n);return p.x>=x-3&&p.x<=x+Math.max(10,n.duration/(beat())*unit)+3&&(active==="drums"||Math.abs(p.y-y)<18)});if(e.shiftKey&&i>=0){arr.splice(i,1);selected=-1;selectedSet.clear();renderAll();return}if(i>=0){if(!selectedSet.has(i)){selectedSet=new Set([i])}selected=i;drag={indices:[...selectedSet],originX:pos,originY:p.y,origins:[...selectedSet].map(j=>({...arr[j]}))}}else{selectBox={x:p.x,y:p.y,w:0,h:0};drag={selection:true};selected=-1;selectedSet.clear()}$("roll").setPointerCapture(e.pointerId);renderAll()});
@@ -54,12 +54,12 @@ $("tabs").onclick=e=>{let b=e.target.closest("button[data-track]");if(!b)return;
 $("generate").onclick=makeDraft;$("key").onchange=()=>{drawWheel();renderProgression()};$("scale").onchange=()=>{drawWheel();renderProgression()};$("degrees").oninput=renderProgression;$("clearTrack").onclick=()=>{tracks[active]=[];selected=-1;selectedSet.clear();renderAll()};$("deleteSelected").onclick=()=>{if(selectedSet.size){tracks[active]=tracks[active].filter((n,i)=>!selectedSet.has(i))}else if(selected>=0)tracks[active].splice(selected,1);selected=-1;selectedSet.clear();renderAll()};
 function toMidi(){let m=new Midi();m.header.setTempo(bpm());m.header.timeSignatures=[{ticks:0,timeSignature:meter()}];for(let [name,arr] of Object.entries(tracks)){let t=m.addTrack();t.name=name.toUpperCase();if(name==="drums")t.channel=9;arr.forEach(n=>t.addNote({midi:n.pitch,ticks:Math.round(n.start*m.header.ppq),durationTicks:Math.max(1,Math.round(n.duration*m.header.ppq)),velocity:n.velocity}))}return m}
 $("export").onclick=()=>{let blob=new Blob([toMidi().toArray()],{type:"audio/midi"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="musictheory-sketch.mid";a.click();URL.revokeObjectURL(u);$("status").textContent="MIDIを書き出しました。"};
-$("midiFile").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let m=new Midi(await f.arrayBuffer());tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();m.tracks.forEach(t=>{let target=/drum|perc/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":/pad|chord|synth/i.test(t.name)?"pad":null;if(target)t.notes.forEach(n=>tracks[target].push({pitch:n.midi,start:n.ticks/m.header.ppq,duration:n.durationTicks/m.header.ppq,velocity:n.velocity}))});renderAll();$("status").textContent="MIDIを読み込みました。トラック名から3種類に振り分けました。"}catch(err){$("status").textContent="MIDI import failed: "+err.message}};
+$("midiFile").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let m=new Midi(await f.arrayBuffer());tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();m.tracks.forEach(t=>{let target=/drum|perc/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":/pad|chord|synth/i.test(t.name)?"pad":null;if(target)t.notes.forEach(n=>tracks[target].push({pitch:n.midi,start:n.ticks/m.header.ppq,duration:n.durationTicks/m.header.ppq,velocity:n.velocity}))});renderAll();$("status").textContent="MIDIを読み込みました。トラック名から3種類に振り分けました。"}catch(err){$("status").textContent="MIDIの読み込みに失敗しました: "+err.message}};
 function stopPlayback() {
   clearTimeout(playTimer);
   const audio = ctx;
   ctx = null;
-  if (audio) audio.close().catch(error => {$("status").textContent = `Could not stop playback: ${error.message}`;});
+  if (audio) audio.close().catch(error => {$("status").textContent = `再生を停止できません: ${error.message}`;});
 }
 
 function audition(source, label, status) {
@@ -84,13 +84,13 @@ function audition(source, label, status) {
     $(status).textContent = `Playing ${label}.`;
   } catch (error) {
     stopPlayback();
-    $(status).textContent = `Playback failed: ${error.message}`;
+    $(status).textContent = `再生できません: ${error.message}`;
   }
 }
 
-$("play").onclick = () => audition(tracks, "draft", "status");
-$("stop").onclick = () => { stopPlayback(); $("status").textContent = "Playback stopped."; };
-$("stopPreview").onclick = () => { stopPlayback(); $("aiStatus").textContent = "Preview stopped."; };
+$("play").onclick = () => audition(tracks, "草案", "status");
+$("stop").onclick = () => { stopPlayback(); $("status").textContent = "再生を停止しました。"; };
+$("stopPreview").onclick = () => { stopPlayback(); $("aiStatus").textContent = "プレビューを停止しました。"; };
 
 let cache, manualBaseline, review;
 async function db() {
@@ -271,7 +271,7 @@ function applyChoice(index) {
   $("aiStatus").textContent = "「" + choice.name + "」をMIDIに反映しました。";
 }
 
-$("playOriginal").onclick = withCandidate(() => audition(review.originalTracks, "original", "aiStatus"));
+$("playOriginal").onclick = withCandidate(() => audition(review.originalTracks, "元のMIDI", "aiStatus"));
 $("playCandidate").onclick = withCandidate(choice => audition(choice.tracks, choice.name, "aiStatus"));
 $("applyCandidate").onclick = withCandidate(() => applyChoice(Number($("candidate").value)));
 $("undoAI").onclick = () => {

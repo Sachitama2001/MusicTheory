@@ -1,0 +1,135 @@
+[
+  {
+    "id": "POP-001",
+    "name": "Pop four-chord cycle",
+    "degrees": [
+      "I",
+      "V",
+      "vi",
+      "IV"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "G",
+      "Am",
+      "F"
+    ],
+    "tags": [
+      "pop",
+      "uplifting",
+      "bittersweet",
+      "kawaii-future-bass"
+    ],
+    "harmonicRhythm": "often one chord per bar",
+    "source": {
+      "title": "SRM Music theory lessons",
+      "url": "https://srm-music.com/music-theory-mail-lesson/"
+    },
+    "evidence_type": "human-authored-source-to-review",
+    "confidence": "medium",
+    "notes": "Common pop progression family; mood depends on melody, rhythm, voicing and arrangement."
+  },
+  {
+    "id": "POP-002",
+    "name": "Royal road progression",
+    "degrees": [
+      "IV",
+      "V",
+      "iii",
+      "vi"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "F",
+      "G",
+      "Em",
+      "Am"
+    ],
+    "tags": [
+      "j-pop",
+      "pop",
+      "uplifting",
+      "bittersweet",
+      "future-bass"
+    ],
+    "harmonicRhythm": "one chord per bar",
+    "source": {
+      "title": "DTM Hacker progression patterns",
+      "url": "https://dtmhacker.com/chord-progression-pattern/"
+    },
+    "evidence_type": "human-authored-source-to-review",
+    "confidence": "medium",
+    "notes": "Common J-pop chorus progression; not exclusive to a genre."
+  },
+  {
+    "id": "POP-003",
+    "name": "Canon progression",
+    "degrees": [
+      "I",
+      "V",
+      "vi",
+      "iii",
+      "IV",
+      "I",
+      "IV",
+      "V"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "G",
+      "Am",
+      "Em",
+      "F",
+      "C",
+      "F",
+      "G"
+    ],
+    "tags": [
+      "pop",
+      "classical-influenced",
+      "nostalgic",
+      "uplifting"
+    ],
+    "harmonicRhythm": "one chord per bar",
+    "source": {
+      "title": "SRM Music theory lessons",
+      "url": "https://srm-music.com/music-theory-mail-lesson/"
+    },
+    "evidence_type": "human-authored-source-to-review",
+    "confidence": "medium",
+    "notes": "Familiar functional cycle; mood is not deterministic."
+  },
+  {
+    "id": "POP-004",
+    "name": "Minor pop cycle",
+    "degrees": [
+      "vi",
+      "IV",
+      "I",
+      "V"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Am",
+      "F",
+      "C",
+      "G"
+    ],
+    "tags": [
+      "pop",
+      "emotional",
+      "anthemic",
+      "future-bass"
+    ],
+    "harmonicRhythm": "one chord per bar",
+    "source": {
+      "title": "DTM Hacker progression patterns",
+      "url": "https://dtmhacker.com/chord-progression-pattern/"
+    },
+    "evidence_type": "human-authored-source-to-review",
+    "confidence": "medium",
+    "notes": "Relative-minor opening can foreground a bittersweet color."
+  }
+]

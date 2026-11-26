@@ -4,7 +4,7 @@
 When the app is served by `node server.mjs` with `OPENAI_API_KEY` set, the user enters a request on the page and chooses one of two edit categories:
 
 - `harmony`: change Pad chord pitches/voicings and Bass notes when needed. The Drum events are immutable.
-- `rhythm`: change note onset and duration only. Preserve note count, pitch, velocity, bar placement, Pad chord groups, tempo, meter and section length.
+- `rhythm`: change timing and articulation. Note count may increase or decrease; notes may be re-triggered, split or omitted. Bass / Pad may only reuse pitches already present in the same bar. Drums may only reuse existing drum note types. Velocity may vary modestly for accents. Preserve tempo, meter, bar boundaries and track roles.
 
 The browser sends the prompt, current MIDI events, project settings and approved local knowledge records to the loopback-only Node server. The server calls the OpenAI Responses API with Structured Outputs and `store: false`. The API key is never sent to the browser.
 
@@ -26,7 +26,7 @@ GitHub Pages cannot run the local Node API or protect an OpenAI API key. On the 
 4. Generate Bass, Drums and Pad only.
 5. Respect key, scale, BPM, meter and maximum 16 bars.
 6. Offer up to two candidates when practical.
-7. For rhythm-only edits, preserve pitch, velocity, note count and harmonic content. Change onset/duration only.
+7. For rhythm-only edits, allow note count changes, re-triggers and omissions. Preserve pitch vocabulary per bar and existing drum note types; velocity may vary modestly.
 8. For harmony edits, preserve all Drum events and do not silently change project settings.
 9. Cite only record IDs present in the supplied knowledge excerpts.
 10. Do not treat genre/mood associations as deterministic rules.
@@ -36,7 +36,7 @@ GitHub Pages cannot run the local Node API or protect an OpenAI API key. On the 
     {
       "candidates": [
         {
-          "name": "Riddim flow — restrained",
+          "name": "シャッフル・フロウ",
           "summary": "Short explanation of the rhythmic change.",
           "sources": ["ARR-RID-001"],
           "tracks": [
@@ -73,7 +73,7 @@ Start and duration are in quarter-note beats from the start. Pitch is MIDI note 
 - Reuse only existing drum note types; note count may change.
 - Velocity may vary modestly for accents.
 - Keep notes in their original bars.
-- Keep Pad chord tones grouped at the same onset and preserve group order.
+- Pad may re-articulate or omit existing chord tones, but must not introduce pitches absent from the original bar.
 - Preserve kick/snare/hi-hat identities.
 - Explain the rhythmic changes.
 - Prefer subtle and stronger alternatives when practical.

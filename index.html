@@ -130,15 +130,12 @@ $("stop").onclick = () => { stopPlayback(); $("status").textContent = "再生を
 $("stopPreview").onclick = () => { stopPlayback(); $("aiStatus").textContent = "プレビューを停止しました。"; };
 
 let cache, manualBaseline, review;
-async function db() {
-  if (!cache) {
-    cache = await Promise.all(LIBRARIES.map(async name => {
-      const response = await fetch(`data/${name}.json`);
-      if (!response.ok) throw new Error(`Could not load ${name} (HTTP ${response.status}).`);
-      return [name, await response.json()];
-    })).then(Object.fromEntries);
-  }
-  return cache;
+async function db(){
+ if(!cache){
+  const names=[...LIBRARIES,"ai-index"];
+  cache=await Promise.all(names.map(async name=>{const response=await fetch(`data/${name}.json`);if(!response.ok)throw new Error(`知識データ ${name} を読み込めません (HTTP ${response.status})`);return [name,await response.json()]})).then(Object.fromEntries);
+ }
+ return cache;
 }
 
 function inputDraft(){
@@ -149,14 +146,14 @@ function inputDraft(){
 
 function updateModeUI(){}
 function selectKnowledge(data,current,request){
- const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1),aliases=[["シャッフル","shuffle","triplet","swing"],["ストレート","straight-pop","pop"],["ハーフタイム","half-time"],["ブレイクビーツ","breakbeat"],["ファンク","funk"],["リディム","riddim","dubstep"],["マスロック","math-rock"],["二次ドミナント","secondary dominant","V/V"],["裏コード","tritone substitution","subV"],["借用和音","modal interchange","borrowed chord"],["シンコペーション","syncopation"],["ポリリズム","polyrhythm"]];
- for(const [ja,...en] of aliases)if(query.includes(ja))terms.push(...en);
- const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;if(record.ai_card?.keywords?.some(tag=>terms.includes(String(tag).toLowerCase())))value+=3;if((mode==="rhythm"||mode==="combined")&&record.kind==="rhythm_pattern")value+=5;if((mode==="harmony"||mode==="combined")&&["progression_pattern","harmony_technique"].includes(record.kind))value+=5;if(record.evidence_type==="academic-research"||record.evidence_type==="human-authored-source")value+=1;return value};
- const limits=mode==="rhythm"?{arrangements:8,"style-moods":4,"composition-rules":5}:mode==="combined"?{progressions:5,"harmony-techniques":6,arrangements:7,"style-moods":4,"composition-rules":5}:{progressions:8,"harmony-techniques":9,"style-moods":4,"composition-rules":5};
- const result={};
- for(const [name,limit] of Object.entries(limits)){
-  const records=(data[name]||[]).filter(record=>record.review_status!=="pending").map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
-  result[name]=records.map(({record})=>record.ai_card||record);
+ const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),aliases=[["シャッフル","shuffle","triplet","swing"],["ストレート","straight-pop","pop"],["ハーフタイム","half-time"],["ブレイクビーツ","breakbeat"],["ファンク","funk"],["リディム","riddim","dubstep"],["マスロック","math-rock"],["二次ドミナント","secondary dominant","V/V"],["裏コード","tritone substitution","subV"],["借用和音","modal interchange","borrowed chord"],["シンコペーション","syncopation"],["ポリリズム","polyrhythm"]];
+ const terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1);for(const [ja,...en] of aliases)if(query.includes(ja))terms.push(...en);
+ const limits=mode==="rhythm"?{"arrangements":8,"style-moods":4,"composition-rules":4}:mode==="combined"?{progressions:5,"harmony-techniques":6,arrangements:6,"style-moods":3,"composition-rules":4}:{progressions:8,"harmony-techniques":8,"style-moods":3,"composition-rules":4};
+ const all=data["ai-index"]?.records||[];const result={};
+ const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;for(const keyword of record.keywords||[])if(keyword&&query.includes(String(keyword).toLowerCase()))value+=4;if(mode!=="rhythm"&&(record.kind==="progression_pattern"||record.kind==="harmony_technique"))value+=3;if(mode!=="harmony"&&record.kind==="rhythm_pattern")value+=3;if(record.provenance?.evidence_type==="academic-research"||record.provenance?.evidence_type==="human-authored-source"||record.provenance?.evidence_type==="human-authored-educational-source")value+=1;return value};
+ for(const [library,limit] of Object.entries(limits)){
+  const chosen=all.filter(record=>record.library===library).map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
+  result[library]=chosen.map(({record})=>({id:record.id,name:record.title,summary:record.summary,kind:record.kind,tags:record.keywords,applies_to:record.applies_to,when_to_use:record.when_to_use,operations:record.operations,example:record.example,constraints:record.constraints,provenance:record.provenance}));
  }
  return result;
 }

@@ -30,9 +30,9 @@ GitHub Pages cannot run the local Node API or protect an OpenAI API key. On the 
 6. Offer up to two candidates when practical.
 7. For rhythm-only edits, allow note count changes, re-triggers and omissions. Preserve Bass / Pad pitch vocabulary per bar; use standard GM drum types; velocity may vary modestly.
 8. For combined edits, apply both requests coherently rather than enforcing either single-mode preservation rule.
-8. For harmony edits, preserve all Drum events and do not silently change project settings.
-9. Cite only record IDs present in the supplied knowledge excerpts.
-10. Do not treat genre/mood associations as deterministic rules.
+9. For harmony-only edits, preserve all Drum events and do not silently change project settings.
+10. Cite only record IDs present in the supplied knowledge excerpts.
+11. Do not treat genre/mood associations as deterministic rules.
 
 ## JSON format
 
@@ -79,7 +79,7 @@ Start and duration are in quarter-note beats from the start. Pitch is MIDI note 
 - Retain BPM, meter and bar count.
 - Do not preserve note count; add or omit repeated attacks when the groove requires it.
 - Preserve pitch vocabulary per bar for Bass and Pad; every generated pitch must already exist in that bar.
-- Reuse only existing drum note types; note count may change.
+- Use standard GM kick 36, snare 38 and closed hi-hat 42; note count may change.
 - Velocity may vary modestly for accents.
 - Keep notes in their original bars.
 - Pad may re-articulate or omit existing chord tones, but must not introduce pitches absent from the original bar.

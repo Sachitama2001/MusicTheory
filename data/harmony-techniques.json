@@ -551,5 +551,178 @@
     "evidence_type": "human-authored-source",
     "confidence": "high",
     "notes": "The cited author presents Fm (iv) as a subdominant-minor color that can still be used in a calm progression."
+  },
+  {
+    "id": "HARM-018",
+    "name": "Secondary dominant (V of a target chord)",
+    "summary": "Temporarily treat a diatonic target chord as a tonic and precede it with its own dominant seventh, usually a perfect fifth above the target root.",
+    "tags": [
+      "secondary-dominant",
+      "V-of",
+      "dominant-seventh",
+      "chromatic",
+      "voice-leading"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "D7",
+      "G7",
+      "Cmaj7"
+    ],
+    "useWhen": "A target chord needs stronger forward pull or a chromatic approach tone.",
+    "caution": "The target chord and melody must support the altered scale tone. Do not label every non-diatonic dominant as a secondary dominant without checking its resolution.",
+    "source": {
+      "title": "二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "published": "2025-08-04",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Paraphrase of SoundQuest's explanation and examples. The D7→G movement is the secondary dominant of V in C major."
+  },
+  {
+    "id": "HARM-019",
+    "name": "Tritone substitution of a dominant seventh",
+    "summary": "Replace a dominant seventh with another dominant seventh whose root is a tritone away; the two chords share the same guide-tone tritone enharmonically.",
+    "tags": [
+      "tritone-substitution",
+      "subV",
+      "dominant",
+      "chromatic-bass",
+      "jazz"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "useWhen": "A dominant approach should have a chromatic bass descent into the target chord.",
+    "caution": "The substitute dominant's resolution and melody compatibility matter. SoundQuest notes that the common ♭II7 use has a focused resolution context; do not substitute indiscriminately.",
+    "source": {
+      "title": "トライトーン代理",
+      "author": "plugmon",
+      "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+      "published": "2025-06-08",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "In C major, G7 and Db7 share the F–B tritone (enharmonically respelled). This is a paraphrase, not a claim that every dominant substitution works in every context."
+  },
+  {
+    "id": "HARM-020",
+    "name": "Modal interchange from a parallel scale",
+    "summary": "Borrow a chord from a scale or mode with the same tonic while keeping the tonal center; the borrowed chord introduces one or more non-diatonic notes.",
+    "tags": [
+      "modal-interchange",
+      "parallel-scale",
+      "borrowed-chord",
+      "chromatic",
+      "mood-color"
+    ],
+    "before": [
+      "C",
+      "F",
+      "G",
+      "C"
+    ],
+    "after": [
+      "C",
+      "Fm",
+      "G",
+      "C"
+    ],
+    "useWhen": "A familiar progression needs a borrowed chord color without changing the tonic center.",
+    "caution": "Specify the source mode/scale and check the melody against the borrowed notes. The term can refer to scale-level borrowing or chord-level borrowing depending on the explanatory framework.",
+    "source": {
+      "title": "モーダル・インターチェンジ",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/",
+      "published": "2024-01-10",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest describes modal interchange as borrowing from a parallel scale with the same tonic, and discusses both scale and chord perspectives."
+  },
+  {
+    "id": "HARM-021",
+    "name": "Substitution within a harmonic-function family",
+    "summary": "Replace a chord with another chord that serves a similar phrase function, while checking shared chord tones and the target melody.",
+    "tags": [
+      "chord-substitution",
+      "reharmonization",
+      "tonic-family",
+      "subdominant-family",
+      "dominant-family"
+    ],
+    "before": [
+      "Cmaj7",
+      "Fmaj7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "useWhen": "A progression needs a different harmonic color without completely changing its functional direction.",
+    "caution": "Function families are useful models, not universal categories. Confirm the melody, bass line and local style; do not assume a substitution is interchangeable in every voicing.",
+    "source": {
+      "title": "Chord Substitution and Reharmonization",
+      "author": "Berklee Online; based on Randy Felts, Reharmonization Techniques",
+      "url": "https://online.berklee.edu/takenote/reharmonization-simple-substitution/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee's lesson describes tonic, subdominant and dominant chord families and substitution by similar function."
+  },
+  {
+    "id": "HARM-022",
+    "name": "Guide-tone voice leading with common-tone retention",
+    "summary": "For successive chords, keep common tones in the same voice where possible and move remaining voices by step or small intervals. In seventh chords, the 3rd and 7th often define chord quality and function.",
+    "tags": [
+      "voice-leading",
+      "guide-tones",
+      "common-tone",
+      "stepwise-motion",
+      "seventh-chord"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "F-C-E-A",
+      "F-B-E-A",
+      "E-B-D-G"
+    ],
+    "useWhen": "Pad voicings jump too much or chord changes sound disconnected.",
+    "caution": "Berklee's voice-leading suggestions are practical guidelines, not immutable rules. Keep register, melody and instrument range in view.",
+    "source": {
+      "title": "Voice Leading Paradigms for Harmony in Music Composition",
+      "author": "Berklee Online; courses by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+      "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee lists common-tone retention, stepwise motion and limited leaps as voice-leading principles; guide tones for seventh chords are 3rd and 7th."
   }
 ]

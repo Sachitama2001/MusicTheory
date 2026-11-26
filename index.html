@@ -287,17 +287,90 @@ $("undoAI").onclick = () => {
 };
 
 async function showDb() {
+  const labels = {
+    progressions: "コード進行",
+    "harmony-techniques": "和声技法",
+    "style-moods": "ジャンル・雰囲気",
+    arrangements: "アレンジ",
+    "composition-rules": "作曲ルール"
+  };
   try {
     const data = await db();
-    for (const [name, records] of Object.entries(data)) {
-      const article = document.createElement("article");
-      article.innerHTML = `<b>${name.toUpperCase()}</b><p>${records.length} records</p>`;
-      $("knowledge").append(article);
-    }
+    const render = () => {
+      const query = $("knowledgeSearch").value.trim().toLowerCase();
+      const root = $("knowledge");
+      root.replaceChildren();
+      let total = 0;
+      for (const [name, records] of Object.entries(data)) {
+        const matches = records.filter(record => {
+          const haystack = JSON.stringify(record).toLowerCase();
+          return !query || haystack.includes(query);
+        });
+        if (!matches.length) continue;
+        total += matches.length;
+        const section = document.createElement("section");
+        section.className = "kb-library";
+        const heading = document.createElement("h4");
+        heading.textContent = labels[name] + " · " + matches.length;
+        section.append(heading);
+        const grid = document.createElement("div");
+        grid.className = "kb-records";
+        for (const record of matches) {
+          const card = document.createElement("article");
+          card.className = "kb-record";
+          const title = document.createElement("b");
+          title.textContent = record.name || record.id;
+          card.append(title);
+          const summary = record.summary || record.rule || record.notes || "";
+          if (summary) {
+            const p = document.createElement("p");
+            p.textContent = summary;
+            card.append(p);
+          }
+          if (record.degrees?.length) {
+            const p = document.createElement("p");
+            p.textContent = "度数: " + record.degrees.join(" – ");
+            card.append(p);
+          }
+          if (record.example?.length) {
+            const p = document.createElement("p");
+            p.textContent = "例: " + record.example.join(" → ");
+            card.append(p);
+          }
+          if (record.tags?.length) {
+            const p = document.createElement("p");
+            p.textContent = record.tags.join(" · ");
+            card.append(p);
+          }
+          const source = record.source;
+          if (source?.url) {
+            const link = document.createElement("a");
+            link.href = source.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = source.title || "出典";
+            card.append(link);
+          }
+          if (record.review_status === "pending") {
+            const badge = document.createElement("p");
+            badge.textContent = "要確認";
+            badge.style.color = "#a66a35";
+            card.append(badge);
+          }
+          grid.append(card);
+        }
+        section.append(grid);
+        root.append(section);
+      }
+      if (!total) root.textContent = "該当する項目はありません。";
+    };
+    $("knowledgeSearch").addEventListener("input", render);
+    render();
   } catch (error) {
     $("knowledge").textContent = error.message;
   }
 }
+
 
 initKeys();
 try {

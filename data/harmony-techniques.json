@@ -483,5 +483,73 @@
     },
     "evidence_type": "human-authored-source+song-analysis",
     "confidence": "medium"
+  },
+  {
+    "id": "HARM-016",
+    "name": "Cliché / chromatic inner-line motion",
+    "summary": "Retain a chord's basic root identity while moving one chord tone chromatically through successive chord qualities.",
+    "tags": [
+      "cliche",
+      "chromatic-line",
+      "inner-voice",
+      "pop",
+      "calm"
+    ],
+    "before": [
+      "C"
+    ],
+    "after": [
+      "C",
+      "Cmaj7",
+      "C7",
+      "C6"
+    ],
+    "useWhen": "A stable harmony needs a small, audible inner-line movement without a full progression change.",
+    "caution": "C7 introduces a dominant-seventh color; omit it or use C6 if the extra dominant tension is not wanted.",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source's C–Cmaj7–C7–C6 example moves one voice C–B–Bb–A while retaining the C-root family."
+  },
+  {
+    "id": "HARM-017",
+    "name": "Subdominant minor (IV–iv–I)",
+    "summary": "Borrow the minor subdominant from the parallel minor before returning to the tonic.",
+    "tags": [
+      "modal-interchange",
+      "borrowed-chord",
+      "subdominant-minor",
+      "bittersweet",
+      "soft"
+    ],
+    "before": [
+      "C",
+      "F",
+      "C"
+    ],
+    "after": [
+      "C",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "useWhen": "A familiar major-key progression needs a brief softer or wistful color before tonic return.",
+    "caution": "Check the melody against Ab in Fm; keep the borrowed chord's duration appropriate to the phrase.",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The cited author presents Fm (iv) as a subdominant-minor color that can still be used in a calm progression."
   }
 ]

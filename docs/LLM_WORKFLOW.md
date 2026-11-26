@@ -68,7 +68,10 @@ Start and duration are in quarter-note beats from the start. Pitch is MIDI note 
 
 ## Rhythm-only transformation contract
 - Retain BPM, meter and bar count.
-- Preserve note count, pitch and velocity for every track.
+- Do not preserve note count; add or omit repeated attacks when the groove requires it.
+- Preserve pitch vocabulary per bar for Bass and Pad; every generated pitch must already exist in that bar.
+- Reuse only existing drum note types; note count may change.
+- Velocity may vary modestly for accents.
 - Keep notes in their original bars.
 - Keep Pad chord tones grouped at the same onset and preserve group order.
 - Preserve kick/snare/hi-hat identities.

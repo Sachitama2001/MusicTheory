@@ -102,7 +102,7 @@ function changeKeyAndTranspose(){
 $("key").onchange=changeKeyAndTranspose;
 $("scale").onchange=()=>{drawWheel();renderProgression()};
 $("rhythmStyle").onchange=()=>{$("aiStatus").textContent="リズムの方向性: "+$("rhythmStyle").selectedOptions[0].textContent};
-$("bpm").onchange=()=>{if(ctx&&playingSource){const source=playingSource,label=playingLabel,status=playingStatus;audition(source,label,status)}$("status").textContent="BPMを"+bpm()+"に設定しました。再生速度とMIDI書き出しに反映されます。"};
+$("bpm").onchange=()=>{if(ctx&&playingSource){const source=playingSource,label=playingLabel,status=playingStatus;audition(source,label,status)}renderAll();$("status").textContent="BPMを"+bpm()+"に設定しました。再生速度とMIDI書き出しに反映されます。"};
 $("degrees").oninput=renderProgression;$("clearTrack").onclick=()=>{tracks[active]=[];selected=-1;selectedSet.clear();renderAll()};$("deleteSelected").onclick=()=>{if(selectedSet.size){tracks[active]=tracks[active].filter((n,i)=>!selectedSet.has(i))}else if(selected>=0)tracks[active].splice(selected,1);selected=-1;selectedSet.clear();renderAll()};
 function toMidi(){let m=new Midi();m.header.setTempo(bpm());m.header.timeSignatures=[{ticks:0,timeSignature:meter()}];for(let [name,arr] of Object.entries(tracks)){let t=m.addTrack();t.name=name.toUpperCase();if(name==="drums")t.channel=9;arr.forEach(n=>t.addNote({midi:n.pitch,ticks:Math.round(n.start*m.header.ppq),durationTicks:Math.max(1,Math.round(n.duration*m.header.ppq)),velocity:n.velocity}))}return m}
 $("export").onclick=()=>{let blob=new Blob([toMidi().toArray()],{type:"audio/midi"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="musictheory-sketch.mid";a.click();URL.revokeObjectURL(u);$("status").textContent="MIDIを書き出しました。"};

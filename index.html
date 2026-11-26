@@ -142,7 +142,7 @@ async function db(){
 function inputDraft(){
  const current=structuredClone(draft()),harmonyRequest=$("harmonyRequest").value.trim(),rhythmRequest=$("rhythmRequest").value.trim();
  const mode=harmonyRequest&&rhythmRequest?"combined":rhythmRequest?"rhythm":"harmony";
- return {...current,signature:JSON.stringify(current),beatsPerBar:beat(),bars:bars(),mode,rhythmOnly:mode==="rhythm",harmonyRequest,rhythmRequest};
+ return {...current,signature:JSON.stringify({draft:current,harmonyRequest,rhythmRequest}),beatsPerBar:beat(),bars:bars(),mode,rhythmOnly:mode==="rhythm",harmonyRequest,rhythmRequest};
 }
 
 function updateModeUI(){}
@@ -181,8 +181,9 @@ async function buildBrief(current){
  ].join("\n");
 }
 
-function ensureCurrent(current) {
-  if (current.signature !== JSON.stringify(draft())) throw new Error("The draft changed. Build a new brief or generate again for this draft.");
+function ensureCurrent(current){
+ const now=JSON.stringify({draft:draft(),harmonyRequest:$("harmonyRequest").value.trim(),rhythmRequest:$("rhythmRequest").value.trim()});
+ if(current.signature!==now)throw new Error("MIDIまたは指示内容が変わりました。現在の内容で再生成してください。");
 }
 
 async function makeManualBrief() {

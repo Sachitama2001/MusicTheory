@@ -195,13 +195,15 @@
       "quiet"
     ],
     "harmonyTendencies": [
-      "I–vi alternation",
-      "tonic and subdominant functions",
-      "subdominant-minor as a soft color",
-      "tonic pedal"
+      "I–vi and I–iii–vi tonic-family cycles",
+      "tonic and subdominant alternation (I–IV, I–ii)",
+      "subdominant-minor as a soft borrowed color",
+      "tonic pedal / slash-chord patterns",
+      "dominant tension is often reduced in the source examples"
     ],
     "arrangementTendencies": [
-      "longer chord holds can support a calm impression; avoid excessive dominant tension"
+      "Longer chord holds can support a calm impression; avoid excessive dominant tension",
+      "The author also notes that melody, arrangement and other musical elements affect the result"
     ],
     "source": {
       "title": "落ち着いた雰囲気を持つコード進行を考える",
@@ -212,7 +214,7 @@
     },
     "evidence_type": "human-authored-mood-description",
     "confidence": "medium",
-    "notes": "These are the author's examples and interpretation of calm/stable progressions; do not infer mood from chords alone."
+    "notes": "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone."
   },
   {
     "id": "STYLE-009",

@@ -84,3 +84,47 @@ Public availability does not automatically grant redistribution rights. Do not c
   - Published: 2022-06-19.
   - Chapters identify Drums (0:51–1:59), Synths & Flow (2:00–2:46), Sub Bass (4:25–5:37), and other sound-design topics.
   - Use: manual study of how drum, synth-flow and sub-bass roles are separated. Do not bundle the paid sample pack or project files.
+
+## SoundQuest — コードとリズム
+- 二次ドミナント: https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/
+  - Author: yuta; published 2025-08-04.
+  - Use: secondary-dominant approach chords and their semitone voice-leading into target chords.
+- トライトーン代理: https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/
+  - Author: plugmon; published 2025-06-08.
+  - Use: dominant-seventh substitution using the shared guide-tone tritone.
+- モーダル・インターチェンジ: https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/
+  - Author: yuta; published 2024-01-10.
+  - Use: borrowing chords from parallel scales while retaining the tonic center.
+- シャッフルビート: https://soundquest.jp/quest/rhythm/rhythm-mv2/shuffle-beat/
+  - Author: yuta; published 2025-07-17.
+  - Use: triplet subdivision, typical 2:1 long-short weighting, straight-vs-shuffle comparison and the distinction between shuffle and broader jazz swing usage.
+- シンコペーション: https://soundquest.jp/quest/rhythm/rhythm-mv1/syncopation/
+  - Author: yuta; published 2026-06-04.
+  - Use: offbeat kick/snare, 1/8 and 1/16 displacement, anticipation and rhythmic tension.
+- ポリリズム: https://soundquest.jp/quest/rhythm/rhythm-mv2/polyrhythm/
+  - Author: yuta; published 2024-06-26.
+  - Use: distinguish independent rhythmic cycles from ordinary syncopation or different accents over the same meter.
+- タイム・フィール: https://soundquest.jp/quest/rhythm/rhythm-mv1/timefeel/
+  - Author: yuta; published 2026-03-20.
+  - Use: half-time and double-time perception while the underlying tempo and melodic/harmonic pace may remain unchanged.
+
+## Berklee Online — Harmony and arranging
+- Chord Substitution and Reharmonization: https://online.berklee.edu/takenote/reharmonization-simple-substitution/
+  - Based on Randy Felts, *Reharmonization Techniques*.
+  - Use: tonic, subdominant and dominant families; substitutions by similar function.
+- Voice Leading Paradigms: https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/
+  - Course material by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling.
+  - Use: retain common tones, move other voices by step where possible, and use guide tones.
+- Piano Voicing Techniques: https://online.berklee.edu/takenote/basic-piano-voicing-techniques/
+  - Based on Randy Felts, *Reharmonization Techniques*.
+  - Use: chord tones and guide-tone voicings.
+
+## Academic research — interval perception
+- Consonance and dissonance perception: https://doi.org/10.1016/j.plrev.2022.10.004
+  - Authors: Nicola Di Stefano, Peter Vuust and Elvira Brattico.
+  - Journal: *Physics of Life Reviews* (December 2022).
+  - Use: critical review of psychoacoustic, neurobiological and cultural explanations of consonance/dissonance; explicitly cautions against simplistic universal interpretations.
+- Timbral effects on consonance: https://www.nature.com/articles/s41467-024-45812-z
+  - Authors: Raja Marjieh, Peter M. C. Harrison, Harin Lee, Fotini Deligiannaki, Nori Jacoby et al.
+  - Published: 2024-02-19 in *Nature Communications*.
+  - Use: five large-scale behavioral studies (235,440 judgments) showing timbre can reshape consonance preferences. Supports displaying interval role as context-sensitive rather than fixed emotion.

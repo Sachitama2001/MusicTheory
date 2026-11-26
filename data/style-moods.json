@@ -296,5 +296,63 @@
     "evidence_type": "project-interpretation",
     "confidence": "medium",
     "notes": "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context."
+  },
+  {
+    "id": "STYLE-012",
+    "name": "Consonance and dissonance are context-dependent",
+    "tags": [
+      "interval",
+      "consonance",
+      "dissonance",
+      "perception",
+      "culture",
+      "timbre"
+    ],
+    "harmonyTendencies": [
+      "Simple frequency ratios and roughness are relevant to sensory consonance, but cultural familiarity and musical context also influence preference.",
+      "A theory label such as 'consonant' or 'dissonant' should not be treated as a universal emotional label."
+    ],
+    "arrangementTendencies": [
+      "Use interval color as a descriptive cue, then evaluate it in the actual voicing, register, instrument timbre and surrounding progression."
+    ],
+    "source": {
+      "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+      "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+      "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+      "published": "2022-12",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-review",
+    "confidence": "high",
+    "notes": "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping."
+  },
+  {
+    "id": "STYLE-013",
+    "name": "Timbre can reshape perceived consonance",
+    "tags": [
+      "timbre",
+      "consonance",
+      "dissonance",
+      "interval",
+      "sound-design",
+      "perception"
+    ],
+    "harmonyTendencies": [
+      "Perceived consonance preferences can change when timbre changes, including with inharmonic spectra.",
+      "Interval color should be interpreted together with the sound source, not only pitch-class distance."
+    ],
+    "arrangementTendencies": [
+      "When evaluating a chord or interval map, compare the same pitches with different timbres if the target instrument is a synth, guitar or sampled source."
+    ],
+    "source": {
+      "title": "Timbral effects on consonance disentangle psychoacoustic mechanisms and suggest perceptual origins for musical scales",
+      "author": "Raja Marjieh, Peter M. C. Harrison, Harin Lee, Fotini Deligiannaki, Nori Jacoby et al.",
+      "url": "https://www.nature.com/articles/s41467-024-45812-z",
+      "published": "2024-02-19",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes."
   }
 ]

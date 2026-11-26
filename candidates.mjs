@@ -69,29 +69,34 @@ export function parseCandidates(input, {tracks, bars, beatsPerBar, rhythmOnly}) 
       throw new Error(label + ": harmony edits must leave the Drums track unchanged.");
     }
     if (rhythmOnly) {
-      for (const name of Object.keys(result)) {
-        if (result[name].some(note => note.start + note.duration > (Math.floor(note.start / beatsPerBar) + 1) * beatsPerBar + EPSILON) ||
-            fingerprint(result[name], beatsPerBar, name === "pad") !== fingerprint(tracks[name], beatsPerBar, name === "pad")) {
-          throw new Error(label + ": rhythm-only edits must preserve " + name + " pitches, velocities, bar placement and Pad chord groups.");
-        }
-      }
+      validateRhythmOnly(result, tracks, {bars, beatsPerBar}, label);
     }
     return {...candidate, tracks: result};
   });
 }
 
-function fingerprint(notes, beatsPerBar, chords) {
-  const groups = new Map();
-  for (const {start, pitch, velocity} of [...notes].sort((a, b) => a.start - b.start)) {
-    // Pad tones must remain together and in chord order; other tracks can reorder notes within a bar.
-    const key = chords ? start : Math.floor(start / beatsPerBar);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(`${pitch}:${velocity}`);
+function validateRhythmOnly(candidateTracks, originalTracks, {bars, beatsPerBar}, label) {
+  for (const name of Object.keys(candidateTracks)) {
+    const source = originalTracks[name] || [];
+    const candidate = candidateTracks[name] || [];
+    const sourceByBar = Array.from({length: bars}, () => new Set());
+    for (const note of source) {
+      const bar = Math.floor(note.start / beatsPerBar);
+      if (bar >= 0 && bar < bars) sourceByBar[bar].add(note.pitch);
+    }
+    const allowedDrumPitches = new Set(source.map(note => note.pitch));
+    for (const note of candidate) {
+      const bar = Math.floor(note.start / beatsPerBar);
+      if (bar < 0 || bar >= bars || note.start + note.duration > (bar + 1) * beatsPerBar + EPSILON) {
+        throw new Error(label + ": " + name + " notes must stay inside their original bar.");
+      }
+      if (name === "Drums") {
+        if (!allowedDrumPitches.has(note.pitch)) {
+          throw new Error(label + ": rhythm edits may only reuse existing Drum note types.");
+        }
+      } else if (!sourceByBar[bar].has(note.pitch)) {
+        throw new Error(label + ": " + name + " may only reuse pitches already present in the same bar.");
+      }
+    }
   }
-  return JSON.stringify([...groups].map(([key, notes]) => [chords ? Math.floor(key / beatsPerBar) : key, notes.sort()]));
-}
-
-function eventFingerprint(notes) {
-  return JSON.stringify([...notes].map(({pitch, start, duration, velocity}) => ({pitch, start, duration, velocity})).sort((a, b) =>
-    a.start - b.start || a.pitch - b.pitch || a.duration - b.duration || a.velocity - b.velocity));
 }

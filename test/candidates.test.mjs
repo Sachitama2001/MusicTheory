@@ -47,3 +47,12 @@ test("a legacy partial import only replaces the named track", () => {
   assert.deepEqual(candidate.tracks.bass, [{pitch: 40, start: 0, duration: 1, velocity: 0.7}]);
   assert.deepEqual(candidate.tracks.pad, original.pad);
 });
+
+test("harmony candidates may change Pad and Bass but must preserve the Drum arrangement", () => {
+  const harmony = {...current, rhythmOnly: false};
+  const pad = [note(60, 0), note(65, 0), note(62, 3.5), note(67, 3.5)];
+  const [candidate] = parseCandidates(wrap({pad}), harmony);
+  assert.deepEqual(candidate.tracks.pad, pad);
+  assert.deepEqual(candidate.tracks.drums, original.drums);
+  assert.throws(() => parseCandidates(wrap({drums: [note(36, 0)]}), harmony), /Drums track unchanged/);
+});

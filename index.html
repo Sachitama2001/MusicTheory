@@ -187,12 +187,6 @@ async function makeManualBrief() {
 }
 
 $("buildBrief").onclick = makeManualBrief;
-$("rhythm").onclick = () => {
-  $("editMode").value = "rhythm";
-  $("request").value = "Riddimのドロップのようなフロウにする。147 BPMの4/4を維持し、音程・音数・ベロシティは変えない。ベースは短い反復と休符、裏拍、3連符のアクセントを使う。ドラムはハーフタイムを保ち、Padはコードのまとまりを崩さない。2小節ごとに小さな変化を付ける。";
-  if (!$("arrange").disabled) $("arrange").click();
-  else makeManualBrief();
-};
 
 function updateReview() {
   if (!review) return;
@@ -234,41 +228,29 @@ $("reviewJson").onclick = () => {
 };
 
 const apiPath = "./api/arrangements";
-async function enableLocalApi() {
-  $("arrange").disabled = true;
-  $("apiState").textContent = "API未接続";
-  if (!["127.0.0.1", "localhost"].includes(location.hostname)) return;
-  try {
-    const response = await fetch(apiPath);
-    if (response.status === 404) return;
-    if (!response.ok) throw new Error("HTTP " + response.status);
-    const {available} = await response.json();
-    $("arrange").disabled = !available;
-    $("apiState").textContent = available ? "API接続済み" : "API未設定";
-  } catch (error) {
-    $("apiState").textContent = "API未接続";
-    $("aiStatus").textContent = "ローカルAPIに接続できません: " + error.message;
-  }
+async function enableLocalApi(){
+ $("arrange").disabled=true;$("apiState").textContent="API未接続";
+ if(!["127.0.0.1","localhost"].includes(location.hostname)){ $("apiState").textContent="手動モード";return; }
+ try{const response=await fetch(apiPath,{signal:AbortSignal.timeout(5000)});if(!response.ok)throw new Error("HTTP "+response.status);const info=await response.json();$("arrange").disabled=!info.available;$("apiState").textContent=info.available?"APIキー設定済み · "+(info.model||"OpenAI"):"APIキー未設定";}
+ catch(error){$("apiState").textContent="API未接続";$("aiStatus").textContent="ローカルAPIに接続できません: "+error.message;}
 }
 
-$("arrange").onclick = async () => {
-  const current = inputDraft();
-  $("arrange").disabled = true;
-  $("aiStatus").textContent = "生成中…";
-  try {
-    const prompt = await buildBrief(current);
-    ensureCurrent(current);
-    const response = await fetch(apiPath, {
-      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({prompt})
-    });
-    const raw = await response.json();
-    if (!response.ok) throw new Error(raw.error || "HTTP " + response.status);
-    stageCandidates(raw, current, {autoApply: true});
-  } catch (error) {
-    $("aiStatus").textContent = "生成できませんでした: " + error.message;
-  } finally {
-    $("arrange").disabled = false;
-  }
+$("arrange").onclick=async()=>{
+ const current=inputDraft();$("arrange").disabled=true;$("aiStatus").textContent="指示と関連資料を整理中…";
+ let elapsed=0,interval=null,timeout=null,controller=null;
+ try{
+   const prompt=await buildBrief(current);ensureCurrent(current);
+   controller=new AbortController();interval=setInterval(()=>{elapsed++;$("aiStatus").textContent="AIがアレンジ候補を生成中… "+elapsed+"秒";},1000);
+   timeout=setTimeout(()=>controller.abort(),125000);$("aiStatus").textContent="AIに送信しました。応答を待っています…";
+   const response=await fetch(apiPath,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({prompt}),signal:controller.signal});
+   let raw;try{raw=await response.json()}catch{throw new Error("サーバーからJSON形式の応答がありません。ターミナルのログを確認してください。")}
+   if(!response.ok)throw new Error(raw.error||"HTTP "+response.status);
+   $("aiStatus").textContent="候補を検証してMIDIに反映中…";
+   stageCandidates(raw,current,{autoApply:true});
+ }catch(error){
+   const message=error.name==="AbortError"?"120秒以内に応答がありませんでした。入力を短くするか、ターミナルのエラーを確認してください。":error.message;
+   $("aiStatus").textContent="生成できませんでした: "+message;
+ }finally{if(interval)clearInterval(interval);if(timeout)clearTimeout(timeout);$("arrange").disabled=false;}
 };
 
 function withCandidate(fn) {
@@ -290,6 +272,7 @@ function loadDraft(state) {
   }
   selected = -1;
   selectedSet.clear();
+  updateModeUI();
   renderAll();
   renderProgression();
 }

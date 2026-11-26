@@ -268,5 +268,33 @@
     "evidence_type": "academic-research",
     "confidence": "high",
     "notes": "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets."
+  },
+  {
+    "id": "STYLE-011",
+    "name": "Tonic-relative interval color map",
+    "tags": [
+      "scale",
+      "tonic",
+      "interval",
+      "mood",
+      "harmony",
+      "visualization"
+    ],
+    "harmonyTendencies": [
+      "1st: tonal center and strongest reference point.",
+      "3rd: major/minor quality; a central source of tonal color.",
+      "5th: stable structural tone in common triadic harmony.",
+      "2nd/9th and 6th/13th: color tones that can add openness or extension.",
+      "4th/11th: suspended or unresolved color when placed against the 3rd.",
+      "Major 7th and minor 2nd: close semitone relations to the tonic; often create strong directional tension.",
+      "Tritone: high intervallic tension, often associated with dominant function in tonal contexts."
+    ],
+    "arrangementTendencies": [
+      "Display scale membership separately from interval character.",
+      "Use color as a theory-oriented tendency, not as a deterministic emotion label."
+    ],
+    "evidence_type": "project-interpretation",
+    "confidence": "medium",
+    "notes": "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context."
   }
 ]

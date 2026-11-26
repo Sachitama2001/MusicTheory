@@ -1,0 +1,37 @@
+[
+  {
+    "id": "RULE-001",
+    "name": "Keep the sketch small",
+    "rule": "Generate no more than 16 bars and exactly three tracks: Bass, Drums and Pad.",
+    "priority": "hard",
+    "evidence_type": "product-requirement"
+  },
+  {
+    "id": "RULE-002",
+    "name": "Separate harmony and rhythm edits",
+    "rule": "Harmony suggestions may alter chord pitches or voicings. Rhythm suggestions preserve pitches and change onset/duration only.",
+    "priority": "hard",
+    "evidence_type": "product-requirement"
+  },
+  {
+    "id": "RULE-003",
+    "name": "Resolve intentionally",
+    "rule": "When a progression loops, provide a clear return to tonic or explain the non-tonic loop.",
+    "priority": "soft",
+    "evidence_type": "project-rule"
+  },
+  {
+    "id": "RULE-004",
+    "name": "Offer alternatives, do not overwrite",
+    "rule": "Return at least two candidates when practical. Preserve original until explicit apply.",
+    "priority": "hard",
+    "evidence_type": "product-requirement"
+  },
+  {
+    "id": "RULE-005",
+    "name": "Source-aware recommendations",
+    "rule": "Cite knowledge record IDs. Distinguish sourced theory from project heuristics and generated suggestions.",
+    "priority": "hard",
+    "evidence_type": "data-governance"
+  }
+]

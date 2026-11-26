@@ -7,7 +7,8 @@ Five JSON libraries live under data/.
 - name: human-readable title
 - summary: concise explanation
 - tags: genre, mood, technique or use-case tags
-- source: title, author/organization, URL, publication/update date
+- source: title, author/organization, URL, publication/update date and access date
+- review_status: pending / approved / merged (optional)
 - evidence_type: human-authored, academic, observed-example, project-original
 - confidence: high, medium, low
 - notes: limitations, caveats and licensing notes
@@ -23,7 +24,8 @@ Five JSON libraries live under data/.
 - Never present AI-generated interpretations as source facts.
 - Preserve exact source URLs and author attribution.
 - Store paraphrases, not large copyrighted passages.
-- New sources enter as proposed records with review_status pending.
+- New sources enter as proposed records with review_status pending; pending records are visible in the app but excluded from LLM context.
 - Conflicting entries coexist with a conflict note until human review.
 - Updates are additive and versioned; never silently overwrite existing records.
 - Store last-reviewed and source-access dates.
+- The app displays source links and allows text search across records.

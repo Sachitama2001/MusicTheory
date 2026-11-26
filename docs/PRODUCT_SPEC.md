@@ -25,7 +25,7 @@ Static app, scale-aware Roman numeral progression, three MIDI tracks, preview pl
 
 ### M1 — Arrangement suggestions
 Harmony: voicing alternatives, chord substitution and passing chords.
-Rhythm: timing-only transformations.
+Rhythm: timing and articulation transformations that may add, re-trigger or omit note events while preserving the original pitch vocabulary.
 With the local API, apply the first valid candidate automatically, retain the original for undo, and allow the user to switch to another returned candidate. Harmony edits must leave Drums unchanged; rhythm-only edits preserve all pitches and velocities.
 
 ### M2 — Riddim flow

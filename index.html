@@ -12,8 +12,11 @@
 <section class="panel"><div class="row spread"><h3 class="sectiontitle">MIDI編集</h3><span class="hint">クリック：追加 / ドラッグ：移動 / 空白ドラッグ：範囲選択 / Shift+クリック：削除</span></div><div class="tracktabs" id="tabs"><button data-track="bass" class="active">BASS</button><button data-track="drums">DRUMS</button><button data-track="pad">PAD</button></div><div class="canvaswrap"><canvas id="roll" width="1200" height="310"></canvas></div><div class="row spread" style="margin-top:10px"><span class="hint" id="trackHint">単音ベース</span><div class="actions"><button id="clearTrack">トラックを消去</button><button id="deleteSelected">選択ノートを削除</button></div></div></section>
 <section class="panel">
 <div class="row spread"><h3 class="sectiontitle">アレンジ指示</h3><span class="tag" id="apiState">API未接続</span></div>
-<div class="row" style="margin:8px 0"><div class="field"><label>変更対象</label><select id="editMode"><option value="harmony">コード</option><option value="rhythm">リズム</option></select></div><div class="field wide" id="rhythmStyleField" hidden><label>リズムの方向性</label><select id="rhythmStyle"><option value="auto">自動で提案</option><option value="straight-pop">ストレート・ポップ</option><option value="shuffle">シャッフル</option><option value="half-time">ハーフタイム</option><option value="breakbeat">ブレイクビーツ</option><option value="funk">ファンク</option><option value="riddim">Riddim / Dubstep</option><option value="math-rock">Math Rock</option></select></div></div>
-<textarea id="request" aria-label="アレンジ指示" placeholder="例：ベースの反復を増やし、2小節ごとにアクセントを変える。Padは短いコードスタブと休符を組み合わせる。"></textarea>
+<div class="field" style="margin:10px 0 5px"><label for="harmonyRequest">コード・和声への指示</label></div>
+<textarea id="harmonyRequest" aria-label="コード・和声への指示" placeholder="例：2小節目にセカンダリードミナントを入れ、Padのボイシングは共通音を残して滑らかにつなぐ。"></textarea>
+<div class="row spread" style="margin:12px 0 5px"><div class="field"><label for="rhythmRequest">リズム・グルーヴへの指示</label></div><div class="field wide"><label for="rhythmStyle">リズムの方向性</label><select id="rhythmStyle"><option value="auto">自動で提案</option><option value="straight-pop">ストレート・ポップ</option><option value="shuffle">シャッフル</option><option value="half-time">ハーフタイム</option><option value="breakbeat">ブレイクビーツ</option><option value="funk">ファンク</option><option value="riddim">Riddim / Dubstep</option><option value="math-rock">Math Rock</option></select></div></div>
+<textarea id="rhythmRequest" aria-label="リズム・グルーヴへの指示" placeholder="例：ベースを短く再発音させ、休符と裏拍を増やす。ドラムはキックとスネアの位置を整理し、2小節ごとに変化を付ける。"></textarea>
+<p class="hint">コードとリズムは片方だけでも、両方同時でも指定できます。</p>
 <div class="actions" style="margin-top:8px"><button class="primary" id="arrange">AIで生成して反映</button><button id="undoAI" hidden>元に戻す</button></div>
 <p class="status" id="aiStatus" role="status"></p>
 <div id="review" hidden>
@@ -36,8 +39,8 @@ const $=id=>document.getElementById(id), NOTES=["C","C#","D","Eb","E","F","F#","
 const ROM=["I","II","III","IV","V","VI","VII"];let tracks={bass:[],drums:[],pad:[]},active="bass",selected=-1,selectedSet=new Set(),drag=null,selectBox=null,ctx=null,playTimer=null,beforeAI=null;
 const beat=()=>Number($("meter").value==="7"?3.5:$("meter").value), bars=()=>Number($("bars").value), bpm=()=>Math.max(40,Math.min(240,Number($("bpm").value)||140)), keyPc=()=>NOTES.indexOf($("key").value);
 const meter=()=>$("meter").value==="7"?[7,8]:[Number($("meter").value),4];
-const draft=()=>({tracks,settings:{key:$("key").value,scale:$("scale").value,bpm:bpm(),meter:$("meter").value,bars:bars(),degrees:$("degrees").value,mode:$("editMode").value,rhythmStyle:$("rhythmStyle").value}});
-function initKeys(){NOTES.forEach(n=>{let o=document.createElement("option");o.value=n;o.textContent=n;$("key").append(o)});$("key").value="C";updateModeUI()}
+const draft=()=>({tracks,settings:{key:$("key").value,scale:$("scale").value,bpm:bpm(),meter:$("meter").value,bars:bars(),degrees:$("degrees").value,rhythmStyle:$("rhythmStyle").value}});
+function initKeys(){NOTES.forEach(n=>{let o=document.createElement("option");o.value=n;o.textContent=n;$("key").append(o)});$("key").value="C";previousKeyPc=keyPc()}
 function chordForDegree(deg){let scaleName=$("scale").value,scale=SCALES[scaleName];if(scaleName==="majorPentatonic")scale=SCALES.major;if(scaleName==="minorPentatonic")scale=SCALES.naturalMinor;let pcs=scale.map(x=>(x+keyPc())%12),d=ROM.findIndex(x=>x.toLowerCase()===deg.toLowerCase());if(d<0)return null;let root=pcs[d],third=pcs[(d+2)%7],fifth=pcs[(d+4)%7],seventh=pcs[(d+6)%7],t3=(third-root+12)%12,t5=(fifth-root+12)%12,t7=(seventh-root+12)%12;let suffix=t3===3?(t5===6?(t7===9?"dim7":"m7b5"):"m7"):(t7===11?"maj7":"7");return {degree:deg,root,notes:[root,third,fifth,seventh],name:NOTES[root]+suffix}}
 function getProgression(){let ds=$("degrees").value.trim().split(/[ ,]+/).filter(Boolean);return (ds.length?ds:["I","V","vi","IV"]).map(chordForDegree).filter(Boolean)}
 function renderProgression(){let p=getProgression();$("progression").innerHTML="";p.forEach(c=>{let d=document.createElement("div");d.className="chord";d.innerHTML="<small>"+c.degree+"</small><b>"+c.name+"</b>";$("progression").append(d)});$("keyLabel").textContent=$("key").value+" · "+$("scale").selectedOptions[0].textContent}
@@ -75,7 +78,7 @@ $("roll").addEventListener("pointerdown",e=>{let p=pt(e),arr=tracks[active],unit
 $("roll").addEventListener("pointermove",e=>{if(!drag)return;let p=pt(e),unit=1200/bars(),pos=p.x/unit*beat();if(drag.selection){selectBox.w=p.x-selectBox.x;selectBox.h=p.y-selectBox.y;renderAll();return}let deltaBeat=Math.round((pos-drag.originX)*4)/4,deltaPitch=active==="drums"?0:Math.round((drag.originY-p.y)/(280/(active==="bass"?32:36)));drag.indices.forEach((idx,k)=>{let n=tracks[active][idx],o=drag.origins[k];n.start=Math.max(0,Math.min(bars()*beat()-o.duration,o.start+deltaBeat));if(active==="drums"){let lane=Math.max(0,Math.min(2,Math.round((p.y-42)/78)));n.pitch=[36,38,42][lane]}else n.pitch=Math.max(24,Math.min(96,o.pitch+deltaPitch))});renderAll()});
 $("roll").addEventListener("pointerup",()=>{if(drag&&drag.selection&&selectBox){if(Math.abs(selectBox.w)<3&&Math.abs(selectBox.h)<3){let end=bars()*beat(),pos=selectBox.x/1200*end,pitch=active==="drums"?[36,38,42][Math.max(0,Math.min(2,Math.floor((selectBox.y-30)/78)))]:Math.round((active==="bass"?28:48)+(310-selectBox.y)/280*(active==="bass"?32:36)),start=Math.max(0,Math.min(end-.25,Math.floor(pos*4)/4));tracks[active].push({pitch,start,duration:Math.min(active==="drums"?.2:beat(),end-start),velocity:.75});selected=tracks[active].length-1;selectedSet=new Set([selected])}else{let x1=Math.min(selectBox.x,selectBox.x+selectBox.w),x2=Math.max(selectBox.x,selectBox.x+selectBox.w),y1=Math.min(selectBox.y,selectBox.y+selectBox.h),y2=Math.max(selectBox.y,selectBox.y+selectBox.h);tracks[active].forEach((n,i)=>{let x=n.start/(beat())*1200/bars(),y=noteY(n);if(x>=x1-8&&x<=x2+8&&y>=y1-12&&y<=y2+12)selectedSet.add(i)});selected=selectedSet.size?[...selectedSet][0]:-1}selectBox=null}drag=null;renderAll()});
 $("tabs").onclick=e=>{let b=e.target.closest("button[data-track]");if(!b)return;active=b.dataset.track;selected=-1;selectedSet.clear();document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("active",x===b));$("trackHint").textContent={bass:"単音ベース",drums:"Kick / Snare / Hi-hat",pad:"コード構成音"}[active];renderAll()};
-$("generate").onclick=makeDraft;$("key").onchange=()=>{drawWheel();renderProgression()};$("scale").onchange=()=>{drawWheel();renderProgression()};$("editMode").onchange=updateModeUI;$("rhythmStyle").onchange=()=>{if($("editMode").value==="rhythm")$("aiStatus").textContent="リズムの方向性: "+$("rhythmStyle").selectedOptions[0].textContent};$("degrees").oninput=renderProgression;$("clearTrack").onclick=()=>{tracks[active]=[];selected=-1;selectedSet.clear();renderAll()};$("deleteSelected").onclick=()=>{if(selectedSet.size){tracks[active]=tracks[active].filter((n,i)=>!selectedSet.has(i))}else if(selected>=0)tracks[active].splice(selected,1);selected=-1;selectedSet.clear();renderAll()};
+$("generate").onclick=makeDraft;$("key").onchange=()=>{drawWheel();renderProgression()};$("scale").onchange=()=>{drawWheel();renderProgression()};$("rhythmStyle").onchange=()=>{$("aiStatus").textContent="リズムの方向性: "+$("rhythmStyle").selectedOptions[0].textContent};$("degrees").oninput=renderProgression;$("clearTrack").onclick=()=>{tracks[active]=[];selected=-1;selectedSet.clear();renderAll()};$("deleteSelected").onclick=()=>{if(selectedSet.size){tracks[active]=tracks[active].filter((n,i)=>!selectedSet.has(i))}else if(selected>=0)tracks[active].splice(selected,1);selected=-1;selectedSet.clear();renderAll()};
 function toMidi(){let m=new Midi();m.header.setTempo(bpm());m.header.timeSignatures=[{ticks:0,timeSignature:meter()}];for(let [name,arr] of Object.entries(tracks)){let t=m.addTrack();t.name=name.toUpperCase();if(name==="drums")t.channel=9;arr.forEach(n=>t.addNote({midi:n.pitch,ticks:Math.round(n.start*m.header.ppq),durationTicks:Math.max(1,Math.round(n.duration*m.header.ppq)),velocity:n.velocity}))}return m}
 $("export").onclick=()=>{let blob=new Blob([toMidi().toArray()],{type:"audio/midi"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="musictheory-sketch.mid";a.click();URL.revokeObjectURL(u);$("status").textContent="MIDIを書き出しました。"};
 $("midiFile").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let m=new Midi(await f.arrayBuffer());tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();m.tracks.forEach(t=>{let target=/drum|perc/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":/pad|chord|synth/i.test(t.name)?"pad":null;if(target)t.notes.forEach(n=>tracks[target].push({pitch:n.midi,start:n.ticks/m.header.ppq,duration:n.durationTicks/m.header.ppq,velocity:n.velocity}))});renderAll();$("status").textContent="MIDIを読み込みました。トラック名から3種類に振り分けました。"}catch(err){$("status").textContent="MIDIの読み込みに失敗しました: "+err.message}};
@@ -128,48 +131,48 @@ async function db() {
   return cache;
 }
 
-function inputDraft() {
-  const current = structuredClone(draft());
-  return {...current, signature: JSON.stringify(current), beatsPerBar: beat(), bars: bars(), mode: $("editMode").value, rhythmOnly: $("editMode").value === "rhythm"};
+function inputDraft(){
+ const current=structuredClone(draft()),harmonyRequest=$("harmonyRequest").value.trim(),rhythmRequest=$("rhythmRequest").value.trim();
+ const mode=harmonyRequest&&rhythmRequest?"combined":rhythmRequest?"rhythm":"harmony";
+ return {...current,signature:JSON.stringify(current),beatsPerBar:beat(),bars:bars(),mode,rhythmOnly:mode==="rhythm",harmonyRequest,rhythmRequest};
 }
 
-function updateModeUI(){
-  const rhythm=$("editMode").value==="rhythm";$("rhythmStyleField").hidden=!rhythm;
-  $("request").placeholder=rhythm?"例：ベースを短い反復にし、2小節ごとにアクセントを変える。ノートの追加や間引きも許可する。":"例：2小節目のコードをセカンダリードミナントに置き換え、Padのボイシングを滑らかにする。";
-}
-
+function updateModeUI(){}
 function selectKnowledge(data,current,request){
-  const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1),aliases=[["シャッフル","shuffle","triplet","swing"],["ストレート","straight-pop","pop"],["ハーフタイム","half-time"],["ブレイクビーツ","breakbeat"],["ファンク","funk"],["リディム","riddim","dubstep"],["マスロック","math-rock"]];for(const [ja,...en] of aliases)if(query.includes(ja))terms.push(...en);
-  const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;if(mode==="rhythm"&&record.category==="rhythm")value+=4;if(mode==="harmony"&&record.degrees)value+=2;if(record.evidence_type==="academic-research"||record.evidence_type==="human-authored-source")value+=1;return value};
-  const limits=mode==="rhythm"?{arrangements:7,"style-moods":4,"composition-rules":5}:{progressions:7,"harmony-techniques":8,"style-moods":4,"composition-rules":5};
-  const result={};
-  for(const [name,limit] of Object.entries(limits)){
-    const records=(data[name]||[]).filter(record=>record.review_status!=="pending").filter(record=>{
-      if(mode==="rhythm"&&name==="arrangements"&&style!=="riddim"&&style!=="auto"&&(record.tags||[]).some(tag=>tag==="riddim"))return false;
-      if(mode==="rhythm"&&name==="arrangements"&&style==="auto"&&!/riddim|dubstep/i.test(request)&&(record.tags||[]).some(tag=>tag==="riddim"))return false;
-      return true;
-    }).map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
-    result[name]=records.map(({record})=>({id:record.id,name:record.name,summary:record.summary||record.rule||"",degrees:record.degrees||undefined,example:record.example||undefined,tags:record.tags||[],rules:record.rules||undefined,useWhen:record.useWhen||undefined,caution:record.caution||undefined,evidence_type:record.evidence_type||"",confidence:record.confidence||"",source:record.source?{title:record.source.title,author:record.source.author,url:record.source.url}:undefined,notes:(record.notes||"").slice(0,260)}));
-  }
-  return result;
+ const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1),aliases=[["シャッフル","shuffle","triplet","swing"],["ストレート","straight-pop","pop"],["ハーフタイム","half-time"],["ブレイクビーツ","breakbeat"],["ファンク","funk"],["リディム","riddim","dubstep"],["マスロック","math-rock"],["二次ドミナント","secondary dominant","V/V"],["裏コード","tritone substitution","subV"],["借用和音","modal interchange","borrowed chord"],["シンコペーション","syncopation"],["ポリリズム","polyrhythm"]];
+ for(const [ja,...en] of aliases)if(query.includes(ja))terms.push(...en);
+ const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;if(record.ai_card?.keywords?.some(tag=>terms.includes(String(tag).toLowerCase())))value+=3;if((mode==="rhythm"||mode==="combined")&&record.kind==="rhythm_pattern")value+=5;if((mode==="harmony"||mode==="combined")&&["progression_pattern","harmony_technique"].includes(record.kind))value+=5;if(record.evidence_type==="academic-research"||record.evidence_type==="human-authored-source")value+=1;return value};
+ const limits=mode==="rhythm"?{arrangements:8,"style-moods":4,"composition-rules":5}:mode==="combined"?{progressions:5,"harmony-techniques":6,arrangements:7,"style-moods":4,"composition-rules":5}:{progressions:8,"harmony-techniques":9,"style-moods":4,"composition-rules":5};
+ const result={};
+ for(const [name,limit] of Object.entries(limits)){
+  const records=(data[name]||[]).filter(record=>record.review_status!=="pending").map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
+  result[name]=records.map(({record})=>record.ai_card||record);
+ }
+ return result;
 }
 
 async function buildBrief(current){
-  const request=$("request").value.trim();if(!request)throw new Error("アレンジ指示を入力してください。");
-  const data=await db(),knowledge=selectKnowledge(data,current,request),style=$("rhythmStyle").value,project={...current.settings,meter:meter(),rhythmStyle:style,tracks:current.tracks};
-  const editRules=current.mode==="rhythm"
-    ?"MODE: RHYTHM. Preserve tempo, meter, bar count, track roles and the existing pitch vocabulary. You MAY add repeated attacks, omit events, split sustained notes into retriggers, add pickups and rests. DO NOT preserve the original note count by default; note density must follow the requested groove. If the source is mostly sustained notes, consider creating several short re-attacks and gaps per bar. If the source is already busy, thin it out. Note count may increase or decrease as musically appropriate. For Bass and Pad, every generated pitch must already occur in the same original bar. For Drums, reuse only drum note types already present in the source. Keep notes within their original bars. Bass must remain monophonic. Pad may re-articulate or omit existing chord tones, but must not introduce new pitches. Velocity may vary modestly for accents. Change timing and articulation freely while keeping the harmonic material recognizable."
-    :"MODE: HARMONY. Suggest chord / voicing changes only. Pad pitches may change and Bass pitches may change to support the harmony. Keep every Drum event exactly unchanged. Preserve BPM, meter, key, scale, bar count and note timing unless the user explicitly requests a timing change. Keep Bass monophonic. Prefer familiar progressions and apply no more than two reharmonization techniques unless requested.";
-  return [
-    "You are arranging a short composition sketch. Return only JSON matching the supplied schema. Write candidate names and summaries in concise Japanese. Provide one or two useful alternatives. Each candidate must contain Bass, Drums and Pad exactly once. Include a concise musical explanation and cite only source IDs that exist in the supplied knowledge data. Do not invent source IDs.",
-    "Use quarter-note beats for start and duration. Stay within the project length. Bass must be monophonic. Drum pitches are GM 36 (kick), 38 (snare) and 42 (closed hi-hat) only. Velocity is 0 to 1.",
-    editRules,
-    "PROJECT: "+JSON.stringify(project),
-    "USER REQUEST: "+request,
-    "RELEVANT KNOWLEDGE: "+JSON.stringify(knowledge),
-    "OUTPUT SCHEMA: "+JSON.stringify(candidateSchema)
-  ].join("\n");
+ const harmony=current.harmonyRequest,rhythm=current.rhythmRequest;if(!harmony&&!rhythm)throw new Error("コードまたはリズムの指示を入力してください。");
+ const data=await db(),request=[harmony?"HARMONY: "+harmony:"",rhythm?"RHYTHM: "+rhythm:""].filter(Boolean).join("\n"),knowledge=selectKnowledge(data,current,request),style=$("rhythmStyle").value,project={...current.settings,meter:meter(),rhythmStyle:style,tracks:current.tracks};
+ const rules=[];
+ if(harmony)rules.push("HARMONY REQUEST ACTIVE. You may change Pad chord pitches/voicings and Bass pitches to realize the requested harmony. Prefer clear functional progressions, smooth voice leading and a small number of purposeful reharmonizations. Keep Bass monophonic.");
+ if(rhythm)rules.push("RHYTHM REQUEST ACTIVE. Change note timing, duration, articulation and event density. You may add retriggers, split sustained notes, omit events, add rests and vary velocity for accents. Do not preserve note count by default. For Bass and Pad, only reuse pitch classes already present in the same original bar unless the harmony instruction also explicitly changes that bar. Drums may use GM kick 36, snare 38 and closed hi-hat 42. Preserve BPM, meter, bar count and track roles. Keep events within the original bar. Bass must remain monophonic.");
+ if(harmony&&!rhythm)rules.push("HARMONY-ONLY: Keep every Drum event exactly unchanged. Preserve note timing, BPM, meter and bar count.");
+ if(!harmony&&rhythm)rules.push("RHYTHM-ONLY: Do not introduce new Bass or Pad pitch classes in any bar. Existing notes may be re-articulated or omitted. Do not change the chord progression.");
+ if(harmony&&rhythm)rules.push("COMBINED EDIT: Apply both requests in one coherent arrangement. First establish the requested chord changes, then design the rhythm around the resulting harmony. Drums may change. Preserve BPM, meter, bar count and track identities.");
+ return [
+  "You are arranging a short composition sketch. Return only JSON matching the supplied schema. Write concise Japanese candidate names and summaries. Provide one or two genuinely distinct candidates. Each candidate must contain Bass, Drums and Pad exactly once. Include a concise musical explanation and cite only IDs that exist in the supplied knowledge. Do not invent source IDs.",
+  "Use quarter-note beats for start and duration. Stay within the project length. Bass must be monophonic. Drum pitches are GM 36 (kick), 38 (snare) and 42 (closed hi-hat) only. Velocity is 0 to 1. Do not return unchanged tracks if the user asked to change them.",
+  "EDIT MODE: "+current.mode,
+  rules.join("\n"),
+  "PROJECT: "+JSON.stringify(project),
+  "HARMONY INSTRUCTION: "+(harmony||"(no harmony change requested)"),
+  "RHYTHM INSTRUCTION: "+(rhythm||"(no rhythm change requested)"),
+  "KNOWLEDGE: "+JSON.stringify(knowledge),
+  "OUTPUT SCHEMA: "+JSON.stringify(candidateSchema)
+ ].join("\n");
 }
+
 function ensureCurrent(current) {
   if (current.signature !== JSON.stringify(draft())) throw new Error("The draft changed. Build a new brief or generate again for this draft.");
 }

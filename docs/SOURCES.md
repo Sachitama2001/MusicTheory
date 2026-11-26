@@ -47,3 +47,40 @@ These are human-authored educational sources and user-contributed song-chart sou
 
 ## Source policy
 Public availability does not automatically grant redistribution rights. Do not copy full articles, lyrics, sheet music or proprietary MIDI into this repository. Keep source facts separate from project heuristics. Each knowledge record should cite its exact page, not only a site's home page.
+
+## うちやま作曲教室 — 内山敦支
+- Article: https://sakkyoku.info/theory/calm-chord-progression-pattern/
+- Author: 内山敦支 (composer / composition teacher; author profile is shown on the page).
+- Published: 2023-06-29.
+- Use: tonic and subdominant function patterns associated by the author with calm/stable impressions; subdominant-minor, cliché and slash-chord examples.
+- Note: mood labels are the author's pedagogical interpretation, not a universal law.
+
+## Berklee Online — Voice Leading / Piano Voicing
+- Voice-leading paradigms: https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/
+- Piano voicing techniques: https://online.berklee.edu/takenote/basic-piano-voicing-techniques/
+- Use: common-tone retention, stepwise motion, voice range, guide tones and practical chord voicing.
+- Note: the piano voicing article credits Randy Felts' *Reharmonization Techniques*. Use concise paraphrases and cite the page/book.
+
+## Academic research — groove and microtiming
+- Japanese review: https://doi.org/10.24602/sjpr.66.1_37
+  - Authors: 惠谷隆英, 三浦哲都, 河瀬諭, 工藤和俊, 藤井進也.
+  - Journal: 心理学評論 66(1), 37–49 (2023).
+  - Use: overview of psychological groove research focused on microtiming.
+- Jazz swing study: https://www.nature.com/articles/s41598-019-55981-3
+  - Authors: George Datseris et al.
+  - Published: 2019-12-27.
+  - Use: evidence that timing deviations should not be exaggerated or applied randomly; findings concern the tested jazz recordings, not Riddim.
+- Chord progressions and groove: https://link.springer.com/article/10.1007/s00426-023-01869-x
+  - Author: Satoshi Kawase.
+  - Published: 2023-08-24.
+  - Use: study of how emotional character of chord progressions and drum breaks influence groove ratings. Do not generalize beyond the study stimuli.
+
+## Riddim / Dubstep production tutorials
+- Dripment — How To FLOW & SONG ARRANGEMENT (BASS Music/DUBSTEP): https://www.youtube.com/watch?v=Eav24crUwrY
+  - Published: 2022-03-31.
+  - Description focuses on rhythm in drops, song arrangement and flow in dubstep/tearout.
+  - Use: manual listening/review resource; no exact MIDI pattern has been transcribed into the database.
+- Dack Janiels / Avant Samples — How to RIDDIM: https://www.youtube.com/watch?v=G2Y1uGkndjk
+  - Published: 2022-06-19.
+  - Chapters identify Drums (0:51–1:59), Synths & Flow (2:00–2:46), Sub Bass (4:25–5:37), and other sound-design topics.
+  - Use: manual study of how drum, synth-flow and sub-bass roles are separated. Do not bundle the paid sample pack or project files.

@@ -44,7 +44,7 @@ npm start
 
 キー変更時はBass / Padを自動移調し、Drumsは維持します。BPM変更は再生速度と書き出しテンポに反映されます。
 
-リズム変更ではノート数の増減・再発音・間引きを許可します。Bass / Padは各小節に元からある音程のみを使い、Drumsは既存のドラム音種のみを使います。ベロシティはアクセント付けの範囲で調整できます。コード変更ではDrumsを保持し、PadとBassを編集対象にします。
+リズム変更ではノート数の増減・再発音・間引きを許可します。Bass / Padは各小節に元からある音程のみを使い、DrumsはGM Kick 36 / Snare 38 / Closed Hi-hat 42を使います。ベロシティはアクセント付けの範囲で調整できます。コード変更ではDrumsを保持し、PadとBassを編集対象にします。
 
 ## 制約
 
@@ -62,7 +62,7 @@ npm start
 4. Arrangement Library
 5. Composition Rules
 
-AI参照用に、5階層を正規化した `data/ai-index.json` を自動生成し、指示内容と編集カテゴリに応じて関連カードだけをLLMへ渡します。
+AI参照用に、5階層を正規化した `data/ai-index.json` を自動生成し、承認済み98カードから指示内容と編集カテゴリに応じた関連カードだけをLLMへ渡します。確認待ち8件は除外しています。
 
 出典のある理論、学術研究、プロジェクト独自の仮説を区別します。`review_status: pending` のレコードは画面に表示しますが、AIの参照対象から除外します。情報の追加手順は [INGESTION_WORKFLOW.md](docs/INGESTION_WORKFLOW.md) を参照してください。
 

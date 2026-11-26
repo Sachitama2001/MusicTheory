@@ -139,5 +139,195 @@
     "evidence_type": "human-authored-source-to-review",
     "confidence": "medium",
     "notes": "Relative-minor opening can foreground a bittersweet color."
+  },
+  {
+    "id": "SRM-CH-001",
+    "name": "G/C → Gaug/B → Am7(9) → G7sus(9)",
+    "degrees": null,
+    "exampleKey": "C / modal center to verify",
+    "example": [
+      "G/C",
+      "Gaug/B",
+      "Am7(9)",
+      "G7sus(9)"
+    ],
+    "tags": [
+      "inversion",
+      "dominant-substitute",
+      "tension"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension."
+  },
+  {
+    "id": "SRM-CH-002",
+    "name": "Dm7(9) → Fm7 → Bb/C → Db/Eb",
+    "degrees": null,
+    "exampleKey": "C reference context to verify",
+    "example": [
+      "Dm7(9)",
+      "Fm7",
+      "Bb/C",
+      "Db/Eb"
+    ],
+    "tags": [
+      "tension",
+      "modal-interchange",
+      "hybrid-chord",
+      "sub-five"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Source labels tension, modal interchange, hybrid chord and sub-five."
+  },
+  {
+    "id": "SRM-CH-003",
+    "name": "CM7 → FM7/C → BbM7/C → EbM7/C",
+    "degrees": null,
+    "exampleKey": "C",
+    "example": [
+      "CM7",
+      "FM7/C",
+      "BbM7/C",
+      "EbM7/C"
+    ],
+    "tags": [
+      "constant-structure",
+      "pedal-point",
+      "hybrid-chord"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "C pedal point under changing upper structures."
+  },
+  {
+    "id": "SRM-CH-004",
+    "name": "FM7 → Bm7 → E7(b9) → Am7(11) omit3",
+    "degrees": null,
+    "exampleKey": "C / A minor arrival",
+    "example": [
+      "FM7",
+      "Bm7",
+      "E7(b9)",
+      "Am7(11)omit3"
+    ],
+    "tags": [
+      "ii-v",
+      "tension",
+      "omit-chord-tone"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Source labels ii-V, tension and omit chord."
+  },
+  {
+    "id": "SRM-CH-005",
+    "name": "Bb7sus/C → Eb7sus/F → Ab7sus/Bb → Db7sus/Eb",
+    "degrees": null,
+    "exampleKey": "C-sharp / Db tonal center to verify",
+    "example": [
+      "Bb7sus/C",
+      "Eb7sus/F",
+      "Ab7sus/Bb",
+      "Db7sus/Eb"
+    ],
+    "tags": [
+      "quartal",
+      "constant-structure"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Quartal harmony and constant structure; key center should be verified by ear."
+  },
+  {
+    "id": "SRM-CH-006",
+    "name": "Am7(9) → BbM7(9) → Gm7(11) → C7(9)",
+    "degrees": null,
+    "exampleKey": "C / modal color to verify",
+    "example": [
+      "Am7(9)",
+      "BbM7(9)",
+      "Gm7(11)",
+      "C7(9)"
+    ],
+    "tags": [
+      "borrowed-chord",
+      "tension"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Source labels borrowed chord and tension."
+  },
+  {
+    "id": "SRM-CH-007",
+    "name": "FM7 → F#M7 → Gm7 → F#/G# → C7sus(9)",
+    "degrees": null,
+    "exampleKey": "C / chromatic approach to verify",
+    "example": [
+      "FM7",
+      "F#M7",
+      "Gm7",
+      "F#/G#",
+      "C7sus(9)"
+    ],
+    "tags": [
+      "bass-motion",
+      "voicing",
+      "hybrid-chord",
+      "tension"
+    ],
+    "harmonicRhythm": "not specified in source; determine by listening",
+    "source": {
+      "title": "SRM Music — おしゃれコード一覧 PDF",
+      "author": "SRM.",
+      "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Source labels bass motion and voicing, hybrid chord and tension."
   }
 ]

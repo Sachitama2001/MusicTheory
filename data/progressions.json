@@ -22,15 +22,9 @@
       "kawaii-future-bass"
     ],
     "harmonicRhythm": "often one chord per bar",
-    "source": {
-      "title": "SRM Music — 作曲初心者が知るべき3つのコード進行のパターン",
-      "author": "SRM.",
-      "url": "https://srm-music.com/3motions/",
-      "accessed": "2026-11-26"
-    },
-    "evidence_type": "human-authored-source-to-review",
+    "evidence_type": "project-example",
     "confidence": "medium",
-    "notes": "Common pop progression family; mood depends on melody, rhythm, voicing and arrangement."
+    "notes": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
   },
   {
     "id": "POP-002",
@@ -63,8 +57,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source-to-review",
-    "confidence": "medium",
-    "notes": "Common J-pop chorus progression; not exclusive to a genre."
+    "confidence": "low",
+    "notes": "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "POP-003",
@@ -97,15 +92,9 @@
       "uplifting"
     ],
     "harmonicRhythm": "one chord per bar",
-    "source": {
-      "title": "SRM Music — 音楽理論メールレッスン",
-      "author": "SRM.",
-      "url": "https://srm-music.com/music-theory-mail-lesson/",
-      "accessed": "2026-11-26"
-    },
-    "evidence_type": "human-authored-source-to-review",
+    "evidence_type": "project-example",
     "confidence": "medium",
-    "notes": "Familiar functional cycle; mood is not deterministic."
+    "notes": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
   },
   {
     "id": "POP-004",
@@ -130,15 +119,9 @@
       "future-bass"
     ],
     "harmonicRhythm": "one chord per bar",
-    "source": {
-      "title": "SRM Music — 音楽理論メールレッスン",
-      "author": "SRM.",
-      "url": "https://srm-music.com/music-theory-mail-lesson/",
-      "accessed": "2026-11-26"
-    },
-    "evidence_type": "human-authored-source-to-review",
+    "evidence_type": "project-example",
     "confidence": "medium",
-    "notes": "Relative-minor opening can foreground a bittersweet color."
+    "notes": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
   },
   {
     "id": "SRM-CH-001",
@@ -164,8 +147,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension."
+    "confidence": "low",
+    "notes": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-002",
@@ -192,8 +176,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Source labels tension, modal interchange, hybrid chord and sub-five."
+    "confidence": "low",
+    "notes": "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-003",
@@ -219,8 +204,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "C pedal point under changing upper structures."
+    "confidence": "low",
+    "notes": "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-004",
@@ -246,8 +232,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Source labels ii-V, tension and omit chord."
+    "confidence": "low",
+    "notes": "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-005",
@@ -272,8 +259,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Quartal harmony and constant structure; key center should be verified by ear."
+    "confidence": "low",
+    "notes": "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-006",
@@ -298,8 +286,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Source labels borrowed chord and tension."
+    "confidence": "low",
+    "notes": "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "SRM-CH-007",
@@ -327,8 +316,9 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",
-    "confidence": "high",
-    "notes": "Source labels bass motion and voicing, hybrid chord and tension."
+    "confidence": "low",
+    "notes": "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+    "review_status": "pending"
   },
   {
     "id": "POP-005",

@@ -132,28 +132,43 @@ function inputDraft() {
   return {...current, signature: JSON.stringify(current), beatsPerBar: beat(), bars: bars(), mode: $("editMode").value, rhythmOnly: $("editMode").value === "rhythm"};
 }
 
-async function buildBrief(current) {
-  const request = $("request").value.trim();
-  if (!request) throw new Error("アレンジ指示を入力してください。");
-  const project = {...current.settings, meter: meter()};
-  const rawKnowledge = await db();
-  const knowledge = Object.fromEntries(Object.entries(rawKnowledge).map(([name, records]) => [
-    name, records.filter(record => record.review_status !== "pending")
-  ]));
-  const editRules = current.mode === "rhythm"
-    ? "MODE: RHYTHM. Change note start positions and durations only. Preserve note count, pitch, velocity, track identity, key, scale, BPM, meter and bar count. Every note must remain inside the bar where it started. Keep all Pad chord tones grouped at the same onset and preserve their order. Do not add or remove notes."
-    : "MODE: HARMONY. Suggest chord / voicing changes only. Pad pitches may change and Bass pitches may change to support the new harmony. Keep every Drum event exactly unchanged. Preserve BPM, meter, key, scale, bar count and note timing unless the user explicitly requests a timing change. Keep Bass monophonic. Prefer familiar progressions and apply no more than two reharmonization techniques unless requested.";
-  return [
-    "You are arranging a short composition sketch. Return only JSON matching the supplied schema. Write candidate names and summaries in concise Japanese. Provide up to two distinct candidates. Each candidate must contain Bass, Drums and Pad exactly once. Include a short musical explanation and cite only record IDs that exist in the supplied knowledge data. Do not invent source IDs.",
-    "Use quarter-note beats for start and duration. Stay within the project length. Bass must be monophonic. Drum pitches are GM 36 (kick), 38 (snare) and 42 (closed hi-hat) only. Velocity is 0 to 1.",
-    editRules,
-    "PROJECT: " + JSON.stringify({...project, tracks: current.tracks}),
-    "USER REQUEST: " + request,
-    "KNOWLEDGE: " + JSON.stringify(knowledge),
-    "OUTPUT SCHEMA: " + JSON.stringify(candidateSchema)
-  ].join("\n");
+function updateModeUI(){
+  const rhythm=$("editMode").value==="rhythm";$("rhythmStyleField").hidden=!rhythm;
+  $("request").placeholder=rhythm?"例：ベースを短い反復にし、2小節ごとにアクセントを変える。ノートの追加や間引きも許可する。":"例：2小節目のコードをセカンダリードミナントに置き換え、Padのボイシングを滑らかにする。";
 }
 
+function selectKnowledge(data,current,request){
+  const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1);
+  const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;if(mode==="rhythm"&&record.category==="rhythm")value+=4;if(mode==="harmony"&&record.degrees)value+=2;if(record.evidence_type==="academic-research"||record.evidence_type==="human-authored-source")value+=1;return value};
+  const limits=mode==="rhythm"?{arrangements:7,"style-moods":4,"composition-rules":5}:{progressions:7,"harmony-techniques":8,"style-moods":4,"composition-rules":5};
+  const result={};
+  for(const [name,limit] of Object.entries(limits)){
+    const records=(data[name]||[]).filter(record=>record.review_status!=="pending").filter(record=>{
+      if(mode==="rhythm"&&name==="arrangements"&&style!=="riddim"&&style!=="auto"&&(record.tags||[]).some(tag=>tag==="riddim"))return false;
+      if(mode==="rhythm"&&name==="arrangements"&&style==="auto"&&!/riddim|dubstep/i.test(request)&&(record.tags||[]).some(tag=>tag==="riddim"))return false;
+      return true;
+    }).map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
+    result[name]=records.map(({record})=>({id:record.id,name:record.name,summary:record.summary||record.rule||"",degrees:record.degrees||undefined,example:record.example||undefined,tags:record.tags||[],rules:record.rules||undefined,useWhen:record.useWhen||undefined,caution:record.caution||undefined,evidence_type:record.evidence_type||"",confidence:record.confidence||"",source:record.source?{title:record.source.title,author:record.source.author,url:record.source.url}:undefined,notes:(record.notes||"").slice(0,260)}));
+  }
+  return result;
+}
+
+async function buildBrief(current){
+  const request=$("request").value.trim();if(!request)throw new Error("アレンジ指示を入力してください。");
+  const data=await db(),knowledge=selectKnowledge(data,current,request),style=$("rhythmStyle").value,project={...current.settings,meter:meter(),rhythmStyle:style,tracks:current.tracks};
+  const editRules=current.mode==="rhythm"
+    ?"MODE: RHYTHM. Preserve tempo, meter, bar count, track roles and the existing pitch vocabulary. You MAY add repeated attacks, omit events, split sustained notes into retriggers, add pickups and rests. DO NOT preserve the original note count; note count may increase or decrease as needed for a convincing groove. For Bass and Pad, every generated pitch must already occur in the same original bar. For Drums, reuse only drum note types already present in the source. Keep notes within their original bars. Bass must remain monophonic. Pad may re-articulate or omit existing chord tones, but must not introduce new pitches. Velocity may vary modestly for accents. Change timing and articulation freely while keeping the harmonic material recognizable."
+    :"MODE: HARMONY. Suggest chord / voicing changes only. Pad pitches may change and Bass pitches may change to support the harmony. Keep every Drum event exactly unchanged. Preserve BPM, meter, key, scale, bar count and note timing unless the user explicitly requests a timing change. Keep Bass monophonic. Prefer familiar progressions and apply no more than two reharmonization techniques unless requested.";
+  return [
+    "You are arranging a short composition sketch. Return only JSON matching the supplied schema. Write candidate names and summaries in concise Japanese. Provide one or two useful alternatives. Each candidate must contain Bass, Drums and Pad exactly once. Include a concise musical explanation and cite only source IDs that exist in the supplied knowledge data. Do not invent source IDs.",
+    "Use quarter-note beats for start and duration. Stay within the project length. Bass must be monophonic. Drum pitches are GM 36 (kick), 38 (snare) and 42 (closed hi-hat) only. Velocity is 0 to 1.",
+    editRules,
+    "PROJECT: "+JSON.stringify(project),
+    "USER REQUEST: "+request,
+    "RELEVANT KNOWLEDGE: "+JSON.stringify(knowledge),
+    "OUTPUT SCHEMA: "+JSON.stringify(candidateSchema)
+  ].join("\n");
+}
 function ensureCurrent(current) {
   if (current.signature !== JSON.stringify(draft())) throw new Error("The draft changed. Build a new brief or generate again for this draft.");
 }

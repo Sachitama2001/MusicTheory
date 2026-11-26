@@ -64,13 +64,15 @@
   },
   {
     "id": "HARM-003",
-    "name": "Tritone substitution",
-    "summary": "Replace a dominant seventh chord with another dominant seventh whose root is a tritone away.",
+    "name": "Tritone substitution / subV (裏コード)",
+    "summary": "Replace a dominant-seventh chord with another dominant seventh whose root is a tritone away; the two chords share the guide-tone tritone enharmonically.",
     "tags": [
       "jazz",
       "neo-soul",
       "chromatic",
-      "voice-leading"
+      "voice-leading",
+      "sub-five",
+      "tritone-substitution"
     ],
     "before": [
       "Dm7",
@@ -82,8 +84,8 @@
       "Db7",
       "Cmaj7"
     ],
-    "useWhen": "A chromatic bass approach or smoother inner voice is desired.",
-    "caution": "May sound too chromatic for a simple pop hook; compare against melody.",
+    "useWhen": "A chromatic bass approach or alternate dominant color is desired, especially when resolving to the tonic.",
+    "caution": "The source describes this as a distinctive, jazz-associated color. Check melody compatibility and avoid treating every flat-II chord as a tritone substitute.",
     "source": {
       "title": "SoundQuest — トライトーン代理",
       "author": "plugmon",
@@ -91,7 +93,21 @@
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-theory-to-review",
-    "confidence": "high"
+    "confidence": "high",
+    "related_sources": [
+      {
+        "title": "SoundQuest — トライトーン代理",
+        "author": "plugmon",
+        "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+        "accessed": "2026-11-26"
+      },
+      {
+        "title": "SRM Music — 簡単！コード進行をかっこよく変えるテクニック",
+        "author": "SRM.",
+        "url": "https://srm-music.com/code/",
+        "accessed": "2026-11-26"
+      }
+    ]
   },
   {
     "id": "HARM-004",
@@ -157,28 +173,28 @@
   },
   {
     "id": "HARM-006",
-    "name": "Substitute dominant / sub-five",
-    "summary": "Replace a dominant-seventh chord with a dominant chord whose root is a tritone away, checking guide-tone resolution and melody compatibility.",
+    "name": "Common-tone and shortest-motion voice leading",
+    "summary": "Retain shared chord tones where practical and move remaining voices by the shortest musically appropriate interval; inspect parallel, oblique and contrary motion.",
     "tags": [
-      "tritone-substitution",
-      "sub-five",
-      "chromatic-bass",
-      "jazz"
+      "voice-leading",
+      "common-tone",
+      "smooth-connection",
+      "harmony"
     ],
     "before": [
-      "Am7",
-      "E7"
+      "Cmaj7",
+      "Fmaj7"
     ],
     "after": [
-      "Am7",
-      "Bb7"
+      "Cmaj7",
+      "Fmaj7"
     ],
-    "useWhen": "A chromatic bass approach or alternate dominant color is desired.",
-    "caution": "The source presents it as a practical color option; verify the fifth and melody notes, and compare alternate chord qualities by ear.",
+    "useWhen": "Connecting chords smoothly, especially when changing voicings or inserting a passing chord.",
+    "caution": "Shortest motion is a useful guideline, not an absolute rule; melody, register, doubling and stylistic context can justify larger leaps.",
     "source": {
-      "title": "SRM Music — 簡単！コード進行をかっこよく変えるテクニック",
-      "author": "SRM.",
-      "url": "https://srm-music.com/code/",
+      "title": "SoundQuest — 和声 : 標準連結と原則",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-principles/",
       "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source",

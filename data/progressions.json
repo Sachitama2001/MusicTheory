@@ -23,8 +23,10 @@
     ],
     "harmonicRhythm": "often one chord per bar",
     "source": {
-      "title": "SRM Music theory lessons",
-      "url": "https://srm-music.com/music-theory-mail-lesson/"
+      "title": "SRM Music — 作曲初心者が知るべき3つのコード進行のパターン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/3motions/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source-to-review",
     "confidence": "medium",
@@ -55,8 +57,10 @@
     ],
     "harmonicRhythm": "one chord per bar",
     "source": {
-      "title": "DTM Hacker progression patterns",
-      "url": "https://dtmhacker.com/chord-progression-pattern/"
+      "title": "DTM Hacker — コード進行パターン集",
+      "author": "DTM Hacker (author metadata to verify)",
+      "url": "https://dtmhacker.com/chord-progression-pattern/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source-to-review",
     "confidence": "medium",
@@ -94,8 +98,10 @@
     ],
     "harmonicRhythm": "one chord per bar",
     "source": {
-      "title": "SRM Music theory lessons",
-      "url": "https://srm-music.com/music-theory-mail-lesson/"
+      "title": "SRM Music — 音楽理論メールレッスン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/music-theory-mail-lesson/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source-to-review",
     "confidence": "medium",
@@ -125,8 +131,10 @@
     ],
     "harmonicRhythm": "one chord per bar",
     "source": {
-      "title": "DTM Hacker progression patterns",
-      "url": "https://dtmhacker.com/chord-progression-pattern/"
+      "title": "SRM Music — 音楽理論メールレッスン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/music-theory-mail-lesson/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-source-to-review",
     "confidence": "medium",

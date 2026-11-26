@@ -69,5 +69,202 @@
     "evidence_type": "project-heuristic",
     "confidence": "medium",
     "notes": "Broad arrangement heuristic, not a universal definition of Riddim."
+  },
+  {
+    "id": "STYLE-004",
+    "name": "Pop harmony tendency (SRM)",
+    "tags": [
+      "pop",
+      "j-pop",
+      "familiar",
+      "accessible"
+    ],
+    "harmonyTendencies": [
+      "simple, familiar diatonic progressions",
+      "inversions for smooth bass",
+      "occasional ii–V or borrowed-chord accents"
+    ],
+    "arrangementTendencies": [
+      "keep the base progression easy to follow",
+      "use reharmonization as a small accent rather than constant complexity"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "This is SRM's description of common pop practice, not a rule for every pop song."
+  },
+  {
+    "id": "STYLE-005",
+    "name": "Jazz harmony tendency (SRM)",
+    "tags": [
+      "jazz",
+      "rich",
+      "deep",
+      "tension"
+    ],
+    "harmonyTendencies": [
+      "tension chords",
+      "subV / tritone substitution",
+      "quartal and hybrid voicings"
+    ],
+    "arrangementTendencies": [
+      "allow richer harmonic movement and voicing variation"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "SRM's qualitative genre description; not a universal definition of jazz."
+  },
+  {
+    "id": "STYLE-006",
+    "name": "R&B / Neo-soul harmony tendency (SRM)",
+    "tags": [
+      "r-and-b",
+      "neo-soul",
+      "warm",
+      "soft",
+      "floating"
+    ],
+    "harmonyTendencies": [
+      "modal interchange",
+      "dominant-seventh substitutes",
+      "omit chords",
+      "constant-structure chords"
+    ],
+    "arrangementTendencies": [
+      "soft or acoustic timbres can expose chord color"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe."
+  },
+  {
+    "id": "STYLE-007",
+    "name": "City-pop harmony tendency (SRM)",
+    "tags": [
+      "city-pop",
+      "j-pop",
+      "polished",
+      "sophisticated"
+    ],
+    "harmonyTendencies": [
+      "simple pop progressions as a base",
+      "moderate use of tensions",
+      "modal interchange"
+    ],
+    "arrangementTendencies": [
+      "balance pop accessibility with jazz/R&B color"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication."
+  },
+  {
+    "id": "STYLE-008",
+    "name": "Calm / stable harmony",
+    "tags": [
+      "calm",
+      "stable",
+      "settled",
+      "quiet"
+    ],
+    "harmonyTendencies": [
+      "I–vi alternation",
+      "tonic and subdominant functions",
+      "subdominant-minor as a soft color",
+      "tonic pedal"
+    ],
+    "arrangementTendencies": [
+      "longer chord holds can support a calm impression; avoid excessive dominant tension"
+    ],
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-mood-description",
+    "confidence": "medium",
+    "notes": "These are the author's examples and interpretation of calm/stable progressions; do not infer mood from chords alone."
+  },
+  {
+    "id": "STYLE-009",
+    "name": "Chord progression affect and groove (research)",
+    "tags": [
+      "groove",
+      "happy",
+      "sad",
+      "chord-progression",
+      "research"
+    ],
+    "harmonyTendencies": [
+      "In the study's stimuli, progressions judged happier were more likely to elicit groove than sadder progressions."
+    ],
+    "arrangementTendencies": [
+      "Drum-break accompaniment increased groove ratings for both happy and sad progressions."
+    ],
+    "source": {
+      "title": "Is happier music groovier? The influence of emotional characteristics of musical chord progressions on groove",
+      "author": "Satoshi Kawase",
+      "url": "https://link.springer.com/article/10.1007/s00426-023-01869-x",
+      "published": "2023-08-24",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener."
+  },
+  {
+    "id": "STYLE-010",
+    "name": "Swing and microtiming are style-dependent (research)",
+    "tags": [
+      "swing",
+      "microtiming",
+      "groove",
+      "jazz",
+      "timing"
+    ],
+    "harmonyTendencies": [],
+    "arrangementTendencies": [
+      "Swing ratio and small timing deviations are separate from tempo.",
+      "Microtiming patterns can be genre-specific; do not apply a fixed swing or random timing offset to every track."
+    ],
+    "source": {
+      "title": "Microtiming Deviations and Swing Feel in Jazz",
+      "author": "George Datseris et al.",
+      "url": "https://www.nature.com/articles/s41598-019-55981-3",
+      "published": "2019-12-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets."
   }
 ]

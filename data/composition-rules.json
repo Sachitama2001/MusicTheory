@@ -33,5 +33,65 @@
     "rule": "Cite knowledge record IDs. Distinguish sourced theory from project heuristics and generated suggestions.",
     "priority": "hard",
     "evidence_type": "data-governance"
+  },
+  {
+    "id": "RULE-006",
+    "name": "Do not map chord progressions to mood as fixed rules",
+    "rule": "Treat genre and mood tags as tendencies tied to a cited source or listening example. A chord progression alone does not guarantee a mood or genre.",
+    "priority": "hard",
+    "evidence_type": "data-governance",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Genre descriptions in SRM are qualitative; the Kawase study also tests chord progression, tempo and rhythmic patterns together rather than treating harmony alone as the full cause."
+  },
+  {
+    "id": "RULE-007",
+    "name": "Avoid arbitrary microtiming",
+    "rule": "For rhythm transformations, preserve a straight baseline and create controlled, track-specific timing variants. Do not randomize all note onsets or exaggerate swing without a listening comparison.",
+    "priority": "hard",
+    "evidence_type": "academic-research",
+    "source": {
+      "title": "Microtiming Deviations and Swing Feel in Jazz",
+      "author": "George Datseris et al.",
+      "url": "https://www.nature.com/articles/s41598-019-55981-3",
+      "published": "2019-12-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Research is about jazz swing; use it as a caution about timing exaggeration, not as a universal genre formula."
+  },
+  {
+    "id": "RULE-008",
+    "name": "Specify harmonic rhythm as well as chord identity",
+    "rule": "When proposing a progression, state how long each chord lasts and where changes occur. A passing ii or subV should be shorter than the chord it approaches when that is the intended effect.",
+    "priority": "soft",
+    "evidence_type": "human-authored-source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Based on SRM's discussion of harmonic rhythm and short inserted chords."
+  },
+  {
+    "id": "RULE-009",
+    "name": "Keep reharmonization selective",
+    "rule": "Start from a clear diatonic or familiar progression. Add only the substitutions, borrowed chords or passing chords that serve the section's purpose; compare against the unmodified version.",
+    "priority": "soft",
+    "evidence_type": "human-authored-source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base."
   }
 ]

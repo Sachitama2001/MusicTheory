@@ -199,5 +199,289 @@
     },
     "evidence_type": "human-authored-source",
     "confidence": "high"
+  },
+  {
+    "id": "HARM-007",
+    "name": "First inversion for a stepwise bass",
+    "summary": "Place the chord's third in the bass while the upper voices retain the chord identity; use the inversion to connect a bass line smoothly.",
+    "tags": [
+      "inversion",
+      "slash-chord",
+      "bass",
+      "voice-leading"
+    ],
+    "before": [
+      "G",
+      "D",
+      "Em"
+    ],
+    "after": [
+      "G",
+      "D/F#",
+      "Em"
+    ],
+    "useWhen": "A G–F#–E bass descent connects the same chords more smoothly than root jumps.",
+    "caution": "The bass note determines the inversion. In four-part major triads, avoid doubling the third in the upper voices; SoundQuest discusses different doubling conventions for minor chords.",
+    "source": {
+      "title": "和声 : 第一転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+      "published": "2024-06-08",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "Chord sequence is an independently written sketchpad example; theory summary is paraphrased from the cited lesson."
+  },
+  {
+    "id": "HARM-008",
+    "name": "Cadential six-four (I6/4 before V)",
+    "summary": "In a classical cadence, place the tonic triad in second inversion over the dominant bass, then move to V before resolving to I.",
+    "tags": [
+      "second-inversion",
+      "cadence",
+      "dominant",
+      "classical"
+    ],
+    "before": [
+      "Bb",
+      "C7",
+      "F"
+    ],
+    "after": [
+      "Bb",
+      "F/C",
+      "C7",
+      "F"
+    ],
+    "useWhen": "A tonal phrase needs a prepared cadence and a clear dominant arrival.",
+    "caution": "The cadential context matters. Do not treat every second-inversion chord as a free-standing tonic or interchangeable sus chord.",
+    "source": {
+      "title": "和声 : 第二・第三転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+      "published": "2023-10-07",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "The F-major example is independently written from the lesson's I6/4–V–I explanation."
+  },
+  {
+    "id": "HARM-009",
+    "name": "Dominant seventh third inversion resolving to tonic first inversion",
+    "summary": "Place the dominant seventh's seventh in the bass; resolve that bass note down by step into the third of the tonic chord, producing I6.",
+    "tags": [
+      "third-inversion",
+      "dominant-seventh",
+      "resolution",
+      "voice-leading"
+    ],
+    "before": [
+      "Bb",
+      "C7",
+      "F"
+    ],
+    "after": [
+      "Bb",
+      "C7/Bb",
+      "F/A"
+    ],
+    "useWhen": "A bass line needs a smooth semitone descent from the dominant into a tonic first inversion.",
+    "caution": "The dominant seventh's seventh is a tendency tone and should resolve down by step in the cited classical context.",
+    "source": {
+      "title": "和声 : 第二・第三転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+      "published": "2023-10-07",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "Example in F major; the cited lesson specifically explains V7 third inversion resolving to I first inversion."
+  },
+  {
+    "id": "HARM-010",
+    "name": "Common-tone and stepwise voice-leading",
+    "summary": "Retain common tones in the same voice where practical; move remaining voices by step, with small leaps used when the musical context calls for them.",
+    "tags": [
+      "voice-leading",
+      "common-tone",
+      "stepwise-motion",
+      "smooth-connection"
+    ],
+    "before": [
+      "C",
+      "F"
+    ],
+    "after": [
+      "C/E",
+      "F/A"
+    ],
+    "useWhen": "A chord progression sounds jumpy or a Pad voicing needs a smoother connection.",
+    "caution": "Berklee presents these as practical guidelines. Do not force every voice to move by step if it damages the melody, register or desired style.",
+    "source": {
+      "title": "Voice Leading Paradigms for Harmony in Music Composition",
+      "author": "Berklee Online; course material by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+      "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee lists common-tone retention, stepwise motion and avoiding large leaps as core voice-leading guidelines; this record paraphrases them."
+  },
+  {
+    "id": "HARM-011",
+    "name": "Guide-tone voicing for seventh chords",
+    "summary": "For a seventh chord, the third and seventh define much of its quality and function; keep them clear in the Pad voicing, with the bass supplying the root when present.",
+    "tags": [
+      "guide-tones",
+      "seventh-chord",
+      "voicing",
+      "jazz",
+      "pop"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7(3,7)",
+      "G7(3,7)",
+      "Cmaj7(3,7)"
+    ],
+    "useWhen": "A Pad or keyboard voicing is muddy or the chord function is unclear.",
+    "caution": "The fifth can be omitted in many seventh-chord voicings, but altered fifths and melody notes may require it. This is a voicing guideline, not a universal chord spelling.",
+    "source": {
+      "title": "Piano Voicing Techniques",
+      "author": "Berklee Online; excerpted from Randy Felts, Reharmonization Techniques",
+      "url": "https://online.berklee.edu/takenote/basic-piano-voicing-techniques/",
+      "published": "2015-10-02",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-012",
+    "name": "Pedal point",
+    "summary": "Keep one bass note fixed while the upper chord changes, creating continuity beneath changing harmony.",
+    "tags": [
+      "pedal-point",
+      "bass",
+      "continuity",
+      "floating"
+    ],
+    "before": [
+      "Dm7",
+      "Em7",
+      "Am7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Em7/D",
+      "Am7/D",
+      "Cmaj7/D"
+    ],
+    "useWhen": "A section needs a stable low anchor while the Pad changes color.",
+    "caution": "Check that upper voices remain compatible with the pedal and that the sustained bass does not obscure the intended chord function.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-013",
+    "name": "Hybrid chord / tension bass",
+    "summary": "Use a bass note outside the upper chord's basic triad, often a tension, to create a slash or hybrid sonority.",
+    "tags": [
+      "hybrid-chord",
+      "slash-chord",
+      "tension",
+      "voicing"
+    ],
+    "before": [
+      "Cmaj7"
+    ],
+    "after": [
+      "Cmaj7/D"
+    ],
+    "useWhen": "The upper chord should stay recognizable while the bass adds a different color or pedal-like connection.",
+    "caution": "The bass note changes the total sonority; check the combined intervals rather than assuming the upper chord label describes the whole sound.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-014",
+    "name": "Quartal voicing",
+    "summary": "Build a chord stack from fourths rather than thirds; the resulting voicing can sound open and less clearly major/minor.",
+    "tags": [
+      "quartal",
+      "floating",
+      "modern",
+      "voicing"
+    ],
+    "before": [
+      "Cm7"
+    ],
+    "after": [
+      "C-F-Bb-Eb"
+    ],
+    "useWhen": "A Pad needs a more open or ambiguous texture than conventional tertian voicings.",
+    "caution": "The chord label may be ambiguous; specify actual notes and register when sending it to MIDI generation.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-015",
+    "name": "Constant structure",
+    "summary": "Move the same chord quality or voicing shape to different roots, preserving its interval structure while changing the harmonic center.",
+    "tags": [
+      "constant-structure",
+      "neo-soul",
+      "jazz",
+      "floating"
+    ],
+    "before": [
+      "Dmaj7"
+    ],
+    "after": [
+      "Dmaj7",
+      "Amaj7",
+      "Emaj7",
+      "Bmaj7"
+    ],
+    "useWhen": "A section needs a consistent color across a non-diatonic root sequence.",
+    "caution": "The sequence may not imply a single conventional key; check melody and bass independently.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+song-analysis",
+    "confidence": "medium"
   }
 ]

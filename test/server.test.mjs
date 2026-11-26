@@ -45,7 +45,10 @@ test("keeps the key server-side, rejects cross-origin calls and filters upstream
   assert.equal((await fetch(`${origin}/server.mjs`)).status, 404);
   const indexResponse = await fetch(`${origin}/data/ai-index.json`);
   assert.equal(indexResponse.status, 200);
-  assert.ok((await indexResponse.json()).records.length > 0);
+  const aiIndex = await indexResponse.json();
+  assert.equal(aiIndex.record_count, aiIndex.records.length);
+  assert.ok(aiIndex.records.length > 0);
+  assert.ok(aiIndex.records.every(record => record.review_status !== "pending"));
   assert.equal((await post(endpoint, "https://other.example")).status, 403);
   assert.equal((await post(endpoint, origin, "")).status, 400);
   assert.equal(calls, 0);

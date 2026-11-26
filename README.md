@@ -58,7 +58,7 @@ npm start
 4. Arrangement Library
 5. Composition Rules
 
-出典のある理論、学術研究、プロジェクト独自の仮説を区別します。要確認レコードはAIの参照対象から除外します。情報の追加手順は [INGESTION_WORKFLOW.md](docs/INGESTION_WORKFLOW.md) を参照してください。
+出典のある理論、学術研究、プロジェクト独自の仮説を区別します。`review_status: pending` のレコードは画面に表示しますが、AIの参照対象から除外します。情報の追加手順は [INGESTION_WORKFLOW.md](docs/INGESTION_WORKFLOW.md) を参照してください。
 
 ## テスト
 

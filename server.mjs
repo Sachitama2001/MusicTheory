@@ -30,7 +30,7 @@ async function readPrompt(req) {
   return prompt;
 }
 
-export function createApp({apiKey, model = "gpt-6.2-astra", fetchOpenAI = fetch} = {}) {
+export function createApp({apiKey, model = "gpt-6-luna", fetchOpenAI = fetch} = {}) {
   return createServer({requestTimeout: 15_000}, async (req, res) => {
     const port = req.socket.localPort;
     const host = req.headers.host;
@@ -93,7 +93,40 @@ export function createApp({apiKey, model = "gpt-6.2-astra", fetchOpenAI = fetch}
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const port = Number(process.env.PORT || 8000);
-  createApp({apiKey: process.env.OPENAI_API_KEY?.trim(), model: process.env.OPENAI_MODEL || undefined})
-    .listen(port, "127.0.0.1", () => console.log(`MusicTheory: http://127.0.0.1:${port}/`));
+  const requestedPort = Number(process.env.PORT || 8000);
+  const options = {apiKey: process.env.OPENAI_API_KEY?.trim(), model: process.env.OPENAI_MODEL || undefined};
+
+  async function start() {
+    for (let port = requestedPort; port < requestedPort + 10; port++) {
+      const server = createApp(options);
+      try {
+        await new Promise((resolve, reject) => {
+          const onError = error => {
+            server.off("listening", onListening);
+            reject(error);
+          };
+          const onListening = () => {
+            server.off("error", onError);
+            resolve();
+          };
+          server.once("error", onError);
+          server.once("listening", onListening);
+          server.listen(port, "127.0.0.1");
+        });
+        console.log(`MusicTheory: http://127.0.0.1:${port}/`);
+        if (port !== requestedPort) {
+          console.log(`Port ${requestedPort} was busy; using ${port} instead.`);
+        }
+        return;
+      } catch (error) {
+        if (error.code !== "EADDRINUSE") throw error;
+      }
+    }
+    throw new Error(`Ports ${requestedPort}–${requestedPort + 9} are all in use. Stop another process or set PORT to a free port.`);
+  }
+
+  start().catch(error => {
+    console.error(`MusicTheory could not start: ${error.message}`);
+    process.exitCode = 1;
+  });
 }

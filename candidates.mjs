@@ -90,7 +90,7 @@ function validateRhythmOnly(candidateTracks, originalTracks, {bars, beatsPerBar}
       if (bar < 0 || bar >= bars || note.start + note.duration > (bar + 1) * beatsPerBar + EPSILON) {
         throw new Error(label + ": " + name + " notes must stay inside their original bar.");
       }
-      if (name === "Drums") {
+      if (name === "drums") {
         if (!allowedDrumPitches.has(note.pitch)) {
           throw new Error(label + ": rhythm edits may only reuse existing Drum note types.");
         }

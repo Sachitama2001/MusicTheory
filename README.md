@@ -4,7 +4,7 @@
 
 ## 起動
 
-Node.js 22以降を使用します。
+Node.js 18.17以降を使用します。
 
 ```bash
 npm start

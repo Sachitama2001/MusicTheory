@@ -28,6 +28,7 @@ jobs:
           mkdir -p _site/data
           cp index.html candidates.mjs _site/
           cp data/*.json _site/data/
+      # Upload one artifact per workflow run; deploy-pages consumes this run-scoped artifact.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

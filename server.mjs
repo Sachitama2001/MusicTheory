@@ -30,7 +30,7 @@ async function readPrompt(req) {
   return prompt;
 }
 
-export function createApp({apiKey, model = "gpt-5.6-luna", fetchOpenAI = fetch} = {}) {
+export function createApp({apiKey, model = "gpt-6.2-astra", fetchOpenAI = fetch} = {}) {
   return createServer({requestTimeout: 15_000}, async (req, res) => {
     const port = req.socket.localPort;
     const host = req.headers.host;

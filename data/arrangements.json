@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ARR-RID-001",
+    "name": "Riddim-inspired half-time flow",
+    "category": "rhythm",
+    "tags": [
+      "riddim",
+      "dubstep",
+      "half-time",
+      "syncopation"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Keep tempo and meter unchanged.",
+      "Preserve pitches for rhythm-only transformations.",
+      "Use a half-time backbeat with snare on beat 3 in 4/4.",
+      "Create short repeated bass motifs separated by deliberate rests.",
+      "Use offbeat and triplet placements as variations, not on every note.",
+      "Leave space for pad stabs and fills."
+    ],
+    "grid_suggestions": [
+      "1/8 straight foundation",
+      "1/8 triplet shuffle accents",
+      "1/16 occasional pickup"
+    ],
+    "variation": "Create subtle and strong variants; vary every 2 or 4 bars.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "Initial heuristic for first MVP milestone; human listening tests required."
+  },
+  {
+    "id": "ARR-POP-001",
+    "name": "Sustained pad chord foundation",
+    "category": "rhythm",
+    "tags": [
+      "pop",
+      "future-bass",
+      "pad"
+    ],
+    "tracks": [
+      "Pad"
+    ],
+    "rules": [
+      "Hold chord tones for most of the bar.",
+      "Use sparse offbeat chord stabs as a variation.",
+      "Do not alter pitch content in rhythm-only edits."
+    ],
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "Baseline pattern for comparison."
+  }
+]

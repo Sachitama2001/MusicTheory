@@ -142,7 +142,7 @@ async function makeManualBrief() {
     ensureCurrent(current);
     $("brief").value = prompt;
     manualBaseline = {signature: current.signature, rhythmOnly: current.rhythmOnly};
-    $("aiStatus").textContent = "Brief ready to copy.";
+    $("aiStatus").textContent = "依頼文を作成しました。";
   } catch (error) {
     $("aiStatus").textContent = error.message;
   }
@@ -150,26 +150,37 @@ async function makeManualBrief() {
 
 $("buildBrief").onclick = makeManualBrief;
 $("rhythm").onclick = () => {
-  $("rhythmOnly").checked = true;
-  $("request").value = "Create two Riddim-inspired options: a restrained half-time groove and a stronger triplet shuffle with call-and-response gaps. Try moving an existing snare to beat 3 in 4/4 if the rhythm-only constraints allow it. In other meters, use a backbeat that fits the meter. Use shorter bass notes, deliberate rests and offbeats without adding or removing notes.";
-  return makeManualBrief();
+  $("editMode").value = "rhythm";
+  $("request").value = "Riddimのドロップのようなフロウにする。147 BPMの4/4を維持し、音程・音数・ベロシティは変えない。ベースは短い反復と休符、裏拍、3連符のアクセントを使う。ドラムはハーフタイムを保ち、Padはコードのまとまりを崩さない。2小節ごとに小さな変化を付ける。";
+  if (!$("arrange").disabled) $("arrange").click();
+  else makeManualBrief();
 };
 
 function updateReview() {
-  const choice = review.candidates[Number($("candidate").value)];
+  if (!review) return;
+  const index = Number($("candidate").value);
+  const choice = review.candidates[index];
+  if (!choice) return;
   $("candidateSummary").textContent = choice.summary;
-  const counts = Object.entries(choice.tracks).map(([name, notes]) => `${name}: ${tracks[name].length} to ${notes.length}`).join(" / ");
-  $("candidateNotes").textContent = `${counts} notes${choice.sources.length ? ` | Sources: ${choice.sources.join(", ")}` : ""}`;
+  const counts = Object.entries(choice.tracks).map(([name, notes]) => {
+    const before = review.originalTracks[name]?.length ?? 0;
+    return name + " " + before + "→" + notes.length;
+  }).join(" / ");
+  const sourceText = choice.sources.length ? " · " + choice.sources.join(", ") : "";
+  const appliedText = review.appliedIndex === index ? " · 反映済み" : "";
+  $("candidateNotes").textContent = counts + sourceText + appliedText;
 }
 
-function stageCandidates(raw, current) {
+function stageCandidates(raw, current, {autoApply = false} = {}) {
   ensureCurrent(current);
   const candidates = parseCandidates(raw, current);
-  review = {current, candidates};
+  review = {current, candidates, originalTracks: structuredClone(current.tracks), appliedIndex: -1};
   $("candidate").replaceChildren(...candidates.map((entry, index) => new Option(entry.name, index)));
+  $("candidate").value = "0";
   $("review").hidden = false;
   updateReview();
-  $("aiStatus").textContent = `${candidates.length} candidate(s) ready. The draft is unchanged.`;
+  if (autoApply) applyChoice(0);
+  else $("aiStatus").textContent = candidates.length + "件の候補を読み込みました。";
 }
 
 $("candidate").onchange = updateReview;
@@ -177,31 +188,35 @@ $("reviewJson").onclick = () => {
   try {
     const current = inputDraft();
     if (manualBaseline) ensureCurrent(manualBaseline);
-    stageCandidates(JSON.parse($("aiJson").value), {...current, rhythmOnly: current.rhythmOnly || manualBaseline?.rhythmOnly});
+    stageCandidates(JSON.parse($("aiJson").value), current);
   } catch (error) {
     $("review").hidden = true;
-    $("aiStatus").textContent = `Could not load AI JSON: ${error.message}`;
+    $("aiStatus").textContent = "JSONを読み込めません: " + error.message;
   }
 };
 
 const apiPath = "./api/arrangements";
 async function enableLocalApi() {
+  $("arrange").disabled = true;
+  $("apiState").textContent = "API未接続";
   if (!["127.0.0.1", "localhost"].includes(location.hostname)) return;
   try {
     const response = await fetch(apiPath);
     if (response.status === 404) return;
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    if (!response.ok) throw new Error("HTTP " + response.status);
     const {available} = await response.json();
-    $("arrange").hidden = $("apiNotice").hidden = !available;
+    $("arrange").disabled = !available;
+    $("apiState").textContent = available ? "API接続済み" : "API未設定";
   } catch (error) {
-    $("aiStatus").textContent = `Could not check the local OpenAI API: ${error.message}`;
+    $("apiState").textContent = "API未接続";
+    $("aiStatus").textContent = "ローカルAPIに接続できません: " + error.message;
   }
 }
 
 $("arrange").onclick = async () => {
   const current = inputDraft();
   $("arrange").disabled = true;
-  $("aiStatus").textContent = "Generating candidates with OpenAI...";
+  $("aiStatus").textContent = "生成中…";
   try {
     const prompt = await buildBrief(current);
     ensureCurrent(current);
@@ -209,10 +224,10 @@ $("arrange").onclick = async () => {
       method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({prompt})
     });
     const raw = await response.json();
-    if (!response.ok) throw new Error(raw.error || `HTTP ${response.status}`);
-    stageCandidates(raw, current);
+    if (!response.ok) throw new Error(raw.error || "HTTP " + response.status);
+    stageCandidates(raw, current, {autoApply: true});
   } catch (error) {
-    $("aiStatus").textContent = `OpenAI generation failed: ${error.message}`;
+    $("aiStatus").textContent = "生成できませんでした: " + error.message;
   } finally {
     $("arrange").disabled = false;
   }

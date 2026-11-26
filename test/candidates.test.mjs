@@ -68,3 +68,16 @@ test("harmony candidates may change Pad and Bass but must preserve the Drum arra
   assert.deepEqual(candidate.tracks.drums, original.drums);
   assert.throws(() => parseCandidates(wrap({drums: [note(36, 0)]}), harmony), /Drums track unchanged/);
 });
+
+test("combined harmony and rhythm mode may change pitches, Drum events and event density together", () => {
+  const combined = {...current, rhythmOnly: false, mode: "combined"};
+  const raw = wrap({
+    bass: [note(40, 0, 0.25), note(40, 0.5, 0.25), note(42, 3.5, 0.25)],
+    drums: [note(36, 0), note(42, 0.25), note(38, 2)],
+    pad: [note(60, 0), note(65, 0), note(62, 3.5)]
+  });
+  const [candidate] = parseCandidates(raw, combined);
+  assert.equal(candidate.tracks.bass.length, 3);
+  assert.deepEqual(candidate.tracks.drums, raw.candidates[0].tracks[1].notes);
+  assert.deepEqual(candidate.tracks.pad, raw.candidates[0].tracks[2].notes);
+});

@@ -66,7 +66,7 @@ test("upstream rejection and incomplete generation return errors, not candidates
     Response.json({status: "completed", output: [{type: "message", content: [{type: "refusal", refusal: "reason"}]}]})
   ];
   const {endpoint, origin} = await runApp(t, {apiKey: "test-key", fetchOpenAI: async () => replies.shift()});
-  for (const [status, expected] of [[502, "HTTP 429"], [502, "did not complete"], [422, "declined"]]) {
+  for (const [status, expected] of [[502, "HTTP 429"], [502, "生成が完了しませんでした"], [422, "declined"]]) {
     const response = await post(endpoint, origin);
     assert.equal(response.status, status);
     assert.ok((await response.json()).error.includes(expected));

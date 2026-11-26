@@ -329,5 +329,397 @@
     "evidence_type": "human-authored-source",
     "confidence": "high",
     "notes": "Source labels bass motion and voicing, hybrid chord and tension."
+  },
+  {
+    "id": "POP-005",
+    "name": "Dominant-motion chain",
+    "degrees": [
+      "vi",
+      "ii",
+      "V",
+      "I"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "tags": [
+      "pop",
+      "j-pop",
+      "forward-motion",
+      "cadence"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "作曲初心者が知るべき3つのコード進行のパターン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/3motions/",
+      "published": "2022-04-03",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SRM describes successive ascending-fourth root motion as strongly connected and useful before an important section such as a chorus. This is the source's pedagogical framing, not a universal rule."
+  },
+  {
+    "id": "POP-006",
+    "name": "Diatonic scale-motion ascent",
+    "degrees": [
+      "ii",
+      "iii",
+      "IV",
+      "V"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Dm7",
+      "Em7",
+      "Fmaj7",
+      "G7"
+    ],
+    "tags": [
+      "pop",
+      "verse",
+      "stepwise",
+      "natural-flow"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "作曲初心者が知るべき3つのコード進行のパターン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/3motions/",
+      "published": "2022-04-03",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SRM describes adjacent diatonic chord movement as smooth and familiar, with relatively little dramatic change; suggests use near the beginning of a song or verse."
+  },
+  {
+    "id": "POP-007",
+    "name": "Tonic–subdominant–subdominant–dominant",
+    "degrees": [
+      "I",
+      "IV",
+      "ii",
+      "V"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Cmaj7",
+      "Fmaj7",
+      "Dm7",
+      "G7"
+    ],
+    "tags": [
+      "pop",
+      "j-pop",
+      "functional-harmony",
+      "build"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "作曲初心者が知るべき3つのコード進行のパターン",
+      "author": "SRM.",
+      "url": "https://srm-music.com/3motions/",
+      "published": "2022-04-03",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source labels this T–S–S–D and uses repetition to create forward motion."
+  },
+  {
+    "id": "CALM-001",
+    "name": "Tonic–relative-minor alternation",
+    "degrees": [
+      "I",
+      "vi",
+      "I",
+      "vi"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "Am",
+      "C",
+      "Am"
+    ],
+    "tags": [
+      "calm",
+      "stable",
+      "tonic",
+      "pop"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The author describes I and vi as tonic-function chords and this alternation as stable/calm. Treat mood as the author's interpretation; voicing, melody and rhythm still matter."
+  },
+  {
+    "id": "CALM-002",
+    "name": "Tonic–iii–vi cycle",
+    "degrees": [
+      "I",
+      "iii",
+      "vi",
+      "iii"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "Em",
+      "Am",
+      "Em"
+    ],
+    "tags": [
+      "calm",
+      "stable",
+      "tonic",
+      "pop"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source uses iii alongside I and vi as a tonic-like color to vary a stable progression."
+  },
+  {
+    "id": "CALM-003",
+    "name": "Tonic and subdominant mixture",
+    "degrees": [
+      "I",
+      "IV",
+      "iii",
+      "vi"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "F",
+      "Em",
+      "Am"
+    ],
+    "tags": [
+      "calm",
+      "stable",
+      "subdominant",
+      "pop"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The author groups tonic and subdominant functions to produce a calm overall flow."
+  },
+  {
+    "id": "CALM-004",
+    "name": "Subdominant-minor return",
+    "degrees": [
+      "I",
+      "IV",
+      "iv",
+      "I"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "tags": [
+      "soft",
+      "bittersweet",
+      "borrowed-chord",
+      "calm"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source presents iv (Fm) as a borrowed subdominant-minor color that can still be used in a calm progression."
+  },
+  {
+    "id": "CALM-005",
+    "name": "Tonic chromatic-line cliché",
+    "degrees": [
+      "I",
+      "Imaj7",
+      "I7",
+      "I6"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "C",
+      "Cmaj7",
+      "C7",
+      "C6"
+    ],
+    "tags": [
+      "calm",
+      "cliche",
+      "chromatic-line",
+      "pop"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source example moves one chord tone C–B–Bb–A while retaining the C-root identity."
+  },
+  {
+    "id": "POP-013",
+    "name": "J-pop chorus with first-inversion bass",
+    "degrees": [
+      "I",
+      "V6",
+      "vi",
+      "V"
+    ],
+    "exampleKey": "D",
+    "example": [
+      "Dmaj7",
+      "A/C#",
+      "Bm7",
+      "A"
+    ],
+    "tags": [
+      "j-pop",
+      "pop",
+      "smooth-bass",
+      "inversion"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-song-analysis",
+    "confidence": "medium",
+    "notes": "SRM cites this as the chorus progression of Aimyon's Marigold to illustrate inversion in pop. Treat as a cited song-analysis example, not a genre-wide template."
+  },
+  {
+    "id": "JAZZ-001",
+    "name": "Jazz-colored subV example",
+    "degrees": null,
+    "exampleKey": null,
+    "example": [
+      "Em7(9)",
+      "Bb7(9)",
+      "Am7",
+      "Am7/D"
+    ],
+    "tags": [
+      "jazz",
+      "sub-five",
+      "tension",
+      "slash-chord"
+    ],
+    "harmonicRhythm": "not specified in source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-song-analysis",
+    "confidence": "medium",
+    "notes": "SRM uses the chorus ending of Fujii Kaze's Nan-Nan as an example of a subV color. Key/degree interpretation is intentionally left unspecified."
+  },
+  {
+    "id": "NEOSOUL-001",
+    "name": "Major-seventh constant structure",
+    "degrees": null,
+    "exampleKey": null,
+    "example": [
+      "Dmaj7",
+      "Amaj7",
+      "Emaj7",
+      "Bmaj7"
+    ],
+    "tags": [
+      "r-and-b",
+      "neo-soul",
+      "constant-structure",
+      "floating"
+    ],
+    "harmonicRhythm": "not specified in source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-song-analysis",
+    "confidence": "medium",
+    "notes": "SRM describes the repeated major-seventh chord quality across changing roots as a constant-structure example from Anderson .Paak's TINTS. Mood tags are descriptive, not deterministic."
+  },
+  {
+    "id": "CITYPOP-001",
+    "name": "City-pop modal-color example",
+    "degrees": null,
+    "exampleKey": null,
+    "example": [
+      "Bbmaj7",
+      "Am7",
+      "A7"
+    ],
+    "tags": [
+      "city-pop",
+      "modal-interchange",
+      "chromatic",
+      "j-pop"
+    ],
+    "harmonicRhythm": "not specified in source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-song-analysis",
+    "confidence": "medium",
+    "notes": "SRM cites this chorus segment from Miki Matsubara's Mayonaka no Door as a modal-interchange example. Exact global key is not assigned here."
   }
 ]

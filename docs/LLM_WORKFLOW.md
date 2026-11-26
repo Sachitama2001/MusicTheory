@@ -1,63 +1,43 @@
 # ChatGPT / LLM Workflow
 
-## Safe first version
-The browser app does not contain an API key and does not call an LLM directly. It creates a prompt containing project settings and relevant local database excerpts. The user sends that prompt to ChatGPT, then pastes the returned JSON into the app.
+## Generate, compare and apply
 
-## Assistant responsibilities
-1. Parse the request into musical constraints.
-2. Retrieve relevant records from the five local libraries.
-3. Separate source-backed theory from creative suggestions.
-4. Generate Bass, Drums and Pad only.
-5. Respect key, scale, BPM, meter and maximum 16 bars.
-6. Offer at least two candidates when practical.
-7. For rhythm-only edits, preserve pitches and harmony; change onset and duration only unless asked otherwise.
-8. Never silently change tempo, meter, key or progression.
-9. Return JSON and cite matching knowledge record IDs.
+- **Manual (including GitHub Pages):** Use **Build ChatGPT brief**, send it to ChatGPT, then paste the returned JSON into **Load AI JSON**. No API key is needed in the sketchpad.
+- **Local API:** Start the [local server](DEPLOYMENT.md#local-openai-api) with `OPENAI_API_KEY`, enter a request and choose **Generate with OpenAI**. The API response loads into the same candidate review.
+- **Review:** Choose a candidate, read its summary and source IDs, and use **Preview original** and **Preview candidate** to compare. Neither preview changes the draft.
+- **Apply:** Use **Apply candidate** to replace the notes without changing the project settings. **Restore pre-AI draft** returns to the draft saved before the last application, including after reloading the page. Confirming restore replaces later edits.
 
-## JSON format
+If the draft or its settings change after generating a brief or candidates, generate again for the updated draft.
+
+## Candidate JSON
+
+Return one JSON object without prose or a Markdown fence. Use two distinct candidates when practical; one is also supported. Each candidate has a short `summary`, relevant knowledge record IDs in `sources` (or an empty array), and exactly one Bass, Drums and Pad track. Use empty `notes` for intentionally silent tracks.
+
+```json
+{
+  "candidates": [
     {
-      "version": 1,
-      "project": {
-        "key": "C",
-        "scale": "major",
-        "bpm": 140,
-        "meter": [4, 4],
-        "bars": 8
-      },
+      "name": "Short bass and sustained pad",
+      "summary": "Leave space after the downbeat bass note while the pad sustains.",
+      "sources": ["ARR-POP-001"],
       "tracks": [
-        {
-          "name": "Bass",
-          "notes": [
-            {"pitch": 36, "start": 0, "duration": 1.5, "velocity": 0.78}
-          ]
-        },
-        {
-          "name": "Drums",
-          "notes": [
-            {"pitch": 36, "start": 0, "duration": 0.2, "velocity": 0.9},
-            {"pitch": 42, "start": 0.5, "duration": 0.1, "velocity": 0.45}
-          ]
-        },
-        {
-          "name": "Pad",
-          "notes": [
-            {"pitch": 60, "start": 0, "duration": 4, "velocity": 0.5}
-          ]
-        }
+        {"name": "Bass", "notes": [{"pitch": 36, "start": 0, "duration": 1.5, "velocity": 0.78}]},
+        {"name": "Drums", "notes": [{"pitch": 36, "start": 0, "duration": 0.2, "velocity": 0.9}]},
+        {"name": "Pad", "notes": [
+          {"pitch": 60, "start": 0, "duration": 3, "velocity": 0.5},
+          {"pitch": 64, "start": 0, "duration": 3, "velocity": 0.5},
+          {"pitch": 67, "start": 0, "duration": 3, "velocity": 0.5}
+        ]}
       ]
     }
+  ]
+}
+```
 
-Start and duration are in quarter-note beats from the start. Pitch is MIDI note number. Velocity is 0–1. Drums use GM kick 36, snare 38 and closed hi-hat 42.
+`start` and `duration` are in quarter-note beats from the start; a 7/8 bar is 3.5 units. Keep notes in the current project range (up to 16 bars), use MIDI pitches 0–127 and velocity 0–1. Bass notes must not overlap. Drums use only GM kick (36), snare (38) and closed hi-hat (42). A legacy `{ "tracks": [...] }` / version 1 object can also be loaded as one candidate; omitted tracks and current project settings are retained.
 
-## Rhythm-only transformation contract
-Input: existing note events and target style / groove.
-Output: same track names and same pitch material, with changed onset positions and durations. Must:
-- retain BPM and meter
-- stay within the bar range
-- preserve bass pitch identity and pad chord membership
-- preserve drum pitch identity
-- explain rhythmic changes
-- provide subtle and stronger variants when practical
+## Rhythm and harmony contracts
 
-## Harmony suggestion contract
-Suggestions may replace a chord, alter voicing/inversion, or insert a passing chord. Explain expected color and voice-leading effect. Always show the original progression. Do not overwrite user work without explicit apply action.
+**Rhythm only** changes onsets and durations, not note counts, pitches or velocities. Each note stays within the bar in which it originally started. Pad chord tones keep a common onset and the chord groups stay in order. **Try Riddim flow** prepares a rhythm-only brief for half-time and triplet-shuffle options; it does not mutate notes or call the API.
+
+Harmony candidates may alter pitches, voicings or insert passing chords. Explain the musical effect and distinguish sourced theory from creative suggestions.

@@ -18,7 +18,7 @@
       "Keep tempo and meter unchanged.",
       "Preserve pitches for rhythm-only transformations.",
       "Use a half-time backbeat with snare on beat 3 in 4/4.",
-      "Create short repeated bass motifs separated by deliberate rests.",
+      "Shorten or reposition existing bass notes to make motifs with deliberate rests, without adding notes.",
       "Use offbeat and triplet placements as variations, not on every note.",
       "Leave space for pad stabs and fills."
     ],
@@ -52,5 +52,38 @@
     "evidence_type": "project-original",
     "confidence": "medium",
     "notes": "Baseline pattern for comparison."
+  },
+  {
+    "id": "ARR-METER-001",
+    "name": "7/8 groove in 2+2+3",
+    "summary": "Mark an uneven meter by spacing three accents across the bar rather than moving the 4/4 backbeat unchanged.",
+    "category": "rhythm",
+    "tags": ["7/8", "odd-meter", "accent"],
+    "tracks": ["Bass", "Drums", "Pad"],
+    "grid_suggestions": ["0.5 quarter-note beats per eighth-note step"],
+    "rules": [
+      "In this example, accent offsets 0, 1 and 2 quarter-note beats within a 3.5-beat bar.",
+      "Try kick at 0 and 1, snare at 2, and lighter existing hi-hats at 0.5, 1.5, 2.5 or 3 as available.",
+      "Keep the first bass attack clear and let the longer final group create space before the next bar."
+    ],
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "A sketchpad example, not a universal 7/8 grouping. For rhythm-only edits, move existing notes only."
+  },
+  {
+    "id": "ARR-BASS-001",
+    "name": "Kick and bass attack spacing",
+    "summary": "Separate some kick and bass attacks with a short rhythmic gap to make both easier to hear.",
+    "category": "rhythm",
+    "tags": ["bass", "kick", "space", "syncopation"],
+    "tracks": ["Bass", "Drums"],
+    "grid_suggestions": ["Try a 0.25 or 0.5 quarter-note beat offset"],
+    "rules": [
+      "Keep the kick as the reference; try delaying an existing bass attack after a kick and shorten it if needed to keep the next note clear.",
+      "Keep other shared attacks where a strong downbeat is useful. Compare with the original at the same tempo."
+    ],
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "This is an arrangement choice, not sidechain compression. Results depend on the intended groove."
   }
 ]

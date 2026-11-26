@@ -11,28 +11,35 @@ A lightweight browser-based composition sketchpad for creating editable 3-track 
 - Note selection, add, delete and move
 - MIDI import/export
 - Harmony suggestions from a curated local knowledge base
-- Initial rhythm transformation: Riddim-inspired flow for sustained/simple MIDI patterns, preserving pitch material
-- Prompt builder that packages user intent and local database excerpts for ChatGPT; JSON response import
+- Riddim-inspired timing suggestions that preserve pitches and Pad chord groups
+- Compare and audition AI candidates before applying; restore the pre-apply draft
+- Manual prompt/JSON workflow on GitHub Pages; optional local OpenAI API generation
 
 ## Run locally
 
 Because the app loads JSON files and an ES module, serve the repository over HTTP rather than opening `index.html` directly.
 
 ```bash
-python -m http.server 8000
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open http://localhost:8000.
+Open http://127.0.0.1:8000. To use the optional OpenAI API instead, set `OPENAI_API_KEY` in your terminal environment and run:
+
+```bash
+node server.mjs
+```
+
+Node.js 22 or newer is recommended. Open http://127.0.0.1:8000 and choose **Generate with OpenAI**. Do not put the key in the browser or commit it. This button sends the request, current arrangement and local knowledge records to OpenAI; API charges may apply.
 
 The app uses the browser MIDI parser/writer library `@tonejs/midi` from esm.sh. No API key is required for local editing, playback, or MIDI export.
 
 ## GitHub Pages
 
-Enable GitHub Pages in repository Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
+The [published app](https://sachitama2001.github.io/MusicTheory/) uses the manual ChatGPT workflow. Use **GitHub Actions** as the Pages source (see [deployment](docs/DEPLOYMENT.md)).
 
 ## LLM workflow
 
-The first version does not call an LLM directly from the browser. Use **Build ChatGPT brief** to create a prompt containing the selected musical settings and relevant local knowledge-base records. Ask ChatGPT to return the documented JSON composition format, then paste that JSON into **Import AI JSON**. This avoids exposing an API key in client-side code.
+Use **Build ChatGPT brief** and paste it into ChatGPT, then paste the reply into **Load AI JSON**. With the local API server, **Generate with OpenAI** loads candidates directly. In both modes, preview the original and each candidate before using **Apply candidate**.
 
 See:
 - `docs/PRODUCT_SPEC.md`
@@ -48,7 +55,7 @@ See:
 4. Arrangement Library
 5. Composition Rules
 
-The initial Riddim groove transformation is a heuristic starter, not a claim to model every Riddim subgenre. The knowledge base records source URLs and distinguishes sourced theory from project-specific interpretation.
+The Riddim suggestions are heuristics, not a claim to model every Riddim subgenre. The knowledge base distinguishes sourced theory from project-specific interpretations. Records in [data/proposals](data/proposals/) are pending human review and are not used by the app.
 
 ## License
 

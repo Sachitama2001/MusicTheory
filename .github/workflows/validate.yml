@@ -19,7 +19,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          for path in Path("data").glob("*.json"):
+          for path in Path("data").rglob("*.json"):
               json.loads(path.read_text(encoding="utf-8"))
               print("OK", path)
           PY
@@ -33,3 +33,5 @@ jobs:
           Path('/tmp/app.mjs').write_text(html[start:end], encoding='utf-8')
           PY
           node --check /tmp/app.mjs
+      - name: Test candidate validation and local API
+        run: node --test

@@ -11,7 +11,7 @@ MusicTheory is a lightweight composition sketchpad, not a replacement for a prod
 - Pad: chord tones / block chords.
 - Simple preview synthesis only; no high-fidelity sound design.
 - MIDI import/export and browser playback.
-- Note creation, deletion and movement; range selection is a follow-up.
+- Note creation, deletion, movement and range selection.
 - Key, scale, BPM, meter and Roman-numeral progression controls.
 - Harmony and rhythm are separate arrangement categories.
 - First rhythm milestone: transform sustained/simple MIDI into Riddim-inspired flow while preserving pitches.
@@ -29,7 +29,7 @@ Rhythm: timing-only transformations.
 Preview candidates before applying. Preserve the original as an undoable variant.
 
 ### M2 — Riddim flow
-Input sustained bass/pad MIDI. Generate several timing variants. Keep pitches unchanged. Use syncopation, rests, note lengths, triplet/swing grids and call-response. Do not change tempo, meter, harmony or track identity.
+Input sustained bass/pad MIDI. Request timing variants through the manual or local API workflow. Keep pitches unchanged. Use syncopation, rests, note lengths, triplet/swing grids and call-response. Do not change tempo, meter, harmony or track identity.
 
 ### M3 — Knowledge ingestion
 Store source metadata, author, publication date, URL, concepts, paraphrase and licensing notes. Require human review before merging updates. Preserve provenance and conflicts.

@@ -1,0 +1,49 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import {parseCandidates} from "../candidates.mjs";
+
+const note = (pitch, start, duration = 0.5) => ({pitch, start, duration, velocity: 0.75});
+const original = {
+  bass: [note(36, 0), note(38, 3.5)],
+  drums: [note(38, 1)],
+  pad: [note(60, 0), note(64, 0), note(62, 3.5), note(65, 3.5)]
+};
+const current = {tracks: original, bars: 4, beatsPerBar: 3.5, rhythmOnly: true};
+
+function wrap({bass = original.bass, drums = original.drums, pad = original.pad} = {}) {
+  return {candidates: [{
+    name: "Offbeat", summary: "Shorter notes after the beat", sources: ["ARR-RID-001"],
+    tracks: [{name: "Bass", notes: bass}, {name: "Drums", notes: drums}, {name: "Pad", notes: pad}]
+  }]};
+}
+
+test("a rhythm-only candidate can move notes without mutating the draft", () => {
+  const shifted = [note(36, 0.5, 0.25), note(38, 4, 0.25)];
+  const raw = wrap({bass: shifted, pad: [note(60, 1.5), note(64, 1.5), note(62, 4), note(65, 4)]});
+  const candidates = parseCandidates(raw, current);
+  assert.deepEqual(candidates[0].tracks.bass, shifted);
+  assert.equal(original.bass[0].start, 0);
+});
+
+test("rhythm-only validation detects a crossed barline, split Pad chord and altered velocity", () => {
+  assert.throws(() => parseCandidates(wrap({bass: [note(36, 3.25), note(38, 4)]}), current), /bar placement/);
+  assert.throws(() => parseCandidates(wrap({pad: [note(60, 0), note(64, 0.5), ...original.pad.slice(2)]}), current), /Pad chord groups/);
+  assert.throws(() => parseCandidates(wrap({drums: [{...note(38, 1), velocity: 0.5}]}), current), /velocities/);
+});
+
+test("rejects out-of-range, unsupported and overlapping notes before review", () => {
+  const general = {...current, rhythmOnly: false};
+  assert.throws(() => parseCandidates(wrap({drums: [note(42, 13.75)]}), general), /invalid Drums note/);
+  assert.throws(() => parseCandidates(wrap({drums: [note(46, 1)]}), general), /invalid Drums note/);
+  assert.throws(() => parseCandidates(wrap({bass: [note(36, 0, 2), note(38, 1)]}), general), /must not overlap/);
+  const duplicate = wrap();
+  duplicate.candidates[0].tracks[2].name = "Bass";
+  assert.throws(() => parseCandidates(duplicate, general), /distinct Bass, Drums or Pad/);
+});
+
+test("a legacy partial import only replaces the named track", () => {
+  const raw = {version: 1, tracks: [{name: "bass", notes: [{pitch: 40, start: 0, duration: 1}]}]};
+  const [candidate] = parseCandidates(raw, {...current, rhythmOnly: false});
+  assert.deepEqual(candidate.tracks.bass, [{pitch: 40, start: 0, duration: 1, velocity: 0.7}]);
+  assert.deepEqual(candidate.tracks.pad, original.pad);
+});

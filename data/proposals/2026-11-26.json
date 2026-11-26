@@ -1,0 +1,48 @@
+{
+  "harmony-techniques": [
+    {
+      "id": "HARM-007",
+      "name": "First inversion for a stepwise bass",
+      "summary": "Place the chord's third in the Bass while the Pad retains the chord identity.",
+      "tags": ["inversion", "slash-chord", "bass", "voice-leading"],
+      "before": ["G", "D", "Em"],
+      "after": ["G", "D/F#", "Em"],
+      "useWhen": "A short G–F#–E bass descent connects the same chords more smoothly than root jumps.",
+      "caution": "Check which note the Bass actually plays; changing the Pad alone does not change the inversion if the Bass still plays the root.",
+      "source": {
+        "title": "SoundQuest — 和声 : 第一転回形",
+        "author": "yuta",
+        "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+        "published": "2017-11-07",
+        "updated": "2026-09-05",
+        "accessed": "2026-11-26"
+      },
+      "evidence_type": "human-authored-source",
+      "confidence": "high",
+      "notes": "Concise paraphrase with an independently written sketchpad example; no source notation or audio bundled.",
+      "review_status": "pending"
+    },
+    {
+      "id": "HARM-008",
+      "name": "Cadential six-four",
+      "summary": "Keep the dominant bass under a second-inversion tonic triad and resolve its upper voices into the dominant before the final tonic.",
+      "tags": ["inversion", "cadence", "dominant", "classical"],
+      "before": ["Bb", "C7", "F"],
+      "after": ["Bb", "F/C", "C7", "F"],
+      "useWhen": "A tonal cadence needs a brief suspended sound before the dominant resolves.",
+      "caution": "The cadential context matters: do not treat every second-inversion chord as a dominant or an interchangeable sus chord.",
+      "source": {
+        "title": "SoundQuest — 和声 : 第二・第三転回形",
+        "author": "yuta",
+        "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+        "published": "2017-11-07",
+        "updated": "2026-09-05",
+        "accessed": "2026-11-26"
+      },
+      "evidence_type": "human-authored-source",
+      "confidence": "high",
+      "notes": "Concise paraphrase with an independently written sketchpad example; no source notation or audio bundled.",
+      "review_status": "pending"
+    }
+  ]
+}

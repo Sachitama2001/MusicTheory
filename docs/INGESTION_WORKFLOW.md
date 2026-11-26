@@ -27,7 +27,7 @@ For every new source, collect:
 5. Search existing records by normalized name, aliases, tags and example before creating a new record.
 6. If the concept already exists, propose an additive source reference or correction rather than creating a duplicate.
 7. If two sources disagree, preserve both claims and add a conflict record. Do not silently choose one.
-8. Add a proposed record with review_status = pending.
+8. Save the proposed record under `data/proposals/`, grouped by its target library, with `review_status = pending`. Proposals are not loaded by the app.
 9. Human reviewer checks theory, spelling, examples, source attribution and licensing.
 10. Only after approval, move the record into the canonical JSON file and update this registry.
 

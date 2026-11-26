@@ -10,39 +10,271 @@
 <div class="topgrid"><section class="panel"><h3 class="sectiontitle">CIRCLE OF FIFTHS · DEGREES</h3><svg class="wheel" viewBox="0 0 240 240" id="wheel"></svg><div class="note">外周の度数をクリックすると進行欄に追加します。</div></section>
 <section class="panel"><div class="row spread"><h3 class="sectiontitle">PROGRESSION</h3><span id="keyLabel" class="tag">C · Major</span></div><div id="progression" class="progression"></div><div class="row" style="margin-top:14px"><button id="play" class="primary">▶ Play</button><button id="stop">■ Stop</button><button id="export" class="primary">Export MIDI</button><label class="actions"><span class="tag">Import MIDI</span><input type="file" id="midiFile" accept=".mid,.midi" style="max-width:190px"></label></div><p class="hint">簡易音源でプレビューします。制作スケッチ用です。</p></section></div>
 <section class="panel"><div class="row spread"><h3 class="sectiontitle">MIDI EDITOR</h3><span class="hint">クリック：追加 · ノートをドラッグ：移動 · 空白をドラッグ：範囲選択 · Shift+クリック：削除</span></div><div class="tracktabs" id="tabs"><button data-track="bass" class="active">BASS</button><button data-track="drums">DRUMS</button><button data-track="pad">PAD</button></div><div class="canvaswrap"><canvas id="roll" width="1200" height="310"></canvas></div><div class="row spread" style="margin-top:10px"><span class="hint" id="trackHint">Bass: monophonic single notes</span><div class="actions"><button id="clearTrack">Clear track</button><button id="deleteSelected">Delete selected</button></div></div></section>
-<div class="two"><section class="panel"><h3 class="sectiontitle">AI ARRANGEMENT ASSISTANT</h3><p class="hint">要望を入力すると、ローカル知識ベースを含むChatGPT用の依頼文を作ります。APIキー不要。</p><textarea id="request" placeholder="例：ドロップをRiddim風にしたい。音程は変えず、ベースに休符とシンコペーションを加えて。"></textarea><div class="actions" style="margin-top:8px"><button class="primary" id="buildBrief">Build ChatGPT brief</button><button id="rhythm">Try Riddim flow</button></div><textarea id="brief" placeholder="ChatGPT用指示書…" style="margin-top:10px"></textarea></section>
-<section class="panel"><h3 class="sectiontitle">IMPORT AI JSON</h3><p class="hint">ChatGPTにMIDIノートJSONを返させ、貼り付けて反映します。</p><textarea id="aiJson" placeholder='{"tracks":[{"name":"Bass","notes":[{"pitch":36,"start":0,"duration":1,"velocity":0.8}]}]}'></textarea><button id="applyJson" class="primary" style="margin-top:8px">Apply AI JSON</button></section></div>
-<section class="panel"><div class="row spread"><h3 class="sectiontitle">KNOWLEDGE BASE</h3><span class="tag">local JSON · source-aware</span></div><div class="kb" id="knowledge"></div></section><div class="status" id="status">Ready. Your work stays in this browser until exported.</div>
+<div class="two"><section class="panel"><h3 class="sectiontitle">AI ARRANGEMENT ASSISTANT</h3><p class="hint">要望とローカル知識ベースからChatGPT用の依頼文を作ります。手動連携はAPIキー不要。</p><textarea id="request" aria-label="Arrangement request" placeholder="例：ドロップをRiddim風にしたい。音程は変えず、ベースに休符とシンコペーションを加えて。"></textarea><label class="hint"><input type="checkbox" id="rhythmOnly"> Rhythm only</label><div class="actions" style="margin-top:8px"><button class="primary" id="buildBrief">Build ChatGPT brief</button><button id="rhythm">Try Riddim flow</button><button id="arrange" hidden>Generate with OpenAI</button></div><p id="apiNotice" class="hint" hidden>API生成を押すと、依頼・現在のノート・知識データをOpenAIに送信します。API利用料が発生する場合があります。</p><textarea id="brief" aria-label="ChatGPT brief" placeholder="ChatGPT用指示書…" style="margin-top:10px"></textarea></section>
+<section class="panel"><h3 class="sectiontitle">REVIEW AI CANDIDATES</h3><p class="hint">APIで生成するか、ChatGPTの返答を貼り付けます。試聴するだけでは下書きは変わりません。</p><textarea id="aiJson" aria-label="AI arrangement JSON" placeholder='{"candidates":[...]}'></textarea><div class="actions" style="margin-top:8px"><button id="reviewJson">Load AI JSON</button><button id="undoAI" hidden>Restore pre-AI draft</button></div><div id="review" hidden>
+<div class="row" style="margin-top:8px"><label for="candidate">Candidate</label><select id="candidate"></select></div><p id="candidateSummary"></p><p id="candidateNotes" class="hint"></p><div class="actions"><button id="playOriginal">Preview original</button><button id="playCandidate">Preview candidate</button><button id="stopPreview">Stop preview</button><button id="applyCandidate" class="primary">Apply candidate</button></div></div><p class="status" id="aiStatus" role="status"></p></section></div>
+<section class="panel"><div class="row spread"><h3 class="sectiontitle">KNOWLEDGE BASE</h3><span class="tag">local JSON · source-aware</span></div><div class="kb" id="knowledge"></div></section><div class="status" id="status" role="status">Ready. Drafts are saved in this browser.</div><div class="status" id="storageStatus" role="status"></div>
 </main>
 <script type="module">
 import { Midi } from "https://esm.sh/@tonejs/midi@2.0.28";
+import { candidateSchema, LIBRARIES, parseCandidates } from "./candidates.mjs";
 const $=id=>document.getElementById(id), NOTES=["C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B"], SCALES={major:[0,2,4,5,7,9,11],naturalMinor:[0,2,3,5,7,8,10],harmonicMinor:[0,2,3,5,7,8,11],dorian:[0,2,3,5,7,9,10],mixolydian:[0,2,4,5,7,9,10],lydian:[0,2,4,6,7,9,11],phrygian:[0,1,3,5,7,8,10],minorPentatonic:[0,3,5,7,10],majorPentatonic:[0,2,4,7,9]};
-const ROM=["I","II","III","IV","V","VI","VII"];let tracks={bass:[],drums:[],pad:[]},active="bass",selected=-1,selectedSet=new Set(),drag=null,selectBox=null,ctx=null,playing=false,playTimer=null;
+const ROM=["I","II","III","IV","V","VI","VII"];let tracks={bass:[],drums:[],pad:[]},active="bass",selected=-1,selectedSet=new Set(),drag=null,selectBox=null,ctx=null,playTimer=null,beforeAI=null;
 const beat=()=>Number($("meter").value==="7"?3.5:$("meter").value), bars=()=>Number($("bars").value), bpm=()=>Math.max(40,Math.min(240,Number($("bpm").value)||140)), keyPc=()=>NOTES.indexOf($("key").value);
+const meter=()=>$("meter").value==="7"?[7,8]:[Number($("meter").value),4];
+const draft=()=>({tracks,settings:{key:$("key").value,scale:$("scale").value,bpm:bpm(),meter:$("meter").value,bars:bars(),degrees:$("degrees").value}});
 function initKeys(){NOTES.forEach(n=>{let o=document.createElement("option");o.value=n;o.textContent=n;$("key").append(o)});$("key").value="C"}
 function chordForDegree(deg){let scaleName=$("scale").value,scale=SCALES[scaleName];if(scaleName==="majorPentatonic")scale=SCALES.major;if(scaleName==="minorPentatonic")scale=SCALES.naturalMinor;let pcs=scale.map(x=>(x+keyPc())%12),d=ROM.findIndex(x=>x.toLowerCase()===deg.toLowerCase());if(d<0)return null;let root=pcs[d],third=pcs[(d+2)%7],fifth=pcs[(d+4)%7],seventh=pcs[(d+6)%7],t3=(third-root+12)%12,t5=(fifth-root+12)%12,t7=(seventh-root+12)%12;let suffix=t3===3?(t5===6?(t7===9?"dim7":"m7b5"):"m7"):(t7===11?"maj7":"7");return {degree:deg,root,notes:[root,third,fifth,seventh],name:NOTES[root]+suffix}}
 function getProgression(){let ds=$("degrees").value.trim().split(/[ ,]+/).filter(Boolean);return (ds.length?ds:["I","V","vi","IV"]).map(chordForDegree).filter(Boolean)}
 function renderProgression(){let p=getProgression();$("progression").innerHTML="";p.forEach(c=>{let d=document.createElement("div");d.className="chord";d.innerHTML="<small>"+c.degree+"</small><b>"+c.name+"</b>";$("progression").append(d)});$("keyLabel").textContent=$("key").value+" · "+$("scale").selectedOptions[0].textContent}
 function drawWheel(){let svg=$("wheel");svg.innerHTML="";let cx=120,cy=120,r=80;const order=[0,4,1,5,2,6,3];for(let i=0;i<7;i++){let degreeIndex=order[i],a=(-90+i*360/7)*Math.PI/180,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r,circle=document.createElementNS("http://www.w3.org/2000/svg","circle");circle.setAttribute("cx",x);circle.setAttribute("cy",y);circle.setAttribute("r",17);circle.setAttribute("fill","#fff");circle.setAttribute("stroke","#d9cedd");circle.addEventListener("click",()=>{$("degrees").value=($("degrees").value+" "+ROM[degreeIndex]).trim();renderProgression()});svg.append(circle);let t=document.createElementNS("http://www.w3.org/2000/svg","text");t.setAttribute("x",x);t.setAttribute("y",y);t.setAttribute("font-size","11");t.setAttribute("fill","#554c5d");t.setAttribute("text-anchor","middle");t.setAttribute("dominant-baseline","middle");t.textContent=ROM[degreeIndex];svg.append(t)}}
-function makeDraft(){let prog=getProgression(),nbar=bars(),b=beat(),unit=b;tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();for(let bar=0;bar<nbar;bar++){let ch=prog[bar%prog.length];if(!ch)continue;let start=bar*unit;tracks.bass.push({pitch:ch.root+36,start,duration:unit*.85,velocity:.78});ch.notes.forEach((pc,i)=>tracks.pad.push({pitch:pc+60,start,duration:unit*.92,velocity:.48-i*.04}));for(let x=0;x<b;x++){let t=start+x;if(x===0||x===Math.floor(b/2))tracks.drums.push({pitch:36,start:t,duration:.2,velocity:.85});if(x===Math.floor(b/2))tracks.drums.push({pitch:38,start:t,duration:.2,velocity:.8});for(let h=0;h<4;h++)tracks.drums.push({pitch:42,start:t+h,duration:.12,velocity:h%2?.28:.45})}}renderAll();renderProgression();$("status").textContent="Draft generated."}
+function makeDraft(){let prog=getProgression(),nbar=bars(),b=beat();tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();for(let bar=0;bar<nbar;bar++){let ch=prog[bar%prog.length];if(!ch)continue;let start=bar*b;tracks.bass.push({pitch:ch.root+36,start,duration:b*.85,velocity:.78});ch.notes.forEach((pc,i)=>tracks.pad.push({pitch:pc+60,start,duration:b*.92,velocity:.48-i*.04}));for(let x=0;x<b;x++){let t=start+x;if(x===0||x===Math.floor(b/2))tracks.drums.push({pitch:36,start:t,duration:.2,velocity:.85});if(x===Math.floor(b/2))tracks.drums.push({pitch:38,start:t,duration:.2,velocity:.8});for(let h=0;h<4&&x+h/4<b;h++)tracks.drums.push({pitch:42,start:t+h/4,duration:.12,velocity:h%2?.28:.45})}}renderAll();renderProgression();$("status").textContent="Draft generated."}
 function canvas(){let c=$("roll"),g=c.getContext("2d"),w=c.width,h=c.height;g.clearRect(0,0,w,h);let n=bars(),unit=w/n;g.fillStyle="#817989";g.font="12px sans-serif";for(let i=0;i<=n;i++){g.strokeStyle=i%4===0?"#d8cedd":"#eee9ef";g.beginPath();g.moveTo(i*unit,0);g.lineTo(i*unit,h);g.stroke();if(i<n)g.fillText(String(i+1),i*unit+5,14)}let arr=tracks[active],dr=active==="drums";if(dr){[36,38,42].forEach((p,i)=>{let y=42+i*78;g.fillStyle="#817989";g.fillText(["KICK","SNARE","HI-HAT"][i],8,y-8);g.strokeStyle="#f0eaf1";g.beginPath();g.moveTo(0,y+6);g.lineTo(w,y+6);g.stroke()});arr.forEach((n,i)=>{let lane=[36,38,42].indexOf(n.pitch),x=n.start/(beat())*unit,y=42+lane*78;g.fillStyle=(i===selected||selectedSet.has(i))?"#ed4d9b":"#55a99d";g.fillRect(x,y,Math.max(8,n.duration/(beat())*unit),18)})}else{let low=active==="bass"?28:48,range=active==="bass"?32:36;for(let p=low;p<=low+range;p+=12){let y=h-(p-low)/range*(h-30)-10;g.strokeStyle="#f0eaf1";g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();g.fillStyle="#aaa";g.fillText(NOTES[p%12],3,y-2)}arr.forEach((n,i)=>{let x=n.start/(beat())*unit,y=h-(n.pitch-low)/range*(h-30)-20;g.fillStyle=(i===selected||selectedSet.has(i))?"#ed4d9b":active==="bass"?"#6e94c5":"#9275bd";g.fillRect(x,y,Math.max(8,n.duration/(beat())*unit),12)})}}
-function renderAll(){canvas();drawWheel();if(selectBox){let g=$("roll").getContext("2d");g.fillStyle="rgba(237,77,155,.12)";g.strokeStyle="#ed4d9b";g.fillRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h);g.strokeRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h)}try{localStorage.setItem("musictheory-draft",JSON.stringify({tracks,settings:{key:$("key").value,scale:$("scale").value,bpm:bpm(),meter:$("meter").value,bars:bars(),degrees:$("degrees").value}}))}catch{}}
+function renderAll(){canvas();drawWheel();if(selectBox){let g=$("roll").getContext("2d");g.fillStyle="rgba(237,77,155,.12)";g.strokeStyle="#ed4d9b";g.fillRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h);g.strokeRect(selectBox.x,selectBox.y,selectBox.w,selectBox.h)}try{localStorage.setItem("musictheory-draft",JSON.stringify({...draft(),beforeAI}));$("storageStatus").textContent=""}catch{$("storageStatus").textContent="Could not save the draft in this browser. Export MIDI before closing."}}
 function pt(e){let r=$("roll").getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*1200,y:(e.clientY-r.top)/r.height*310}}
 function noteY(n){if(active==="drums")return 42+[36,38,42].indexOf(n.pitch)*78;let low=active==="bass"?28:48,range=active==="bass"?32:36;return 310-(n.pitch-low)/range*280-20}
 $("roll").addEventListener("pointerdown",e=>{let p=pt(e),arr=tracks[active],unit=1200/bars(),pos=p.x/unit*beat();let i=arr.findIndex(n=>{let x=n.start/(beat())*unit,y=noteY(n);return p.x>=x-3&&p.x<=x+Math.max(10,n.duration/(beat())*unit)+3&&(active==="drums"||Math.abs(p.y-y)<18)});if(e.shiftKey&&i>=0){arr.splice(i,1);selected=-1;selectedSet.clear();renderAll();return}if(i>=0){if(!selectedSet.has(i)){selectedSet=new Set([i])}selected=i;drag={indices:[...selectedSet],originX:pos,originY:p.y,origins:[...selectedSet].map(j=>({...arr[j]}))}}else{selectBox={x:p.x,y:p.y,w:0,h:0};drag={selection:true};selected=-1;selectedSet.clear()}$("roll").setPointerCapture(e.pointerId);renderAll()});
 $("roll").addEventListener("pointermove",e=>{if(!drag)return;let p=pt(e),unit=1200/bars(),pos=p.x/unit*beat();if(drag.selection){selectBox.w=p.x-selectBox.x;selectBox.h=p.y-selectBox.y;renderAll();return}let deltaBeat=Math.round((pos-drag.originX)*4)/4,deltaPitch=active==="drums"?0:Math.round((drag.originY-p.y)/(280/(active==="bass"?32:36)));drag.indices.forEach((idx,k)=>{let n=tracks[active][idx],o=drag.origins[k];n.start=Math.max(0,Math.min(bars()*beat()-o.duration,o.start+deltaBeat));if(active==="drums"){let lane=Math.max(0,Math.min(2,Math.round((p.y-42)/78)));n.pitch=[36,38,42][lane]}else n.pitch=Math.max(24,Math.min(96,o.pitch+deltaPitch))});renderAll()});
-$("roll").addEventListener("pointerup",()=>{if(drag&&drag.selection&&selectBox){if(Math.abs(selectBox.w)<3&&Math.abs(selectBox.h)<3){let pos=selectBox.x/(1200/bars())*beat(),pitch=active==="drums"?[36,38,42][Math.max(0,Math.min(2,Math.floor((selectBox.y-30)/78)))]:Math.round((active==="bass"?28:48)+(310-selectBox.y)/280*(active==="bass"?32:36));tracks[active].push({pitch,start:Math.max(0,Math.floor(pos*4)/4),duration:active==="drums"?.2:beat(),velocity:.75});selected=tracks[active].length-1;selectedSet=new Set([selected])}else{let x1=Math.min(selectBox.x,selectBox.x+selectBox.w),x2=Math.max(selectBox.x,selectBox.x+selectBox.w),y1=Math.min(selectBox.y,selectBox.y+selectBox.h),y2=Math.max(selectBox.y,selectBox.y+selectBox.h);tracks[active].forEach((n,i)=>{let x=n.start/(beat())*1200/bars(),y=noteY(n);if(x>=x1-8&&x<=x2+8&&y>=y1-12&&y<=y2+12)selectedSet.add(i)});selected=selectedSet.size?[...selectedSet][0]:-1}selectBox=null}drag=null;renderAll()});
+$("roll").addEventListener("pointerup",()=>{if(drag&&drag.selection&&selectBox){if(Math.abs(selectBox.w)<3&&Math.abs(selectBox.h)<3){let end=bars()*beat(),pos=selectBox.x/1200*end,pitch=active==="drums"?[36,38,42][Math.max(0,Math.min(2,Math.floor((selectBox.y-30)/78)))]:Math.round((active==="bass"?28:48)+(310-selectBox.y)/280*(active==="bass"?32:36)),start=Math.max(0,Math.min(end-.25,Math.floor(pos*4)/4));tracks[active].push({pitch,start,duration:Math.min(active==="drums"?.2:beat(),end-start),velocity:.75});selected=tracks[active].length-1;selectedSet=new Set([selected])}else{let x1=Math.min(selectBox.x,selectBox.x+selectBox.w),x2=Math.max(selectBox.x,selectBox.x+selectBox.w),y1=Math.min(selectBox.y,selectBox.y+selectBox.h),y2=Math.max(selectBox.y,selectBox.y+selectBox.h);tracks[active].forEach((n,i)=>{let x=n.start/(beat())*1200/bars(),y=noteY(n);if(x>=x1-8&&x<=x2+8&&y>=y1-12&&y<=y2+12)selectedSet.add(i)});selected=selectedSet.size?[...selectedSet][0]:-1}selectBox=null}drag=null;renderAll()});
 $("tabs").onclick=e=>{let b=e.target.closest("button[data-track]");if(!b)return;active=b.dataset.track;selected=-1;selectedSet.clear();document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("active",x===b));$("trackHint").textContent={bass:"Bass: monophonic",drums:"Drums: kick 36 / snare 38 / hi-hat 42",pad:"Pad: chord voicings"}[active];renderAll()};
 $("generate").onclick=makeDraft;$("key").onchange=()=>{drawWheel();renderProgression()};$("scale").onchange=()=>{drawWheel();renderProgression()};$("degrees").oninput=renderProgression;$("clearTrack").onclick=()=>{tracks[active]=[];selected=-1;selectedSet.clear();renderAll()};$("deleteSelected").onclick=()=>{if(selectedSet.size){tracks[active]=tracks[active].filter((n,i)=>!selectedSet.has(i))}else if(selected>=0)tracks[active].splice(selected,1);selected=-1;selectedSet.clear();renderAll()};
-function toMidi(){let m=new Midi();m.header.setTempo(bpm());m.header.timeSignatures=[{ticks:0,timeSignature:$("meter").value==="7"?[7,8]:[Number($("meter").value),4]}];for(let [name,arr] of Object.entries(tracks)){let t=m.addTrack();t.name=name.toUpperCase();if(name==="drums")t.channel=9;arr.forEach(n=>t.addNote({midi:n.pitch,time:n.start*60/bpm(),duration:n.duration*60/bpm(),velocity:n.velocity}))}return m}
+function toMidi(){let m=new Midi();m.header.setTempo(bpm());m.header.timeSignatures=[{ticks:0,timeSignature:meter()}];for(let [name,arr] of Object.entries(tracks)){let t=m.addTrack();t.name=name.toUpperCase();if(name==="drums")t.channel=9;arr.forEach(n=>t.addNote({midi:n.pitch,ticks:Math.round(n.start*m.header.ppq),durationTicks:Math.max(1,Math.round(n.duration*m.header.ppq)),velocity:n.velocity}))}return m}
 $("export").onclick=()=>{let blob=new Blob([toMidi().toArray()],{type:"audio/midi"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="musictheory-sketch.mid";a.click();URL.revokeObjectURL(u);$("status").textContent="MIDI exported."};
-$("midiFile").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let m=new Midi(await f.arrayBuffer());tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();m.tracks.forEach(t=>{let target=/drum|perc/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":/pad|chord|synth/i.test(t.name)?"pad":null;if(target)t.notes.forEach(n=>tracks[target].push({pitch:n.midi,start:n.time*bpm()/60,duration:n.duration*bpm()/60,velocity:n.velocity}))});renderAll();$("status").textContent="MIDI imported. Track mapping uses track names; unmatched tracks skipped."}catch(err){$("status").textContent="MIDI import failed: "+err.message}};
-$("play").onclick=()=>{if(ctx)return;ctx=new AudioContext();let sec=60/bpm(),all=Object.entries(tracks).flatMap(([k,a])=>a.map(n=>({...n,track:k})));all.forEach(n=>{let t=ctx.currentTime+n.start*sec,o=ctx.createOscillator(),g=ctx.createGain();o.type=n.track==="bass"?"triangle":"sine";o.frequency.value=n.track==="drums"?(n.pitch===36?70:n.pitch===38?180:650):440*Math.pow(2,(n.pitch-69)/12);g.gain.setValueAtTime(n.velocity*.12,t);g.gain.exponentialRampToValueAtTime(.001,t+Math.max(.08,n.duration*sec));o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+Math.max(.1,n.duration*sec))});setTimeout(()=>{if(ctx){ctx.close();ctx=null}},bars()*beat()*sec*1000)};$("stop").onclick=()=>{if(ctx){ctx.close();ctx=null}};
-let cache;async function db(){if(cache)return cache;let names=["progressions","harmony-techniques","style-moods","arrangements","composition-rules"],o={};for(let n of names){try{o[n]=await(await fetch("data/"+n+".json")).json()}catch{o[n]=[]}}return cache=o}
-$("buildBrief").onclick=async()=>{let d=await db();$("brief").value="Act as a music composition assistant. Use the knowledge records below and cite record IDs. Return JSON following docs/LLM_WORKFLOW.md.\\nPROJECT: "+JSON.stringify({key:$("key").value,scale:$("scale").value,bpm:bpm(),meter:$("meter").value,bars:bars(),degrees:$("degrees").value,tracks})+"\\nUSER REQUEST: "+$("request").value+"\\nKNOWLEDGE: "+JSON.stringify(d)};
-$("rhythm").onclick=()=>{$("request").value="Create two Riddim-inspired rhythm-only options for the selected arrangement. Briefly compare them, then return one JSON object for the stronger candidate only. Preserve every pitch, chord membership, tempo, meter and bar boundary. Change note onsets and durations only. Candidate A: restrained half-time groove with snare on beat 3, short repeated bass motifs, deliberate rests and a few late offbeats. Candidate B: stronger triplet shuffle, syncopated bass attacks and call-and-response gaps for Pad. Keep kick, snare and hi-hat limited to GM pitches 36, 38 and 42. Return JSON matching docs/LLM_WORKFLOW.md and explain the timing changes. Do not overwrite the original."; $("buildBrief").click()};
-$("applyJson").onclick=()=>{try{let o=JSON.parse($("aiJson").value);for(let t of o.tracks||[]){let k=/drum/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":"pad";tracks[k]=(t.notes||[]).map(n=>({pitch:+n.pitch,start:+n.start,duration:+n.duration,velocity:+(n.velocity??.7)}))}renderAll();$("status").textContent="AI JSON applied."}catch(e){$("status").textContent="Invalid JSON: "+e.message}};
-async function showDb(){let d=await db();$("knowledge").innerHTML="";Object.entries(d).forEach(([k,v])=>{let a=document.createElement("article");a.innerHTML="<b>"+k.toUpperCase()+"</b><p>"+v.length+" records</p>";$("knowledge").append(a)})}
-initKeys();try{let saved=JSON.parse(localStorage.getItem("musictheory-draft")||"null");if(saved&&saved.tracks){tracks=saved.tracks;Object.entries(saved.settings||{}).forEach(([k,v])=>{let el=$(k);if(el)el.value=v})}}catch{}makeDraftIfEmpty();showDb();
-function makeDraftIfEmpty(){if(!tracks.bass.length&&!tracks.drums.length&&!tracks.pad.length)makeDraft();else{renderAll();renderProgression()}}
+$("midiFile").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let m=new Midi(await f.arrayBuffer());tracks={bass:[],drums:[],pad:[]};selected=-1;selectedSet.clear();m.tracks.forEach(t=>{let target=/drum|perc/i.test(t.name)?"drums":/bass/i.test(t.name)?"bass":/pad|chord|synth/i.test(t.name)?"pad":null;if(target)t.notes.forEach(n=>tracks[target].push({pitch:n.midi,start:n.ticks/m.header.ppq,duration:n.durationTicks/m.header.ppq,velocity:n.velocity}))});renderAll();$("status").textContent="MIDI imported. Track mapping uses track names; unmatched tracks skipped."}catch(err){$("status").textContent="MIDI import failed: "+err.message}};
+function stopPlayback() {
+  clearTimeout(playTimer);
+  const audio = ctx;
+  ctx = null;
+  if (audio) audio.close().catch(error => {$("status").textContent = `Could not stop playback: ${error.message}`;});
+}
+
+function audition(source, label, status) {
+  try {
+    stopPlayback();
+    ctx = new AudioContext();
+    const sec = 60 / bpm(), origin = ctx.currentTime + 0.02;
+    for (const [track, notes] of Object.entries(source)) {
+      for (const note of notes) {
+        if (note.velocity <= 0) continue;
+        const time = origin + note.start * sec, oscillator = ctx.createOscillator(), gain = ctx.createGain();
+        oscillator.type = track === "bass" ? "triangle" : "sine";
+        oscillator.frequency.value = track === "drums" ? (note.pitch === 36 ? 70 : note.pitch === 38 ? 180 : 650) : 440 * Math.pow(2, (note.pitch - 69) / 12);
+        gain.gain.setValueAtTime(note.velocity * 0.12, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + Math.max(0.08, note.duration * sec));
+        oscillator.connect(gain).connect(ctx.destination);
+        oscillator.start(time);
+        oscillator.stop(time + Math.max(0.1, note.duration * sec));
+      }
+    }
+    playTimer = setTimeout(stopPlayback, (bars() * beat() * sec + 0.12) * 1000);
+    $(status).textContent = `Playing ${label}.`;
+  } catch (error) {
+    stopPlayback();
+    $(status).textContent = `Playback failed: ${error.message}`;
+  }
+}
+
+$("play").onclick = () => audition(tracks, "draft", "status");
+$("stop").onclick = () => { stopPlayback(); $("status").textContent = "Playback stopped."; };
+$("stopPreview").onclick = () => { stopPlayback(); $("aiStatus").textContent = "Preview stopped."; };
+
+let cache, manualBaseline, review;
+async function db() {
+  if (!cache) {
+    cache = await Promise.all(LIBRARIES.map(async name => {
+      const response = await fetch(`data/${name}.json`);
+      if (!response.ok) throw new Error(`Could not load ${name} (HTTP ${response.status}).`);
+      return [name, await response.json()];
+    })).then(Object.fromEntries);
+  }
+  return cache;
+}
+
+function inputDraft() {
+  const current = structuredClone(draft());
+  return {...current, signature: JSON.stringify(current), beatsPerBar: beat(), bars: bars(), rhythmOnly: $("rhythmOnly").checked};
+}
+
+async function buildBrief(current) {
+  const request = $("request").value.trim();
+  if (!request) throw new Error("Describe the arrangement first.");
+  if (current.rhythmOnly && Object.values(current.tracks).some(notes =>
+    notes.some(note => note.start < 0 || note.start >= current.bars * current.beatsPerBar))) {
+    throw new Error("Some notes start outside the project bars. Remove them or regenerate the draft before requesting rhythm-only edits.");
+  }
+  const project = {...current.settings, meter: meter()};
+  const knowledge = await db();
+  const rhythm = current.rhythmOnly
+    ? "Change only onset and duration. Preserve every note's pitch, velocity and onset bar; keep each note within that bar. Keep Pad chord groups intact and in order."
+    : "Use the requested harmony or rhythm changes; keep the project settings unchanged.";
+  return [
+    "Act as a music composition assistant. Return just one JSON object matching the schema below, with two distinct candidates when practical, otherwise one. Include a brief explanation in summary and cite relevant knowledge record IDs in sources. Give a complete replacement for each candidate, with each of Bass, Drums and Pad exactly once. Do not add other tracks.",
+    "Use quarter-note beats for start and duration. Stay within the project length. Bass must be monophonic. Drum pitches are GM 36, 38 and 42 only. Velocity is 0 to 1.",
+    rhythm,
+    `SCHEMA: ${JSON.stringify(candidateSchema)}`,
+    `PROJECT: ${JSON.stringify({...project, tracks: current.tracks})}`,
+    `USER REQUEST: ${request}`,
+    `KNOWLEDGE: ${JSON.stringify(knowledge)}`
+  ].join("\n");
+}
+
+function ensureCurrent(current) {
+  if (current.signature !== JSON.stringify(draft())) throw new Error("The draft changed. Build a new brief or generate again for this draft.");
+}
+
+async function makeManualBrief() {
+  const current = inputDraft();
+  try {
+    const prompt = await buildBrief(current);
+    ensureCurrent(current);
+    $("brief").value = prompt;
+    manualBaseline = {signature: current.signature, rhythmOnly: current.rhythmOnly};
+    $("aiStatus").textContent = "Brief ready to copy.";
+  } catch (error) {
+    $("aiStatus").textContent = error.message;
+  }
+}
+
+$("buildBrief").onclick = makeManualBrief;
+$("rhythm").onclick = () => {
+  $("rhythmOnly").checked = true;
+  $("request").value = "Create two Riddim-inspired options: a restrained half-time groove and a stronger triplet shuffle with call-and-response gaps. Try moving an existing snare to beat 3 in 4/4 if the rhythm-only constraints allow it. In other meters, use a backbeat that fits the meter. Use shorter bass notes, deliberate rests and offbeats without adding or removing notes.";
+  return makeManualBrief();
+};
+
+function updateReview() {
+  const choice = review.candidates[Number($("candidate").value)];
+  $("candidateSummary").textContent = choice.summary;
+  const counts = Object.entries(choice.tracks).map(([name, notes]) => `${name}: ${tracks[name].length} to ${notes.length}`).join(" / ");
+  $("candidateNotes").textContent = `${counts} notes${choice.sources.length ? ` | Sources: ${choice.sources.join(", ")}` : ""}`;
+}
+
+function stageCandidates(raw, current) {
+  ensureCurrent(current);
+  const candidates = parseCandidates(raw, current);
+  review = {current, candidates};
+  $("candidate").replaceChildren(...candidates.map((entry, index) => new Option(entry.name, index)));
+  $("review").hidden = false;
+  updateReview();
+  $("aiStatus").textContent = `${candidates.length} candidate(s) ready. The draft is unchanged.`;
+}
+
+$("candidate").onchange = updateReview;
+$("reviewJson").onclick = () => {
+  try {
+    const current = inputDraft();
+    if (manualBaseline) ensureCurrent(manualBaseline);
+    stageCandidates(JSON.parse($("aiJson").value), {...current, rhythmOnly: current.rhythmOnly || manualBaseline?.rhythmOnly});
+  } catch (error) {
+    $("review").hidden = true;
+    $("aiStatus").textContent = `Could not load AI JSON: ${error.message}`;
+  }
+};
+
+const apiPath = "./api/arrangements";
+async function enableLocalApi() {
+  if (!["127.0.0.1", "localhost"].includes(location.hostname)) return;
+  try {
+    const response = await fetch(apiPath);
+    if (response.status === 404) return;
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const {available} = await response.json();
+    $("arrange").hidden = $("apiNotice").hidden = !available;
+  } catch (error) {
+    $("aiStatus").textContent = `Could not check the local OpenAI API: ${error.message}`;
+  }
+}
+
+$("arrange").onclick = async () => {
+  const current = inputDraft();
+  $("arrange").disabled = true;
+  $("aiStatus").textContent = "Generating candidates with OpenAI...";
+  try {
+    const prompt = await buildBrief(current);
+    ensureCurrent(current);
+    const response = await fetch(apiPath, {
+      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({prompt})
+    });
+    const raw = await response.json();
+    if (!response.ok) throw new Error(raw.error || `HTTP ${response.status}`);
+    stageCandidates(raw, current);
+  } catch (error) {
+    $("aiStatus").textContent = `OpenAI generation failed: ${error.message}`;
+  } finally {
+    $("arrange").disabled = false;
+  }
+};
+
+function withCandidate(fn) {
+  return () => {
+    try {
+      ensureCurrent(review.current);
+      fn(review.candidates[Number($("candidate").value)]);
+    } catch (error) {
+      $("aiStatus").textContent = error.message;
+    }
+  };
+}
+
+function loadDraft(state) {
+  tracks = state.tracks;
+  for (const [key, value] of Object.entries(state.settings || {})) {
+    const input = $(key);
+    if (input) input.value = value;
+  }
+  selected = -1;
+  selectedSet.clear();
+  renderAll();
+  renderProgression();
+}
+
+$("playOriginal").onclick = withCandidate(() => audition(tracks, "original", "aiStatus"));
+$("playCandidate").onclick = withCandidate(choice => audition(choice.tracks, choice.name, "aiStatus"));
+$("applyCandidate").onclick = withCandidate(choice => {
+  stopPlayback();
+  beforeAI = structuredClone(draft());
+  loadDraft({...beforeAI, tracks: choice.tracks});
+  $("review").hidden = true;
+  $("undoAI").hidden = false;
+  manualBaseline = null;
+  $("aiStatus").textContent = `Applied ${choice.name}. The previous draft can be restored.`;
+});
+$("undoAI").onclick = () => {
+  if (!confirm("Restore the draft saved before the last AI apply? This replaces the current draft, including any later edits.")) return;
+  stopPlayback();
+  const previous = beforeAI;
+  beforeAI = manualBaseline = null;
+  loadDraft(previous);
+  $("undoAI").hidden = $("review").hidden = true;
+  $("aiStatus").textContent = "Restored the pre-AI draft.";
+};
+
+async function showDb() {
+  try {
+    const data = await db();
+    for (const [name, records] of Object.entries(data)) {
+      const article = document.createElement("article");
+      article.innerHTML = `<b>${name.toUpperCase()}</b><p>${records.length} records</p>`;
+      $("knowledge").append(article);
+    }
+  } catch (error) {
+    $("knowledge").textContent = error.message;
+  }
+}
+
+initKeys();
+try {
+  const saved = JSON.parse(localStorage.getItem("musictheory-draft") || "null");
+  if (saved?.tracks) {
+    beforeAI = saved.beforeAI || null;
+    $("undoAI").hidden = !beforeAI;
+    loadDraft(saved);
+  } else {
+    makeDraft();
+  }
+} catch {
+  $("status").textContent = "Could not load the saved draft. Generate a new draft to continue.";
+}
+showDb();
+enableLocalApi();
 </script></body></html>

@@ -65,11 +65,14 @@ export function parseCandidates(input, {tracks, bars, beatsPerBar, rhythmOnly}) 
     if (bass.some((note, i) => i && bass[i - 1].start + bass[i - 1].duration > note.start + EPSILON)) {
       throw new Error(`${label}: Bass notes must not overlap.`);
     }
+    if (!rhythmOnly && eventFingerprint(result.drums) !== eventFingerprint(tracks.drums)) {
+      throw new Error(label + ": harmony edits must leave the Drums track unchanged.");
+    }
     if (rhythmOnly) {
       for (const name of Object.keys(result)) {
         if (result[name].some(note => note.start + note.duration > (Math.floor(note.start / beatsPerBar) + 1) * beatsPerBar + EPSILON) ||
             fingerprint(result[name], beatsPerBar, name === "pad") !== fingerprint(tracks[name], beatsPerBar, name === "pad")) {
-          throw new Error(`${label}: rhythm-only edits must preserve ${name} pitches, velocities, bar placement and Pad chord groups.`);
+          throw new Error(label + ": rhythm-only edits must preserve " + name + " pitches, velocities, bar placement and Pad chord groups.");
         }
       }
     }
@@ -86,4 +89,9 @@ function fingerprint(notes, beatsPerBar, chords) {
     groups.get(key).push(`${pitch}:${velocity}`);
   }
   return JSON.stringify([...groups].map(([key, notes]) => [chords ? Math.floor(key / beatsPerBar) : key, notes.sort()]));
+}
+
+function eventFingerprint(notes) {
+  return JSON.stringify([...notes].map(({pitch, start, duration, velocity}) => ({pitch, start, duration, velocity})).sort((a, b) =>
+    a.start - b.start || a.pitch - b.pitch || a.duration - b.duration || a.velocity - b.velocity));
 }

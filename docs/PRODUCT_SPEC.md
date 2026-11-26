@@ -17,7 +17,7 @@ MusicTheory is a lightweight composition sketchpad, not a replacement for a prod
 - First rhythm milestone: transform sustained/simple MIDI into style-selectable grooves while preserving the pitch vocabulary within each bar. Riddim is one optional profile among several, not the app's default focus.
 
 ## Visual design
-Inspired by the supplied reference: key, circle-of-fifths / degree display, tempo, meter, progression and piano-roll note editor. Exclude waveform, loudness, spectrum, vector-scope, stem analysis and mastering panels.
+Inspired by the supplied reference: key, 12-note circle of fifths, tempo, meter, progression and piano-roll note editor. Color distinguishes tonic, tonic-triad tones, other scale tones and chromatic notes. The center summarizes the selected scale's characteristic intervals; these are listening tendencies, not deterministic mood labels. Exclude waveform, loudness, spectrum, vector-scope, stem analysis and mastering panels.
 
 ## Milestones
 ### M0 — Browser sketchpad

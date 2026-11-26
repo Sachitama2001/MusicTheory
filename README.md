@@ -28,7 +28,7 @@ $env:OPENAI_API_KEY="your-api-key"
 npm start
 ```
 
-既定モデルは `gpt-5.6-luna` です。変更する場合は `OPENAI_MODEL` を設定してください。API利用料はChatGPTの月額プランとは別です。キーはブラウザやGitHubへ置かず、ローカルサーバーの環境変数にだけ設定してください。
+既定モデルは `gpt-6.2-astra` です。変更する場合は `OPENAI_MODEL` を設定してください。API利用料はChatGPTの月額プランとは別です。キーはブラウザやGitHubへ置かず、ローカルサーバーの環境変数にだけ設定してください。
 
 ## 操作
 

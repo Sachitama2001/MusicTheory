@@ -95,8 +95,9 @@ $("generate").onclick=makeDraft;
 function changeKeyAndTranspose(){
  const next=keyPc();let delta=next-previousKeyPc;if(delta>6)delta-=12;if(delta< -6)delta+=12;
  const pitched=[...tracks.bass,...tracks.pad];if(pitched.some(note=>note.pitch+delta<0||note.pitch+delta>127)){ $("key").value=NOTES[previousKeyPc];$("aiStatus").textContent="この移調ではMIDI音域（0〜127）を超えるため、キーを変更できません。";return; }
+ const resume=Boolean(ctx&&playingSource===tracks);if(ctx)stopPlayback();
  if(delta!==0){for(const note of tracks.bass)note.pitch+=delta;for(const note of tracks.pad)note.pitch+=delta;$("status").textContent="キーを"+$("key").value+"に変更し、Bass / Padを"+(delta>0?"+":"")+delta+"半音移調しました。Drumsは変更していません。";}
- previousKeyPc=next;renderAll();renderProgression();
+ previousKeyPc=next;renderAll();renderProgression();if(resume)audition(tracks,"草案","status");
 }
 $("key").onchange=changeKeyAndTranspose;
 $("scale").onchange=()=>{drawWheel();renderProgression()};

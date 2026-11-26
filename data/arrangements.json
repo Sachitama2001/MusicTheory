@@ -58,9 +58,19 @@
     "name": "7/8 groove in 2+2+3",
     "summary": "Mark an uneven meter by spacing three accents across the bar rather than moving the 4/4 backbeat unchanged.",
     "category": "rhythm",
-    "tags": ["7/8", "odd-meter", "accent"],
-    "tracks": ["Bass", "Drums", "Pad"],
-    "grid_suggestions": ["0.5 quarter-note beats per eighth-note step"],
+    "tags": [
+      "7/8",
+      "odd-meter",
+      "accent"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "grid_suggestions": [
+      "0.5 quarter-note beats per eighth-note step"
+    ],
     "rules": [
       "In this example, accent offsets 0, 1 and 2 quarter-note beats within a 3.5-beat bar.",
       "Try kick at 0 and 1, snare at 2, and lighter existing hi-hats at 0.5, 1.5, 2.5 or 3 as available.",
@@ -75,9 +85,19 @@
     "name": "Kick and bass attack spacing",
     "summary": "Separate some kick and bass attacks with a short rhythmic gap to make both easier to hear.",
     "category": "rhythm",
-    "tags": ["bass", "kick", "space", "syncopation"],
-    "tracks": ["Bass", "Drums"],
-    "grid_suggestions": ["Try a 0.25 or 0.5 quarter-note beat offset"],
+    "tags": [
+      "bass",
+      "kick",
+      "space",
+      "syncopation"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums"
+    ],
+    "grid_suggestions": [
+      "Try a 0.25 or 0.5 quarter-note beat offset"
+    ],
     "rules": [
       "Keep the kick as the reference; try delaying an existing bass attack after a kick and shorten it if needed to keep the next note clear.",
       "Keep other shared attacks where a strong downbeat is useful. Compare with the original at the same tempo."
@@ -85,5 +105,210 @@
     "evidence_type": "project-original",
     "confidence": "medium",
     "notes": "This is an arrangement choice, not sidechain compression. Results depend on the intended groove."
+  },
+  {
+    "id": "ARR-SRM-001",
+    "name": "Syncopation / anticipation in chord attacks",
+    "category": "rhythm",
+    "tags": [
+      "syncopation",
+      "anticipation",
+      "offbeat",
+      "pop",
+      "r-and-b"
+    ],
+    "tracks": [
+      "Pad"
+    ],
+    "rules": [
+      "Move selected chord attacks slightly before or after the expected beat rather than shifting every chord.",
+      "Use half-beat anticipation as a starting example, then listen against the drum groove.",
+      "Keep other chord hits on the beat so the syncopated attacks have contrast."
+    ],
+    "grid_suggestions": [
+      "0.5 quarter-note beat anticipation",
+      "1/8 offbeat"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-arrangement-technique",
+    "confidence": "high",
+    "notes": "SRM explicitly describes moving chord attacks before/after the beat; this record turns that explanation into a conservative MIDI-editing procedure."
+  },
+  {
+    "id": "ARR-SRM-002",
+    "name": "Polyrhythmic chord-change cycle",
+    "category": "rhythm",
+    "tags": [
+      "polyrhythm",
+      "chord-rhythm",
+      "3-over-4",
+      "math-rock"
+    ],
+    "tracks": [
+      "Pad"
+    ],
+    "rules": [
+      "Keep the meter fixed while allowing chord changes to follow a different repeating cycle.",
+      "Do not change every track at once; begin with Pad chord-change positions.",
+      "Choose a cycle that eventually realigns with the bar grid, and mark the realignment point."
+    ],
+    "grid_suggestions": [
+      "3-quarter-note chord-change cycle over 4/4; test alignment after 3 bars"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-arrangement-technique",
+    "confidence": "medium",
+    "notes": "SRM describes changing chord timing in a 3-beat cycle against 4/4 to create a polyrhythmic effect, then realigning it with the bar. The exact source diagram should be checked before reproducing a specific note pattern."
+  },
+  {
+    "id": "ARR-SRM-003",
+    "name": "Stop-time chord hits",
+    "category": "rhythm",
+    "tags": [
+      "stop-time",
+      "hits",
+      "arrangement",
+      "drop"
+    ],
+    "tracks": [
+      "Drums",
+      "Pad",
+      "Bass"
+    ],
+    "rules": [
+      "Create a coordinated hit on a chosen accent, then leave a deliberate gap.",
+      "Let the next bass or drum attack restart the groove rather than filling every subdivision.",
+      "Use sparingly at section boundaries or as a drop variation."
+    ],
+    "grid_suggestions": [
+      "bar downbeat",
+      "beat 4 pickup",
+      "one-beat rest after hit"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-arrangement-technique",
+    "confidence": "high",
+    "notes": "SRM defines stop-time as coordinated 'kime' hits and links chord changes to those hits."
+  },
+  {
+    "id": "ARR-SRM-004",
+    "name": "Harmonic rhythm follows phrase density",
+    "category": "harmony",
+    "tags": [
+      "harmonic-rhythm",
+      "phrase",
+      "pop",
+      "arrangement"
+    ],
+    "tracks": [
+      "Pad",
+      "Bass"
+    ],
+    "rules": [
+      "Longer melodic phrases can sit over longer chord holds.",
+      "For faster or denser sections, try shorter chord durations or a two-beat harmonic rhythm.",
+      "Short inserted chords such as subV or ii–V should usually be shorter than the target chord they approach."
+    ],
+    "grid_suggestions": [
+      "4 beats per chord",
+      "2 beats per chord",
+      "1 beat for passing ii or V"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-arrangement-technique",
+    "confidence": "high",
+    "notes": "Paraphrases SRM's harmonic-rhythm discussion; adjust by listening rather than treating tempo as the only factor."
+  },
+  {
+    "id": "ARR-RESEARCH-001",
+    "name": "Conservative microtiming",
+    "category": "rhythm",
+    "tags": [
+      "microtiming",
+      "swing",
+      "groove",
+      "humanization"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Do not add random timing offsets to every note.",
+      "Compare the straight version with small, track-specific timing changes.",
+      "Avoid exaggerating microtiming; the cited jazz study found expanded deviations reduced swing ratings relative to the original performances.",
+      "Treat swing ratio and tempo as separate parameters."
+    ],
+    "grid_suggestions": [
+      "start with quantized grid",
+      "test subtle offsets only on selected voices"
+    ],
+    "source": {
+      "title": "Microtiming Deviations and Swing Feel in Jazz",
+      "author": "George Datseris et al.",
+      "url": "https://www.nature.com/articles/s41598-019-55981-3",
+      "published": "2019-12-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "The source studies jazz swing, not Riddim. Apply the general caution against exaggerated offsets, but do not transfer jazz timing values as a Riddim recipe."
+  },
+  {
+    "id": "ARR-RESEARCH-002",
+    "name": "Groove and microtiming research overview",
+    "category": "rhythm",
+    "tags": [
+      "groove",
+      "microtiming",
+      "rhythm",
+      "research"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums"
+    ],
+    "rules": [
+      "Treat groove as more than a swing ratio: timing deviations, rhythmic pattern and body-movement response are studied together.",
+      "When designing a transformation, record which track is moved and by how much so candidates can be compared."
+    ],
+    "grid_suggestions": [
+      "record onset offsets in milliseconds and beat fractions"
+    ],
+    "source": {
+      "title": "マイクロタイミングに着目したグルーヴ研究の展望",
+      "author": "惠谷隆英・三浦哲都・河瀬諭・工藤和俊・藤井進也",
+      "url": "https://doi.org/10.24602/sjpr.66.1_37",
+      "published": "2023",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-review",
+    "confidence": "high",
+    "notes": "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern."
   }
 ]

@@ -9,9 +9,10 @@
   {
     "id": "RULE-002",
     "name": "Separate harmony and rhythm edits",
-    "rule": "Harmony suggestions may alter chord pitches or voicings. Rhythm-only suggestions change onset/duration only and preserve note counts, pitches, velocities, onset bars and ordered Pad chord groups.",
+    "rule": "Separate harmony and rhythm edits. Harmony suggestions may alter chord pitches or voicings. Rhythm-only suggestions may add, retrigger, omit or reposition note events, but must reuse only pitches already present in the same original bar for Bass and Pad, and existing drum note types for Drums. Preserve BPM, meter and bar boundaries.",
     "priority": "hard",
-    "evidence_type": "product-requirement"
+    "evidence_type": "product-requirement",
+    "notes": "Rhythm edits are not required to preserve note count or velocity. Velocity may change moderately for accents. No new pitch content is allowed in rhythm-only mode."
   },
   {
     "id": "RULE-003",

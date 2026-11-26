@@ -23,7 +23,8 @@ export const candidateSchema = object({
   }))
 });
 
-export function parseCandidates(input, {tracks, bars, beatsPerBar, rhythmOnly}) {
+export function parseCandidates(input, {tracks, bars, beatsPerBar, rhythmOnly, mode}) {
+  const editMode = mode || (rhythmOnly ? "rhythm" : "harmony");
   const legacy = input && !Object.hasOwn(input, "candidates") && Array.isArray(input.tracks);
   const candidates = legacy ? [{name: "Imported candidate", summary: "", sources: [], tracks: input.tracks}] : input?.candidates;
   if (!Array.isArray(candidates) || candidates.length < 1 || candidates.length > 2) {
@@ -65,10 +66,10 @@ export function parseCandidates(input, {tracks, bars, beatsPerBar, rhythmOnly}) 
     if (bass.some((note, i) => i && bass[i - 1].start + bass[i - 1].duration > note.start + EPSILON)) {
       throw new Error(`${label}: Bass notes must not overlap.`);
     }
-    if (!rhythmOnly && eventFingerprint(result.drums) !== eventFingerprint(tracks.drums)) {
+    if (editMode === "harmony" && eventFingerprint(result.drums) !== eventFingerprint(tracks.drums)) {
       throw new Error(label + ": harmony edits must leave the Drums track unchanged.");
     }
-    if (rhythmOnly) {
+    if (editMode === "rhythm") {
       validateRhythmOnly(result, tracks, {bars, beatsPerBar}, label);
     }
     return {...candidate, tracks: result};
@@ -84,7 +85,7 @@ function validateRhythmOnly(candidateTracks, originalTracks, {bars, beatsPerBar}
       const bar = Math.floor(note.start / beatsPerBar);
       if (bar >= 0 && bar < bars) sourceByBar[bar].add(note.pitch);
     }
-    const allowedDrumPitches = new Set(source.map(note => note.pitch));
+    const allowedDrumPitches = new Set(DRUM_PITCHES);
     for (const note of candidate) {
       const bar = Math.floor(note.start / beatsPerBar);
       if (bar < 0 || bar >= bars || note.start + note.duration > (bar + 1) * beatsPerBar + EPSILON) {

@@ -53,10 +53,10 @@ function wheelInfo(interval,pc,inScale,label){const detail=INTERVAL_INFO[interva
 function renderPlaybackDots(){
  const svg=$("wheel");if(!svg)return;svg.querySelectorAll(".playback-dot").forEach(node=>node.remove());
  const counts=new Map();for(const pitch of activePlaybackNotes){const interval=((pitch%12)-keyPc()+12)%12;counts.set(interval,(counts.get(interval)||0)+1)}
- const ns="http://www.w3.org/2000/svg",cx=170,cy=170,r=83,scale=SCALES[$("scale").value];
+ const ns="http://www.w3.org/2000/svg",cx=170,cy=170,r=83,scaleName=$("scale").value,scale=SCALES[scaleName],stableIntervals=new Set([0,scaleName==="minorPentatonic"?3:scaleName==="majorPentatonic"?4:scale[2],scaleName==="minorPentatonic"||scaleName==="majorPentatonic"?7:scale[4]]);
  for(const [interval,count] of counts){const order=FIFTHS_ORDER.indexOf(interval),angle=(-90+order*30)*Math.PI/180,x=cx+Math.cos(angle)*r,y=cy+Math.sin(angle)*r,pc=(keyPc()+interval)%12;
   const dot=document.createElementNS(ns,"circle");dot.setAttribute("class","playback-dot");dot.setAttribute("cx",x);dot.setAttribute("cy",y);dot.setAttribute("r",Math.min(10,5+Math.log2(count)*1.6));
-  const stable=interval===0||interval===scale[2]||interval===scale[4],fill=interval===0?"#ed4d9b":stable?"#35a99a":scale.includes(interval)?"#9275bd":"#9a8d9a";
+  const stable=stableIntervals.has(interval),fill=interval===0?"#ed4d9b":stable?"#35a99a":scale.includes(interval)?"#9275bd":"#9a8d9a";
   dot.setAttribute("fill",fill);dot.setAttribute("stroke","#fff");dot.setAttribute("stroke-width","2");dot.setAttribute("opacity","0.96");
   const title=document.createElementNS(ns,"title");title.textContent=NOTES[pc]+" · "+count+"音再生中";dot.append(title);svg.append(dot);
   if(count>1){const text=document.createElementNS(ns,"text");text.setAttribute("class","playback-dot");text.setAttribute("x",x);text.setAttribute("y",y+3);text.setAttribute("text-anchor","middle");text.setAttribute("font-size","8");text.setAttribute("font-weight","700");text.setAttribute("fill","#fff");text.textContent=String(count);svg.append(text)}

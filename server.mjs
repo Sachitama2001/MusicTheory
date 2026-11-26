@@ -31,14 +31,14 @@ async function readPrompt(req) {
 }
 
 export function createApp({apiKey, model = "gpt-6-luna", fetchOpenAI = fetch} = {}) {
-  return createServer({requestTimeout: 15_000}, async (req, res) => {
+  return createServer({requestTimeout: 60_000, headersTimeout: 65_000}, async (req, res) => {
     const port = req.socket.localPort;
     const host = req.headers.host;
     if (host !== `127.0.0.1:${port}` && host !== `localhost:${port}`) {
       return json(res, 403, {error: "Use the local sketchpad address."});
     }
     const path = req.url.split("?")[0];
-    if (path === ENDPOINT && req.method === "GET") return json(res, 200, {available: Boolean(apiKey)});
+    if (path === ENDPOINT && req.method === "GET") return json(res, 200, {available: Boolean(apiKey), model});
     if (path === ENDPOINT && req.method === "POST") {
       if (req.headers.origin !== `http://${host}` || req.headers["content-type"]?.split(";")[0] !== "application/json") {
         return json(res, 403, {error: "Only same-origin JSON requests are allowed."});
@@ -56,17 +56,25 @@ export function createApp({apiKey, model = "gpt-6-luna", fetchOpenAI = fetch} = 
           method: "POST",
           headers: {"Content-Type": "application/json", Authorization: `Bearer ${apiKey}`},
           body: JSON.stringify({
-            model, input: prompt, store: false, max_output_tokens: 28000,
+            model, input: prompt, store: false, max_output_tokens: 16000,
             text: {format: {type: "json_schema", name: "arrangement_candidates", strict: true, schema: candidateSchema}}
           }),
-          signal: AbortSignal.timeout(150_000)
+          signal: AbortSignal.timeout(120_000)
         });
         if (!response.ok) {
-          return json(res, 502, {error: `OpenAI API returned HTTP ${response.status}. Check the server key, model access or quota.`});
+          let detail = "";
+          try {
+            const body = await response.json();
+            detail = body.error?.message || body.message || "";
+          } catch {}
+          console.error("OpenAI API error", response.status, detail.slice(0, 500));
+          return json(res, 502, {error: detail ? `OpenAI API (${response.status}): ${detail}` : `OpenAI API returned HTTP ${response.status}. Check the API key, model access and billing quota.`});
         }
         const result = await response.json();
         if (result.status !== "completed") {
-          return json(res, 502, {error: "OpenAI did not complete the arrangement. Try a shorter draft or simpler request."});
+          const reason = result.incomplete_details?.reason || result.status || "unknown";
+          console.error("OpenAI arrangement incomplete", result.id, reason);
+          return json(res, 502, {error: `生成が完了しませんでした（${reason}）。ノート数の多いトラックは一時的に減らすか、指示を短くしてください。`});
         }
         const content = result.output.filter(item => item.type === "message").flatMap(item => item.content);
         if (content.some(item => item.type === "refusal")) {
@@ -75,8 +83,9 @@ export function createApp({apiKey, model = "gpt-6-luna", fetchOpenAI = fetch} = 
         const text = content.filter(item => item.type === "output_text").map(item => item.text).join("");
         return json(res, 200, JSON.parse(text));
       } catch (error) {
-        const timedOut = error.name === "TimeoutError";
-        return json(res, timedOut ? 504 : 502, {error: timedOut ? "OpenAI request timed out." : "Could not read an arrangement from OpenAI."});
+        const timedOut = error.name === "TimeoutError" || error.name === "AbortError";
+        console.error("OpenAI arrangement request failed", error.name, error.message);
+        return json(res, timedOut ? 504 : 502, {error: timedOut ? "AI応答が120秒でタイムアウトしました。入力を短くするか、もう一度試してください。" : `AI応答の処理に失敗しました: ${error.message}`});
       }
     }
 

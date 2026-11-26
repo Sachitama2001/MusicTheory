@@ -310,5 +310,98 @@
     "evidence_type": "academic-review",
     "confidence": "high",
     "notes": "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern."
+  },
+  {
+    "id": "ARR-RID-002",
+    "name": "Riddim drop flow — producer tutorial reference",
+    "category": "resource",
+    "tags": [
+      "riddim",
+      "dubstep",
+      "drop-flow",
+      "arrangement"
+    ],
+    "tracks": [
+      "Drums",
+      "Bass",
+      "Pad"
+    ],
+    "rules": [
+      "Study the drum groove, bass placement and drop arrangement as separate layers.",
+      "Transcribe the actual note placements from the tutorial before treating them as a reusable MIDI pattern.",
+      "Do not assume one universal Riddim pattern; compare multiple examples."
+    ],
+    "source": {
+      "title": "How To FLOW & SONG ARRANGEMENT (BASS Music/DUBSTEP)",
+      "author": "Dripment",
+      "url": "https://www.youtube.com/watch?v=Eav24crUwrY",
+      "published": "2022-03-31",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-video-resource",
+    "confidence": "medium",
+    "notes": "The creator describes the video as a lesson on rhythm in drops, song arrangement and creating flow in dubstep/tearout. No exact MIDI pattern has been transcribed here."
+  },
+  {
+    "id": "ARR-RID-003",
+    "name": "Riddim drop layer study: drums, synth flow and sub bass",
+    "category": "resource",
+    "tags": [
+      "riddim",
+      "dubstep",
+      "drums",
+      "synth-flow",
+      "sub-bass"
+    ],
+    "tracks": [
+      "Drums",
+      "Bass",
+      "Pad"
+    ],
+    "rules": [
+      "Study the drum pattern first, then the synth-flow role, then the sub-bass role.",
+      "Keep the rhythmic role of each layer distinct when adapting the groove to a three-track sketch.",
+      "Treat sound-design demonstrations separately from MIDI timing instructions."
+    ],
+    "source": {
+      "title": "How to RIDDIM — Dubstep Tutorial by Dack Janiels",
+      "author": "Dack Janiels / Avant Samples",
+      "url": "https://www.youtube.com/watch?v=G2Y1uGkndjk",
+      "published": "2022-06-19",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-video-resource",
+    "confidence": "medium",
+    "notes": "The chapter list separates Drums (0:51–1:59), Synths & Flow (2:00–2:46) and Sub Bass (4:25–5:37). The database records the lesson structure, not a copied project or sample."
+  },
+  {
+    "id": "ARR-RESEARCH-003",
+    "name": "Chord emotion and drum-break contribution to groove",
+    "category": "rhythm",
+    "tags": [
+      "groove",
+      "drum-break",
+      "chord-progression",
+      "emotion",
+      "research"
+    ],
+    "tracks": [
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "When comparing groove candidates, test the chord progression with and without the drum pattern.",
+      "Do not attribute a groove change to harmony alone; the study evaluates chord progression characteristics together with rhythmic accompaniment."
+    ],
+    "source": {
+      "title": "Is happier music groovier? The influence of emotional characteristics of musical chord progressions on groove",
+      "author": "Satoshi Kawase",
+      "url": "https://link.springer.com/article/10.1007/s00426-023-01869-x",
+      "published": "2023-08-24",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule."
   }
 ]

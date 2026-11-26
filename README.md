@@ -1,53 +1,56 @@
 # MusicTheory
 
-A lightweight browser-based composition sketchpad for creating editable 3-track MIDI drafts.
+小さな作曲スケッチ環境。Bass / Drums / Pad の3トラックを編集し、MIDIでローカルDAWへ渡します。
 
-## Product scope
+## 起動
 
-- Up to 16 bars, configurable key, scale, BPM and time signature
-- Roman-numeral progression editing and circle-of-fifths key navigation
-- Three tracks only: Bass (monophonic), Drums (kick / snare / hi-hat), Pad (chords)
-- In-browser preview playback using simple synthesized sounds
-- Note selection, add, delete and move
-- MIDI import/export
-- Harmony suggestions from a curated local knowledge base
-- Riddim-inspired timing suggestions that preserve pitches and Pad chord groups
-- Compare and audition AI candidates before applying; restore the pre-apply draft
-- Manual prompt/JSON workflow on GitHub Pages; optional local OpenAI API generation
-
-## Run locally
-
-Because the app loads JSON files and an ES module, serve the repository over HTTP rather than opening `index.html` directly.
+Node.js 22以降を使用します。
 
 ```bash
-python -m http.server 8000 --bind 127.0.0.1
+npm start
 ```
 
-Open http://127.0.0.1:8000. To use the optional OpenAI API instead, set `OPENAI_API_KEY` in your terminal environment and run:
+`http://127.0.0.1:8000` を開きます。
+
+AIアレンジを使う場合は、OpenAI APIキーを環境変数に設定してから起動します。
+
+macOS / Linux:
 
 ```bash
-node server.mjs
+export OPENAI_API_KEY="your-api-key"
+npm start
 ```
 
-Node.js 22 or newer is recommended. Open http://127.0.0.1:8000 and choose **Generate with OpenAI**. Do not put the key in the browser or commit it. This button sends the request, current arrangement and local knowledge records to OpenAI; API charges may apply.
+Windows PowerShell:
 
-The app uses the browser MIDI parser/writer library `@tonejs/midi` from esm.sh. No API key is required for local editing, playback, or MIDI export.
+```powershell
+$env:OPENAI_API_KEY="your-api-key"
+npm start
+```
 
-## GitHub Pages
+既定モデルは `gpt-5.6-luna` です。変更する場合は `OPENAI_MODEL` を設定してください。API利用料はChatGPTの月額プランとは別です。キーはブラウザやGitHubへ置かず、ローカルサーバーの環境変数にだけ設定してください。
 
-The [published app](https://sachitama2001.github.io/MusicTheory/) uses the manual ChatGPT workflow. Use **GitHub Actions** as the Pages source (see [deployment](docs/DEPLOYMENT.md)).
+## 操作
 
-## LLM workflow
+- KEY / SCALE / BPM / 拍子 / 小節数 / 度数を設定
+- 「MIDIを作成」で3トラックの草案を生成
+- ノートをクリックで追加、ドラッグで移動
+- 空白をドラッグして範囲選択、Shift+クリックで削除
+- 再生して確認し、MIDIを書き出す
+- 「アレンジ指示」で変更対象を「コード」または「リズム」に分けて依頼
+- AI生成後は候補1を自動反映。候補を切り替えたり、元に戻したりできます
 
-Use **Build ChatGPT brief** and paste it into ChatGPT, then paste the reply into **Load AI JSON**. With the local API server, **Generate with OpenAI** loads candidates directly. In both modes, preview the original and each candidate before using **Apply candidate**.
+リズム変更では音程・音数・ベロシティを保持します。コード変更ではDrumsを保持し、PadとBassを編集対象にします。
 
-See:
-- `docs/PRODUCT_SPEC.md`
-- `docs/LLM_WORKFLOW.md`
-- `docs/DATA_MODEL.md`
-- `docs/SOURCES.md`
+## 制約
 
-## Knowledge-base hierarchy
+- 最大16小節
+- 3トラック固定: Bass（単音）、Drums（Kick / Snare / Hi-hat）、Pad（コード）
+- ブラウザ内の簡易音源は確認用
+- AI連携はローカルNodeサーバー経由。GitHub Pagesは静的サイトのため、AI自動生成は使えません。Pagesでは手動プロンプト／JSON入出力を利用します。
+- ブラウザのMIDI処理には `@tonejs/midi` をesm.shから読み込みます。
+
+## データベース
 
 1. Progression Library
 2. Harmony Technique Library
@@ -55,8 +58,25 @@ See:
 4. Arrangement Library
 5. Composition Rules
 
-The Riddim suggestions are heuristics, not a claim to model every Riddim subgenre. The knowledge base distinguishes sourced theory from project-specific interpretations. Records in [data/proposals](data/proposals/) are pending human review and are not used by the app.
+出典のある理論、学術研究、プロジェクト独自の仮説を区別します。要確認レコードはAIの参照対象から除外します。情報の追加手順は [INGESTION_WORKFLOW.md](docs/INGESTION_WORKFLOW.md) を参照してください。
+
+## テスト
+
+```bash
+npm test
+```
+
+## GitHub Pages
+
+[公開アプリ](https://sachitama2001.github.io/MusicTheory/) は静的版です。公開設定は [DEPLOYMENT.md](docs/DEPLOYMENT.md) を参照してください。
+
+## 主な仕様
+
+- [PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md)
+- [LLM_WORKFLOW.md](docs/LLM_WORKFLOW.md)
+- [DATA_MODEL.md](docs/DATA_MODEL.md)
+- [SOURCES.md](docs/SOURCES.md)
 
 ## License
 
-No license has been added yet. Add one before redistributing the project or its bundled data.
+まだライセンスは設定していません。再配布する前に追加してください。

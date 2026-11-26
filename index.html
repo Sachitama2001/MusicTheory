@@ -337,6 +337,7 @@ async function showDb() {
       root.replaceChildren();
       let total = 0;
       for (const [name, records] of Object.entries(data)) {
+        if (name === "ai-index" || !Array.isArray(records)) continue;
         const matches = records.filter(record => {
           const haystack = JSON.stringify(record).toLowerCase();
           return !query || haystack.includes(query);

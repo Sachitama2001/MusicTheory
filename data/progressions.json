@@ -1105,5 +1105,73 @@
     "evidence_type": "human-authored-source",
     "confidence": "high",
     "notes": "Seventh-chord version of the source's C–Dm–Dm(b5)–C example."
+  },
+  {
+    "id": "SQ-SEC-001",
+    "name": "vi7–II7–V–I secondary-dominant chain",
+    "degrees": [
+      "vi7",
+      "II7",
+      "V",
+      "I"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Am7",
+      "D7",
+      "G",
+      "C"
+    ],
+    "tags": [
+      "secondary-dominant",
+      "dominant-chain",
+      "j-pop",
+      "functional-harmony"
+    ],
+    "harmonicRhythm": "one chord per bar; source uses the sequence as a comparison example",
+    "source": {
+      "title": "二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "published": "2025-08-04",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source compares vi7–ii7–V–I with vi7–II7–V–I. Raising ii to II7 introduces the secondary dominant of V and a leading-tone semitone into G. Chord spellings here are transposed to C major."
+  },
+  {
+    "id": "SQ-SEC-002",
+    "name": "IVmaj7–V–III7–vi secondary dominant to vi",
+    "degrees": [
+      "IVmaj7",
+      "V",
+      "III7",
+      "vi"
+    ],
+    "exampleKey": "C",
+    "example": [
+      "Fmaj7",
+      "G",
+      "E7",
+      "Am"
+    ],
+    "tags": [
+      "secondary-dominant",
+      "j-pop",
+      "emotional-build",
+      "tonic-arrival"
+    ],
+    "harmonicRhythm": "one chord per bar in the source example",
+    "source": {
+      "title": "二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "published": "2025-08-04",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings."
   }
 ]

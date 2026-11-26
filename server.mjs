@@ -9,6 +9,7 @@ const files = new Map([
   ["/", ["index.html", "text/html"]],
   ["/index.html", ["index.html", "text/html"]],
   ["/candidates.mjs", ["candidates.mjs", "text/javascript"]],
+  ["/data/ai-index.json", ["data/ai-index.json", "application/json"]],
   ...LIBRARIES.map(name => [`/data/${name}.json`, [`data/${name}.json`, "application/json"]])
 ]);
 

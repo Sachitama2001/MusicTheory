@@ -138,7 +138,7 @@ function updateModeUI(){
 }
 
 function selectKnowledge(data,current,request){
-  const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1);
+  const mode=current.mode,style=$("rhythmStyle").value,query=(request+" "+style).toLowerCase(),terms=query.split(/[^a-z0-9ぁ-んァ-ヶ一-龠#♭]+/).filter(x=>x.length>1),aliases=[["シャッフル","shuffle","triplet","swing"],["ストレート","straight-pop","pop"],["ハーフタイム","half-time"],["ブレイクビーツ","breakbeat"],["ファンク","funk"],["リディム","riddim","dubstep"],["マスロック","math-rock"]];for(const [ja,...en] of aliases)if(query.includes(ja))terms.push(...en);
   const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;if(mode==="rhythm"&&record.category==="rhythm")value+=4;if(mode==="harmony"&&record.degrees)value+=2;if(record.evidence_type==="academic-research"||record.evidence_type==="human-authored-source")value+=1;return value};
   const limits=mode==="rhythm"?{arrangements:7,"style-moods":4,"composition-rules":5}:{progressions:7,"harmony-techniques":8,"style-moods":4,"composition-rules":5};
   const result={};

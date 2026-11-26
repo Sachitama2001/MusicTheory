@@ -32,6 +32,7 @@ test("keeps the key server-side, rejects cross-origin calls and filters upstream
       const body = JSON.parse(request.body);
       assert.equal(body.input, "Two short candidates");
       assert.equal(body.store, false);
+      assert.equal(body.model, "gpt-5.6-luna");
       assert.equal(body.text.format.strict, true);
       return Response.json({status: "completed", output: [
         {type: "reasoning"},

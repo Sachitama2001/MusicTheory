@@ -10,7 +10,7 @@ The browser sends the prompt, current MIDI events, project settings and approved
 
 The first valid candidate is applied automatically. The original arrangement is retained for undo. If the model returns a second candidate, the user can select and apply it. The candidate validator checks track names, note ranges, overlaps, bar boundaries and category-specific preservation rules.
 
-The default model is `gpt-5.6-luna`; set `OPENAI_MODEL` to another Responses API model with Structured Outputs support when needed.
+The default model is `gpt-6.2-astra`; set `OPENAI_MODEL` to another Responses API model with Structured Outputs support when needed.
 
 ## Static / manual fallback
 GitHub Pages cannot run the local Node API or protect an OpenAI API key. On the static site, use the collapsed manual workflow:

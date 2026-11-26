@@ -21,8 +21,10 @@
     "useWhen": "A target chord needs stronger arrival or a short lift into a section.",
     "caution": "Check melody notes against the altered leading tone; use sparingly in a simple pop arrangement.",
     "source": {
-      "title": "SoundQuest — music theory",
-      "url": "https://soundquest.jp/"
+      "title": "SoundQuest — 二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-theory-to-review",
     "confidence": "high"
@@ -52,8 +54,10 @@
     "useWhen": "A familiar progression needs a brief darker or wistful color.",
     "caution": "Keep the borrowed chord's voice leading smooth and avoid overuse.",
     "source": {
-      "title": "SoundQuest — music theory",
-      "url": "https://soundquest.jp/"
+      "title": "SoundQuest — パラレル・マイナー ❶",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/parallel-minor/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-theory-to-review",
     "confidence": "high"
@@ -81,8 +85,10 @@
     "useWhen": "A chromatic bass approach or smoother inner voice is desired.",
     "caution": "May sound too chromatic for a simple pop hook; compare against melody.",
     "source": {
-      "title": "SoundQuest — music theory",
-      "url": "https://soundquest.jp/"
+      "title": "SoundQuest — 裏コード / トライトーン代理 (index reference)",
+      "author": "yuta",
+      "url": "https://soundquest.jp/index/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-theory-to-review",
     "confidence": "high"
@@ -109,8 +115,10 @@
     "useWhen": "A brief passing motion connects neighboring chord tones.",
     "caution": "Keep duration short and ensure bass and upper voices lead into destination.",
     "source": {
-      "title": "SoundQuest — music theory",
-      "url": "https://soundquest.jp/"
+      "title": "SoundQuest — パッシング・ディミニッシュ",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+      "accessed": "2026-11-26"
     },
     "evidence_type": "human-authored-theory-to-review",
     "confidence": "high"

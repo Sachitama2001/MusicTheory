@@ -12,9 +12,9 @@ MusicTheory is a lightweight composition sketchpad, not a replacement for a prod
 - Simple preview synthesis only; no high-fidelity sound design.
 - MIDI import/export and browser playback.
 - Note creation, deletion, movement and range selection.
-- Key, scale, BPM, meter and Roman-numeral progression controls.
-- Harmony and rhythm are separate arrangement categories.
-- First rhythm milestone: transform sustained/simple MIDI into style-selectable grooves while preserving the pitch vocabulary within each bar. Riddim is one optional profile among several, not the app's default focus.
+- Key, scale, BPM, meter and Roman-numeral progression controls. Changing key transposes existing Bass and Pad notes by the key interval; Drums are not transposed. BPM changes playback and exported MIDI tempo while beat-grid positions remain intact.
+- Harmony and rhythm have separate instruction fields and may be requested simultaneously.
+- First rhythm milestone: transform sustained/simple MIDI into style-selectable grooves while preserving the pitch vocabulary within each bar; allow note count and articulation to change. Riddim is one optional profile among several, not the app's default focus.
 
 ## Visual design
 Inspired by the supplied reference: key, 12-note circle of fifths, tempo, meter, progression and piano-roll note editor. Color distinguishes tonic, tonic-triad tones, other scale tones and chromatic notes. The center summarizes the selected scale's characteristic intervals; these are listening tendencies, not deterministic mood labels. Exclude waveform, loudness, spectrum, vector-scope, stem analysis and mastering panels.
@@ -32,6 +32,7 @@ With the local API, apply the first valid candidate automatically, retain the or
 Input sustained or repetitive Bass / Drums / Pad MIDI. Offer selectable rhythm directions such as straight pop, shuffle, half-time, breakbeat, funk, math-rock and Riddim. Allow note re-triggers, additions and omissions. Preserve the pitch vocabulary within each bar, track identity, tempo, meter and bar boundaries. Compare subtle and stronger candidates.
 
 ### M3 — Knowledge ingestion
+Maintain five canonical libraries plus a generated normalized AI retrieval index. Retrieve compact, ranked concept cards by edit intent and keywords.
 Store source metadata, author, publication date, URL, concepts, paraphrase and licensing notes. Require human review before merging updates. Preserve provenance and conflicts.
 
 ## Non-goals

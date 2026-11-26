@@ -1,0 +1,73 @@
+[
+  {
+    "id": "STYLE-001",
+    "name": "Kawaii Future Bass",
+    "tags": [
+      "cute",
+      "bright",
+      "playful",
+      "sparkling",
+      "uplifting"
+    ],
+    "harmonyTendencies": [
+      "major-key pop cycles",
+      "extended add9/maj7 colors"
+    ],
+    "arrangementTendencies": [
+      "bright pluck",
+      "supersaw chord stabs",
+      "vocal chops",
+      "bouncy sidechain-like phrasing"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Production and rhythm matter at least as much as chord choice."
+  },
+  {
+    "id": "STYLE-002",
+    "name": "Math Rock",
+    "tags": [
+      "angular",
+      "playful",
+      "technical",
+      "rhythmic"
+    ],
+    "harmonyTendencies": [
+      "add9",
+      "maj7",
+      "sus voicings",
+      "open-string colors"
+    ],
+    "arrangementTendencies": [
+      "interlocking guitar parts",
+      "syncopation",
+      "odd-meter accents"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Do not equate genre with unplayable virtuosity; specify register and technique."
+  },
+  {
+    "id": "STYLE-003",
+    "name": "Riddim-inspired drop",
+    "tags": [
+      "heavy",
+      "hypnotic",
+      "groovy",
+      "minimal"
+    ],
+    "harmonyTendencies": [
+      "static or slowly changing harmony"
+    ],
+    "arrangementTendencies": [
+      "half-time backbeat",
+      "repeated bass motifs",
+      "rests",
+      "call-and-response",
+      "syncopated fills"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Broad arrangement heuristic, not a universal definition of Riddim."
+  }
+]

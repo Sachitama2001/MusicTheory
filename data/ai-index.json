@@ -7,7 +7,8 @@
     "data/arrangements.json",
     "data/composition-rules.json"
   ],
-  "record_count": 106,
+  "record_count": 98,
+  "excluded_pending": 8,
   "libraries": [
     "progressions",
     "harmony-techniques",
@@ -54,60 +55,11 @@
       "constraints": [
         "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-example",
         "confidence": "medium",
         "source": null
-      }
-    },
-    {
-      "id": "POP-002",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "Royal road progression",
-      "summary": "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "j-pop",
-        "pop",
-        "uplifting",
-        "bittersweet",
-        "future-bass",
-        "Royal road progression"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": [
-          "IV",
-          "V",
-          "iii",
-          "vi"
-        ],
-        "exampleKey": "C",
-        "example": [
-          "F",
-          "G",
-          "Em",
-          "Am"
-        ],
-        "harmonicRhythm": "one chord per bar"
-      },
-      "constraints": [
-        "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source-to-review",
-        "confidence": "low",
-        "source": {
-          "title": "DTM Hacker — コード進行パターン集",
-          "author": "DTM Hacker (author metadata to verify)",
-          "url": "https://dtmhacker.com/chord-progression-pattern/",
-          "accessed": "2026-11-26"
-        }
       }
     },
     {
@@ -156,6 +108,7 @@
       "constraints": [
         "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-example",
         "confidence": "medium",
@@ -200,312 +153,11 @@
       "constraints": [
         "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-example",
         "confidence": "medium",
         "source": null
-      }
-    },
-    {
-      "id": "SRM-CH-001",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "G/C → Gaug/B → Am7(9) → G7sus(9)",
-      "summary": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "inversion",
-        "dominant-substitute",
-        "tension",
-        "G/C → Gaug/B → Am7(9) → G7sus(9)"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C / modal center to verify",
-        "example": [
-          "G/C",
-          "Gaug/B",
-          "Am7(9)",
-          "G7sus(9)"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-002",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "Dm7(9) → Fm7 → Bb/C → Db/Eb",
-      "summary": "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "tension",
-        "modal-interchange",
-        "hybrid-chord",
-        "sub-five",
-        "Dm7(9) → Fm7 → Bb/C → Db/Eb"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C reference context to verify",
-        "example": [
-          "Dm7(9)",
-          "Fm7",
-          "Bb/C",
-          "Db/Eb"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-003",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "CM7 → FM7/C → BbM7/C → EbM7/C",
-      "summary": "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "constant-structure",
-        "pedal-point",
-        "hybrid-chord",
-        "CM7 → FM7/C → BbM7/C → EbM7/C"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C",
-        "example": [
-          "CM7",
-          "FM7/C",
-          "BbM7/C",
-          "EbM7/C"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-004",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "FM7 → Bm7 → E7(b9) → Am7(11) omit3",
-      "summary": "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "ii-v",
-        "tension",
-        "omit-chord-tone",
-        "FM7 → Bm7 → E7(b9) → Am7(11) omit3"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C / A minor arrival",
-        "example": [
-          "FM7",
-          "Bm7",
-          "E7(b9)",
-          "Am7(11)omit3"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-005",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "Bb7sus/C → Eb7sus/F → Ab7sus/Bb → Db7sus/Eb",
-      "summary": "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "quartal",
-        "constant-structure",
-        "Bb7sus/C → Eb7sus/F → Ab7sus/Bb → Db7sus/Eb"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C-sharp / Db tonal center to verify",
-        "example": [
-          "Bb7sus/C",
-          "Eb7sus/F",
-          "Ab7sus/Bb",
-          "Db7sus/Eb"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-006",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "Am7(9) → BbM7(9) → Gm7(11) → C7(9)",
-      "summary": "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "borrowed-chord",
-        "tension",
-        "Am7(9) → BbM7(9) → Gm7(11) → C7(9)"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C / modal color to verify",
-        "example": [
-          "Am7(9)",
-          "BbM7(9)",
-          "Gm7(11)",
-          "C7(9)"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
-      }
-    },
-    {
-      "id": "SRM-CH-007",
-      "library": "progressions",
-      "kind": "progression_pattern",
-      "title": "FM7 → F#M7 → Gm7 → F#/G# → C7sus(9)",
-      "summary": "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "keywords": [
-        "bass-motion",
-        "voicing",
-        "hybrid-chord",
-        "tension",
-        "FM7 → F#M7 → Gm7 → F#/G# → C7sus(9)"
-      ],
-      "applies_to": [
-        "Bass",
-        "Pad"
-      ],
-      "when_to_use": "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
-      "operations": [],
-      "example": {
-        "degrees": null,
-        "exampleKey": "C / chromatic approach to verify",
-        "example": [
-          "FM7",
-          "F#M7",
-          "Gm7",
-          "F#/G#",
-          "C7sus(9)"
-        ],
-        "harmonicRhythm": "not specified in source; determine by listening"
-      },
-      "constraints": [
-        "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
-      ],
-      "provenance": {
-        "evidence_type": "human-authored-source",
-        "confidence": "low",
-        "source": {
-          "title": "SRM Music — おしゃれコード一覧 PDF",
-          "author": "SRM.",
-          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
-          "accessed": "2026-11-26"
-        }
       }
     },
     {
@@ -546,6 +198,7 @@
       "constraints": [
         "SRM describes successive ascending-fourth root motion as strongly connected and useful before an important section such as a chorus. This is the source's pedagogical framing, not a universal rule."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -595,6 +248,7 @@
       "constraints": [
         "SRM describes adjacent diatonic chord movement as smooth and familiar, with relatively little dramatic change; suggests use near the beginning of a song or verse."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -644,6 +298,7 @@
       "constraints": [
         "The source labels this T–S–S–D and uses repetition to create forward motion."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -693,6 +348,7 @@
       "constraints": [
         "The author describes I and vi as tonic-function chords and this alternation as stable/calm. Treat mood as the author's interpretation; voicing, melody and rhythm still matter."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -742,6 +398,7 @@
       "constraints": [
         "The source uses iii alongside I and vi as a tonic-like color to vary a stable progression."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -791,6 +448,7 @@
       "constraints": [
         "The author groups tonic and subdominant functions to produce a calm overall flow."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -840,6 +498,7 @@
       "constraints": [
         "The source presents iv (Fm) as a borrowed subdominant-minor color that can still be used in a calm progression."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -889,6 +548,7 @@
       "constraints": [
         "The source example moves one chord tone C–B–Bb–A while retaining the C-root identity."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -938,6 +598,7 @@
       "constraints": [
         "SRM cites this as the chorus progression of Aimyon's Marigold to illustrate inversion in pop. Treat as a cited song-analysis example, not a genre-wide template."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-song-analysis",
         "confidence": "medium",
@@ -982,6 +643,7 @@
       "constraints": [
         "SRM uses the chorus ending of Fujii Kaze's Nan-Nan as an example of a subV color. Key/degree interpretation is intentionally left unspecified."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-song-analysis",
         "confidence": "medium",
@@ -1026,6 +688,7 @@
       "constraints": [
         "SRM describes the repeated major-seventh chord quality across changing roots as a constant-structure example from Anderson .Paak's TINTS. Mood tags are descriptive, not deterministic."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-song-analysis",
         "confidence": "medium",
@@ -1069,6 +732,7 @@
       "constraints": [
         "SRM cites this chorus segment from Miki Matsubara's Mayonaka no Door as a modal-interchange example. Exact global key is not assigned here."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-song-analysis",
         "confidence": "medium",
@@ -1118,6 +782,7 @@
       "constraints": [
         "The author describes I and IV alternation as a calm/still color; this is the author's listening interpretation."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1167,6 +832,7 @@
       "constraints": [
         "The source groups ii with subdominant function and describes the repeated I–ii alternation as calm."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1216,6 +882,7 @@
       "constraints": [
         "The source describes a mixture of tonic and subdominant-function chords as calm despite changing colors."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1264,6 +931,7 @@
       "constraints": [
         "The source recommends a subdominant-to-tonic direction to settle the progression."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1312,6 +980,7 @@
       "constraints": [
         "Source example of beginning with a subdominant-function chord and moving to tonic."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1358,6 +1027,7 @@
       "constraints": [
         "Source example of a subdominant-led progression settling into tonic-function vi."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1406,6 +1076,7 @@
       "constraints": [
         "The source describes Dm(b5) as a substitute for subdominant-minor color in this context; keep this interpretation tied to the example."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1450,6 +1121,7 @@
       "constraints": [
         "The bass remains C while upper harmony changes; source explains that retaining tonic bass sustains a stable impression."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1499,6 +1171,7 @@
       "constraints": [
         "Seventh-chord reading of the source's I–IV alternation."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1545,6 +1218,7 @@
       "constraints": [
         "Seventh-chord reading of the source's F–Em–Am example."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1594,6 +1268,7 @@
       "constraints": [
         "Seventh-chord version of the source's C–F–Fm–C example."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1643,6 +1318,7 @@
       "constraints": [
         "Seventh-chord version of the source's C–Dm–Dm(b5)–C example."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1692,6 +1368,7 @@
       "constraints": [
         "The source compares vi7–ii7–V–I with vi7–II7–V–I. Raising ii to II7 introduces the secondary dominant of V and a leading-tone semitone into G. Chord spellings here are transposed to C major."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1741,6 +1418,7 @@
       "constraints": [
         "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -1787,6 +1465,7 @@
       "constraints": [
         "Check melody notes against the altered leading tone; use sparingly in a simple pop arrangement."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-theory-to-review",
         "confidence": "high",
@@ -1836,6 +1515,7 @@
       "constraints": [
         "Keep the borrowed chord's voice leading smooth and avoid overuse."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-theory-to-review",
         "confidence": "high",
@@ -1885,6 +1565,7 @@
       "constraints": [
         "The source describes this as a distinctive, jazz-associated color. Check melody compatibility and avoid treating every flat-II chord as a tritone substitute."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-theory-to-review",
         "confidence": "high",
@@ -1931,6 +1612,7 @@
       "constraints": [
         "Keep duration short and ensure bass and upper voices lead into destination."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-theory-to-review",
         "confidence": "high",
@@ -1979,6 +1661,7 @@
       "constraints": [
         "The source recommends balancing density; applying the technique everywhere may make the progression too busy."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2024,6 +1707,7 @@
       "constraints": [
         "Shortest motion is a useful guideline, not an absolute rule; melody, register, doubling and stylistic context can justify larger leaps."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2072,6 +1756,7 @@
         "The bass note determines the inversion. In four-part major triads, avoid doubling the third in the upper voices; SoundQuest discusses different doubling conventions for minor chords.",
         "Chord sequence is an independently written sketchpad example; theory summary is paraphrased from the cited lesson."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source+project-example",
         "confidence": "high",
@@ -2121,6 +1806,7 @@
         "The cadential context matters. Do not treat every second-inversion chord as a free-standing tonic or interchangeable sus chord.",
         "The F-major example is independently written from the lesson's I6/4–V–I explanation."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source+project-example",
         "confidence": "high",
@@ -2169,6 +1855,7 @@
         "The dominant seventh's seventh is a tendency tone and should resolve down by step in the cited classical context.",
         "Example in F major; the cited lesson specifically explains V7 third inversion resolving to I first inversion."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source+project-example",
         "confidence": "high",
@@ -2215,6 +1902,7 @@
         "Berklee presents these as practical guidelines. Do not force every voice to move by step if it damages the melody, register or desired style.",
         "Berklee lists common-tone retention, stepwise motion and avoiding large leaps as core voice-leading guidelines; this record paraphrases them."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-educational-source",
         "confidence": "high",
@@ -2263,6 +1951,7 @@
       "constraints": [
         "The fifth can be omitted in many seventh-chord voicings, but altered fifths and melody notes may require it. This is a voicing guideline, not a universal chord spelling."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-educational-source",
         "confidence": "high",
@@ -2312,6 +2001,7 @@
       "constraints": [
         "Check that upper voices remain compatible with the pedal and that the sustained bass does not obscure the intended chord function."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2355,6 +2045,7 @@
       "constraints": [
         "The bass note changes the total sonority; check the combined intervals rather than assuming the upper chord label describes the whole sound."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2398,6 +2089,7 @@
       "constraints": [
         "The chord label may be ambiguous; specify actual notes and register when sending it to MIDI generation."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2444,6 +2136,7 @@
       "constraints": [
         "The sequence may not imply a single conventional key; check melody and bass independently."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source+song-analysis",
         "confidence": "medium",
@@ -2492,6 +2185,7 @@
         "C7 introduces a dominant-seventh color; omit it or use C6 if the extra dominant tension is not wanted.",
         "The source's C–Cmaj7–C7–C6 example moves one voice C–B–Bb–A while retaining the C-root family."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2542,6 +2236,7 @@
         "Check the melody against Ab in Fm; keep the borrowed chord's duration appropriate to the phrase.",
         "The cited author presents Fm (iv) as a subdominant-minor color that can still be used in a calm progression."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2592,6 +2287,7 @@
         "The target chord and melody must support the altered scale tone. Do not label every non-diatonic dominant as a secondary dominant without checking its resolution.",
         "Paraphrase of SoundQuest's explanation and examples. The D7→G movement is the secondary dominant of V in C major."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2641,6 +2337,7 @@
         "The substitute dominant's resolution and melody compatibility matter. SoundQuest notes that the common ♭II7 use has a focused resolution context; do not substitute indiscriminately.",
         "In C major, G7 and Db7 share the F–B tritone (enharmonically respelled). This is a paraphrase, not a claim that every dominant substitution works in every context."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2692,6 +2389,7 @@
         "Specify the source mode/scale and check the melody against the borrowed notes. The term can refer to scale-level borrowing or chord-level borrowing depending on the explanatory framework.",
         "SoundQuest describes modal interchange as borrowing from a parallel scale with the same tonic, and discusses both scale and chord perspectives."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -2743,6 +2441,7 @@
         "Function families are useful models, not universal categories. Confirm the melody, bass line and local style; do not assume a substitution is interchangeable in every voicing.",
         "Berklee's lesson describes tonic, subdominant and dominant chord families and substitution by similar function."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-educational-source",
         "confidence": "high",
@@ -2792,6 +2491,7 @@
         "Berklee's voice-leading suggestions are practical guidelines, not immutable rules. Keep register, melody and instrument range in view.",
         "Berklee lists common-tone retention, stepwise motion and limited leaps as voice-leading principles; guide tones for seventh chords are 3rd and 7th."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-educational-source",
         "confidence": "high",
@@ -2824,6 +2524,7 @@
       "constraints": [
         "Production and rhythm matter at least as much as chord choice."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-heuristic",
         "confidence": "medium",
@@ -2850,6 +2551,7 @@
       "constraints": [
         "Do not equate genre with unplayable virtuosity; specify register and technique."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-heuristic",
         "confidence": "medium",
@@ -2876,6 +2578,7 @@
       "constraints": [
         "Broad arrangement heuristic, not a universal definition of Riddim."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-heuristic",
         "confidence": "medium",
@@ -2902,6 +2605,7 @@
       "constraints": [
         "This is SRM's description of common pop practice, not a rule for every pop song."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-genre-description",
         "confidence": "medium",
@@ -2933,6 +2637,7 @@
       "constraints": [
         "SRM's qualitative genre description; not a universal definition of jazz."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-genre-description",
         "confidence": "medium",
@@ -2965,6 +2670,7 @@
       "constraints": [
         "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-genre-description",
         "confidence": "medium",
@@ -2996,6 +2702,7 @@
       "constraints": [
         "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-genre-description",
         "confidence": "medium",
@@ -3027,6 +2734,7 @@
       "constraints": [
         "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-mood-description",
         "confidence": "medium",
@@ -3059,6 +2767,7 @@
       "constraints": [
         "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "high",
@@ -3091,6 +2800,7 @@
       "constraints": [
         "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "high",
@@ -3124,6 +2834,7 @@
       "constraints": [
         "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-interpretation",
         "confidence": "medium",
@@ -3152,6 +2863,7 @@
       "constraints": [
         "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-review",
         "confidence": "high",
@@ -3185,6 +2897,7 @@
       "constraints": [
         "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "high",
@@ -3234,6 +2947,7 @@
       "constraints": [
         "Initial heuristic for first MVP milestone; human listening tests required."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3265,6 +2979,7 @@
       "constraints": [
         "Baseline pattern for comparison."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3302,6 +3017,7 @@
       "constraints": [
         "A sketchpad example, not a universal 7/8 grouping. For rhythm-only edits, move existing notes only."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3338,6 +3054,7 @@
       "constraints": [
         "This is an arrangement choice, not sidechain compression. Results depend on the intended groove."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3376,6 +3093,7 @@
       "constraints": [
         "SRM explicitly describes moving chord attacks before/after the beat; this record turns that explanation into a conservative MIDI-editing procedure."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-arrangement-technique",
         "confidence": "high",
@@ -3417,6 +3135,7 @@
       "constraints": [
         "SRM describes changing chord timing in a 3-beat cycle against 4/4 to create a polyrhythmic effect, then realigning it with the bar. The exact source diagram should be checked before reproducing a specific note pattern."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-arrangement-technique",
         "confidence": "medium",
@@ -3462,6 +3181,7 @@
       "constraints": [
         "SRM defines stop-time as coordinated 'kime' hits and links chord changes to those hits."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-arrangement-technique",
         "confidence": "high",
@@ -3506,6 +3226,7 @@
       "constraints": [
         "Paraphrases SRM's harmonic-rhythm discussion; adjust by listening rather than treating tempo as the only factor."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-arrangement-technique",
         "confidence": "high",
@@ -3551,6 +3272,7 @@
       "constraints": [
         "The source studies jazz swing, not Riddim. Apply the general caution against exaggerated offsets, but do not transfer jazz timing values as a Riddim recipe."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "high",
@@ -3592,6 +3314,7 @@
       "constraints": [
         "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-review",
         "confidence": "high",
@@ -3631,6 +3354,7 @@
       "constraints": [
         "The creator describes the video as a lesson on rhythm in drops, song arrangement and creating flow in dubstep/tearout. No exact MIDI pattern has been transcribed here."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-video-resource",
         "confidence": "medium",
@@ -3671,6 +3395,7 @@
       "constraints": [
         "The chapter list separates Drums (0:51–1:59), Synths & Flow (2:00–2:46) and Sub Bass (4:25–5:37). The database records the lesson structure, not a copied project or sample."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-video-resource",
         "confidence": "medium",
@@ -3709,6 +3434,7 @@
       "constraints": [
         "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "high",
@@ -3755,6 +3481,7 @@
       "constraints": [
         "Starter arrangement heuristic for the app; not a transcription of a particular recording."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3796,6 +3523,7 @@
       "constraints": [
         "General shuffle-arrangement heuristic. Swing ratios vary by genre, performance and tempo."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3837,6 +3565,7 @@
       "constraints": [
         "Basic half-time arrangement concept; exact patterns depend on style."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3878,6 +3607,7 @@
       "constraints": [
         "Starter breakbeat arrangement heuristic; not tied to a single breakbeat subgenre."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3919,6 +3649,7 @@
       "constraints": [
         "General funk-inspired MIDI heuristic; humanize and adjust by ear."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -3960,6 +3691,7 @@
       "constraints": [
         "A compositional starting point for displaced accents, not a definition of all math rock."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-original",
         "confidence": "medium",
@@ -4001,6 +3733,7 @@
       "constraints": [
         "SoundQuest explains shuffle as triplet subdivision with a typical 2:1 long-short weighting, sometimes mixed with equal triplets. It distinguishes straight/square from shuffle and notes swing has broader jazz-specific uses."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -4049,6 +3782,7 @@
       "constraints": [
         "SoundQuest describes offbeat accents and kick displacement on 1/8 and 1/16 grids, as well as anticipation and its forward/laid-back effects."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -4095,6 +3829,7 @@
       "constraints": [
         "SoundQuest distinguishes polyrhythm from ordinary simultaneous rhythmic variety: the independent part implies a different beat framework or cycle."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -4140,6 +3875,7 @@
       "constraints": [
         "SoundQuest explains time-feel as a perceptual interpretation shaped by the listener's chosen pulse, with half-time and double-time examples. Do not confuse it with changing the MIDI tempo."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "high",
@@ -4167,6 +3903,7 @@
       ],
       "example": null,
       "constraints": [],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "product-requirement",
         "confidence": "unspecified",
@@ -4191,6 +3928,7 @@
       "constraints": [
         "Rhythm edits are not required to preserve note count or velocity. Velocity may change moderately for accents. No new pitch content is allowed in rhythm-only mode."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "product-requirement",
         "confidence": "unspecified",
@@ -4213,6 +3951,7 @@
       ],
       "example": null,
       "constraints": [],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "project-rule",
         "confidence": "unspecified",
@@ -4235,6 +3974,7 @@
       ],
       "example": null,
       "constraints": [],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "product-requirement",
         "confidence": "unspecified",
@@ -4257,6 +3997,7 @@
       ],
       "example": null,
       "constraints": [],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "data-governance",
         "confidence": "unspecified",
@@ -4281,6 +4022,7 @@
       "constraints": [
         "Genre descriptions in SRM are qualitative; the Kawase study also tests chord progression, tempo and rhythmic patterns together rather than treating harmony alone as the full cause."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "data-governance",
         "confidence": "unspecified",
@@ -4310,6 +4052,7 @@
       "constraints": [
         "Research is about jazz swing; use it as a caution about timing exaggeration, not as a universal genre formula."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "unspecified",
@@ -4339,6 +4082,7 @@
       "constraints": [
         "Based on SRM's discussion of harmonic rhythm and short inserted chords."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "unspecified",
@@ -4368,6 +4112,7 @@
       "constraints": [
         "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "human-authored-source",
         "confidence": "unspecified",
@@ -4397,6 +4142,7 @@
       "constraints": [
         "Based on the critical review of consonance/dissonance perception; the review emphasizes multiple interacting explanations and limitations."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "academic-research",
         "confidence": "unspecified",
@@ -4426,6 +4172,7 @@
       "constraints": [
         "Implementation contract for combined edits."
       ],
+      "review_status": "approved",
       "provenance": {
         "evidence_type": "product-requirement",
         "confidence": "unspecified",

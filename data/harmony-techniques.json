@@ -122,5 +122,66 @@
     },
     "evidence_type": "human-authored-theory-to-review",
     "confidence": "high"
+  },
+  {
+    "id": "HARM-005",
+    "name": "Related II (リレイテッド・ツー)",
+    "summary": "Precede a secondary dominant with its related minor-seventh ii chord, forming a short ii–V approach to the target chord.",
+    "tags": [
+      "ii-v",
+      "secondary-dominant",
+      "forward-motion",
+      "pop",
+      "jazz"
+    ],
+    "before": [
+      "Am7",
+      "FM7"
+    ],
+    "after": [
+      "Am7",
+      "Gm7",
+      "C7",
+      "FM7"
+    ],
+    "useWhen": "A target chord needs a little more approach and forward motion; shorten the inserted ii and V to avoid overcrowding.",
+    "caution": "The source recommends balancing density; applying the technique everywhere may make the progression too busy.",
+    "source": {
+      "title": "SRM Music — オシャレなコード進行をつくるための２つのテクニック",
+      "author": "SRM.",
+      "url": "https://srm-music.com/two-five/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-006",
+    "name": "Substitute dominant / sub-five",
+    "summary": "Replace a dominant-seventh chord with a dominant chord whose root is a tritone away, checking guide-tone resolution and melody compatibility.",
+    "tags": [
+      "tritone-substitution",
+      "sub-five",
+      "chromatic-bass",
+      "jazz"
+    ],
+    "before": [
+      "Am7",
+      "E7"
+    ],
+    "after": [
+      "Am7",
+      "Bb7"
+    ],
+    "useWhen": "A chromatic bass approach or alternate dominant color is desired.",
+    "caution": "The source presents it as a practical color option; verify the fifth and melody notes, and compare alternate chord qualities by ear.",
+    "source": {
+      "title": "SRM Music — 簡単！コード進行をかっこよく変えるテクニック",
+      "author": "SRM.",
+      "url": "https://srm-music.com/code/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
   }
 ]

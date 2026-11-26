@@ -100,3 +100,7 @@ function validateRhythmOnly(candidateTracks, originalTracks, {bars, beatsPerBar}
     }
   }
 }
+
+function eventFingerprint(notes) {
+  return JSON.stringify([...notes].map(({pitch, start, duration, velocity}) => ({pitch, start, duration, velocity})).sort((a, b) => a.start - b.start || a.pitch - b.pitch || a.duration - b.duration || a.velocity - b.velocity));
+}

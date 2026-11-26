@@ -153,7 +153,7 @@ function selectKnowledge(data,current,request){
  const all=data["ai-index"]?.records||[];const result={};
  const score=record=>{const text=JSON.stringify(record).toLowerCase();let value=0;for(const term of terms)if(text.includes(term))value+=2;for(const keyword of record.keywords||[])if(keyword&&query.includes(String(keyword).toLowerCase()))value+=4;if(mode!=="rhythm"&&(record.kind==="progression_pattern"||record.kind==="harmony_technique"))value+=3;if(mode!=="harmony"&&record.kind==="rhythm_pattern")value+=3;if(record.provenance?.evidence_type==="academic-research"||record.provenance?.evidence_type==="human-authored-source"||record.provenance?.evidence_type==="human-authored-educational-source")value+=1;return value};
  for(const [library,limit] of Object.entries(limits)){
-  const chosen=all.filter(record=>record.library===library).map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
+  const chosen=all.filter(record=>record.library===library&&record.review_status!=="pending").map(record=>({record,score:score(record)})).sort((a,b)=>b.score-a.score).slice(0,limit);
   result[library]=chosen.map(({record})=>({id:record.id,name:record.title,summary:record.summary,kind:record.kind,tags:record.keywords,applies_to:record.applies_to,when_to_use:record.when_to_use,operations:record.operations,example:record.example,constraints:record.constraints,provenance:record.provenance}));
  }
  return result;

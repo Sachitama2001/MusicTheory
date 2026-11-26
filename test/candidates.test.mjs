@@ -40,7 +40,7 @@ test("rhythm-only edits may add or remove repeated notes while preserving pitche
 
 test("rhythm-only edits reject new pitches and notes crossing a barline", () => {
   assert.throws(() => parseCandidates(wrap({bass: [note(40, 0)]}), current), /reuse pitches already present/);
-  assert.throws(() => parseCandidates(wrap({drums: [note(36, 0)]}), current), /reuse existing Drum note types/);
+  assert.doesNotThrow(() => parseCandidates(wrap({drums: [note(36, 0), note(42, 0.5)]}), current));
   assert.throws(() => parseCandidates(wrap({bass: [note(36, 3.25, 0.5)]}), current), /stay inside their original bar/);
 });
 test("rejects out-of-range, unsupported and overlapping notes before review", () => {

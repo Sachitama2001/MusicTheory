@@ -1,0 +1,118 @@
+[
+  {
+    "id": "HARM-001",
+    "name": "Secondary dominant",
+    "summary": "Temporarily tonicize a diatonic chord by preceding it with its dominant seventh.",
+    "tags": [
+      "dominant",
+      "tension",
+      "resolution",
+      "pop",
+      "jazz"
+    ],
+    "before": [
+      "C",
+      "Am"
+    ],
+    "after": [
+      "E7",
+      "Am"
+    ],
+    "useWhen": "A target chord needs stronger arrival or a short lift into a section.",
+    "caution": "Check melody notes against the altered leading tone; use sparingly in a simple pop arrangement.",
+    "source": {
+      "title": "SoundQuest — music theory",
+      "url": "https://soundquest.jp/"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-002",
+    "name": "Modal interchange",
+    "summary": "Borrow a chord from a parallel mode while retaining the same tonic.",
+    "tags": [
+      "color",
+      "bittersweet",
+      "cinematic",
+      "pop"
+    ],
+    "before": [
+      "C",
+      "F",
+      "G",
+      "C"
+    ],
+    "after": [
+      "C",
+      "Fm",
+      "G",
+      "C"
+    ],
+    "useWhen": "A familiar progression needs a brief darker or wistful color.",
+    "caution": "Keep the borrowed chord's voice leading smooth and avoid overuse.",
+    "source": {
+      "title": "SoundQuest — music theory",
+      "url": "https://soundquest.jp/"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-003",
+    "name": "Tritone substitution",
+    "summary": "Replace a dominant seventh chord with another dominant seventh whose root is a tritone away.",
+    "tags": [
+      "jazz",
+      "neo-soul",
+      "chromatic",
+      "voice-leading"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "useWhen": "A chromatic bass approach or smoother inner voice is desired.",
+    "caution": "May sound too chromatic for a simple pop hook; compare against melody.",
+    "source": {
+      "title": "SoundQuest — music theory",
+      "url": "https://soundquest.jp/"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-004",
+    "name": "Passing diminished chord",
+    "summary": "Insert a diminished seventh chord between two chords to connect voices chromatically.",
+    "tags": [
+      "passing-chord",
+      "chromatic",
+      "jazz",
+      "pop"
+    ],
+    "before": [
+      "C",
+      "Dm"
+    ],
+    "after": [
+      "C",
+      "C#dim7",
+      "Dm"
+    ],
+    "useWhen": "A brief passing motion connects neighboring chord tones.",
+    "caution": "Keep duration short and ensure bass and upper voices lead into destination.",
+    "source": {
+      "title": "SoundQuest — music theory",
+      "url": "https://soundquest.jp/"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  }
+]

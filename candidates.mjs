@@ -93,7 +93,7 @@ function validateRhythmOnly(candidateTracks, originalTracks, {bars, beatsPerBar}
       }
       if (name === "drums") {
         if (!allowedDrumPitches.has(note.pitch)) {
-          throw new Error(label + ": rhythm edits may only reuse existing Drum note types.");
+          throw new Error(label + ": rhythm edits may use only GM kick, snare and closed hi-hat pitches.");
         }
       } else if (!sourceByBar[bar].has(note.pitch)) {
         throw new Error(label + ": " + name + " may only reuse pitches already present in the same bar.");

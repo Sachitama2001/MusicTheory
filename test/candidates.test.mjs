@@ -25,12 +25,24 @@ test("a rhythm-only candidate can move notes without mutating the draft", () => 
   assert.equal(original.bass[0].start, 0);
 });
 
-test("rhythm-only validation detects a crossed barline, split Pad chord and altered velocity", () => {
-  assert.throws(() => parseCandidates(wrap({bass: [note(36, 3.25), note(38, 4)]}), current), /bar placement/);
-  assert.throws(() => parseCandidates(wrap({pad: [note(60, 0), note(64, 0.5), ...original.pad.slice(2)]}), current), /Pad chord groups/);
-  assert.throws(() => parseCandidates(wrap({drums: [{...note(38, 1), velocity: 0.5}]}), current), /velocities/);
+test("rhythm-only edits may add or remove repeated notes while preserving pitches per bar", () => {
+  const expanded = wrap({
+    bass: [note(36, 0, 0.25), note(36, 0.5, 0.25), note(36, 1.5, 0.25), note(38, 3.5, 0.25)],
+    drums: [note(38, 0.5, 0.1), note(38, 1.5, 0.1), note(38, 3, 0.1)],
+    pad: [note(60, 0, 0.25), note(64, 0, 0.25), note(60, 1, 0.25), note(64, 1, 0.25), note(62, 3.5, 0.25)]
+  });
+  const [candidate] = parseCandidates(expanded, current);
+  assert.equal(candidate.tracks.bass.length, 4);
+  assert.equal(candidate.tracks.drums.length, 3);
+  assert.equal(candidate.tracks.pad.length, 5);
+  assert.equal(candidate.tracks.bass[0].velocity, 0.75);
 });
 
+test("rhythm-only edits reject new pitches and notes crossing a barline", () => {
+  assert.throws(() => parseCandidates(wrap({bass: [note(40, 0)]}), current), /reuse pitches already present/);
+  assert.throws(() => parseCandidates(wrap({drums: [note(36, 0)]}), current), /reuse existing Drum note types/);
+  assert.throws(() => parseCandidates(wrap({bass: [note(36, 3.25, 0.5), note(38, 3.5)]}), current), /stay inside their original bar/);
+});
 test("rejects out-of-range, unsupported and overlapping notes before review", () => {
   const general = {...current, rhythmOnly: false};
   assert.throws(() => parseCandidates(wrap({drums: [note(42, 13.75)]}), general), /invalid Drums note/);

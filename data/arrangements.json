@@ -403,5 +403,185 @@
     "evidence_type": "academic-research",
     "confidence": "high",
     "notes": "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule."
+  },
+  {
+    "id": "ARR-STRAIGHT-001",
+    "name": "Straight pop backbeat",
+    "category": "rhythm",
+    "tags": [
+      "straight-pop",
+      "pop",
+      "backbeat",
+      "eighth-note"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Keep the main pulse straight; do not apply swing globally.",
+      "Use a clear kick foundation and snare backbeat, with hi-hat subdivisions carrying motion.",
+      "Create interest with pickups, rests and occasional offbeat chord stabs rather than constant fills."
+    ],
+    "grid_suggestions": [
+      "1/4 pulse",
+      "1/8 hi-hat",
+      "occasional 1/16 pickup"
+    ],
+    "variation": "Change one layer at a time; keep the backbeat recognizable.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "Starter arrangement heuristic for the app; not a transcription of a particular recording."
+  },
+  {
+    "id": "ARR-SHUFFLE-001",
+    "name": "Selective triplet shuffle",
+    "category": "rhythm",
+    "tags": [
+      "shuffle",
+      "swing",
+      "triplet",
+      "groove"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Use a long-short subdivision based on triplets for selected voices.",
+      "Do not swing every track by the same amount; let kick and snare anchor the pulse while hats, bass or chord attacks provide the shuffle.",
+      "Mix straight attacks with shuffled responses so the groove can breathe."
+    ],
+    "grid_suggestions": [
+      "1/8 triplet pair",
+      "1/8 straight anchor",
+      "occasional 1/16 pickup"
+    ],
+    "variation": "Apply the shuffle to one or two layers first, then compare a stronger version.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "General shuffle-arrangement heuristic. Swing ratios vary by genre, performance and tempo."
+  },
+  {
+    "id": "ARR-HALFTIME-001",
+    "name": "Half-time backbeat",
+    "category": "rhythm",
+    "tags": [
+      "half-time",
+      "dubstep",
+      "trap",
+      "slow-feel"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "In 4/4, place the principal snare or clap on beat 3 to create a half-time backbeat.",
+      "Keep the actual BPM unchanged; create the slower feel through backbeat placement and note density.",
+      "Use kick syncopation and short fills to connect phrases."
+    ],
+    "grid_suggestions": [
+      "quarter-note pulse",
+      "1/8 hats",
+      "triplet or 1/16 pickups"
+    ],
+    "variation": "Keep the snare anchor stable while varying kick and bass placements.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "Basic half-time arrangement concept; exact patterns depend on style."
+  },
+  {
+    "id": "ARR-BREAKBEAT-001",
+    "name": "Syncopated breakbeat",
+    "category": "rhythm",
+    "tags": [
+      "breakbeat",
+      "syncopation",
+      "drum-loop",
+      "electronic"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Use syncopated kick and snare placements rather than a uniform four-on-the-floor pulse.",
+      "Create a recognizable one- or two-bar motif, then vary only selected hits at phrase endings.",
+      "Let hi-hat subdivisions and bass pickups answer the main drum accents."
+    ],
+    "grid_suggestions": [
+      "1/8 foundation",
+      "1/16 syncopation",
+      "short 1/32-style pickup only when needed"
+    ],
+    "variation": "Use a stable core loop with small two-bar and four-bar changes.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "Starter breakbeat arrangement heuristic; not tied to a single breakbeat subgenre."
+  },
+  {
+    "id": "ARR-FUNK-001",
+    "name": "Sixteenth-note funk pocket",
+    "category": "rhythm",
+    "tags": [
+      "funk",
+      "sixteenth-note",
+      "ghost-notes",
+      "syncopation"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Use a 1/16 grid as a placement reference, not as a requirement to fill every slot.",
+      "Build the pocket from short notes, rests and accents around the kick/snare relationship.",
+      "Allow bass and chord stabs to answer one another; avoid making all parts equally busy."
+    ],
+    "grid_suggestions": [
+      "1/16 grid",
+      "offbeat 1/8 accents",
+      "sparse ghost-note events"
+    ],
+    "variation": "Keep the main groove stable and vary one pickup or response per two bars.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "General funk-inspired MIDI heuristic; humanize and adjust by ear."
+  },
+  {
+    "id": "ARR-MATH-001",
+    "name": "Displaced-accent math-rock pulse",
+    "category": "rhythm",
+    "tags": [
+      "math-rock",
+      "displaced-accent",
+      "polyrhythm",
+      "odd-grouping"
+    ],
+    "tracks": [
+      "Bass",
+      "Drums",
+      "Pad"
+    ],
+    "rules": [
+      "Keep the chosen meter stable while placing accents in repeating groups that cross the beat grouping.",
+      "Use a short repeating cell such as 3+3+2 eighth-note accents over 4/4.",
+      "Keep the bass part playable and let Pad attacks reinforce only selected accents."
+    ],
+    "grid_suggestions": [
+      "1/8 grid",
+      "3+3+2 accent grouping",
+      "short 3:4 overlay"
+    ],
+    "variation": "Return to a clear downbeat every two or four bars so the listener can reorient.",
+    "evidence_type": "project-original",
+    "confidence": "medium",
+    "notes": "A compositional starting point for displaced accents, not a definition of all math rock."
   }
 ]

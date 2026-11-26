@@ -38,7 +38,7 @@ GitHub Pages cannot run the local Node API or protect an OpenAI API key. On the 
         {
           "name": "シャッフル・フロウ",
           "summary": "Short explanation of the rhythmic change.",
-          "sources": ["ARR-RID-001"],
+          "sources": ["ARR-SHUFFLE-001"],
           "tracks": [
             {
               "name": "Bass",

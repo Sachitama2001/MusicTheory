@@ -30,6 +30,7 @@ For every new source, collect:
 8. Save the proposed record under `data/proposals/`, grouped by its target library, with `review_status = pending`. Proposals are not loaded by the app.
 9. Human reviewer checks theory, spelling, examples, source attribution and licensing.
 10. Only after approval, move the record into the canonical JSON file and update this registry.
+11. Rebuild `data/ai-index.json` from all five canonical libraries. Each normalized card must include the source record ID, library, concept kind, keywords, applicable tracks, use case, operations, examples, constraints and provenance. Do not copy a pending record into the index.
 
 ## Required record provenance
 Each canonical record should include:

@@ -1,0 +1,4436 @@
+{
+  "schema_version": "1.0",
+  "generated_from": [
+    "data/progressions.json",
+    "data/harmony-techniques.json",
+    "data/style-moods.json",
+    "data/arrangements.json",
+    "data/composition-rules.json"
+  ],
+  "record_count": 106,
+  "libraries": [
+    "progressions",
+    "harmony-techniques",
+    "style-moods",
+    "arrangements",
+    "composition-rules"
+  ],
+  "records": [
+    {
+      "id": "POP-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Pop four-chord cycle",
+      "summary": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "keywords": [
+        "pop",
+        "uplifting",
+        "bittersweet",
+        "kawaii-future-bass",
+        "Pop four-chord cycle"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "V",
+          "vi",
+          "IV"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "harmonicRhythm": "often one chord per bar"
+      },
+      "constraints": [
+        "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "project-example",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "POP-002",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Royal road progression",
+      "summary": "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "j-pop",
+        "pop",
+        "uplifting",
+        "bittersweet",
+        "future-bass",
+        "Royal road progression"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "IV",
+          "V",
+          "iii",
+          "vi"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "F",
+          "G",
+          "Em",
+          "Am"
+        ],
+        "harmonicRhythm": "one chord per bar"
+      },
+      "constraints": [
+        "Common J-pop chorus progression; not exclusive to a genre. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source-to-review",
+        "confidence": "low",
+        "source": {
+          "title": "DTM Hacker — コード進行パターン集",
+          "author": "DTM Hacker (author metadata to verify)",
+          "url": "https://dtmhacker.com/chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "POP-003",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Canon progression",
+      "summary": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "keywords": [
+        "pop",
+        "classical-influenced",
+        "nostalgic",
+        "uplifting",
+        "Canon progression"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "V",
+          "vi",
+          "iii",
+          "IV",
+          "I",
+          "IV",
+          "V"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "G",
+          "Am",
+          "Em",
+          "F",
+          "C",
+          "F",
+          "G"
+        ],
+        "harmonicRhythm": "one chord per bar"
+      },
+      "constraints": [
+        "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "project-example",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "POP-004",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Minor pop cycle",
+      "summary": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "keywords": [
+        "pop",
+        "emotional",
+        "anthemic",
+        "future-bass",
+        "Minor pop cycle"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "vi",
+          "IV",
+          "I",
+          "V"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "harmonicRhythm": "one chord per bar"
+      },
+      "constraints": [
+        "プロジェクト内の基本例。外部資料からの転記ではない。ジャンルや雰囲気の断定には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "project-example",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "SRM-CH-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "G/C → Gaug/B → Am7(9) → G7sus(9)",
+      "summary": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "inversion",
+        "dominant-substitute",
+        "tension",
+        "G/C → Gaug/B → Am7(9) → G7sus(9)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C / modal center to verify",
+        "example": [
+          "G/C",
+          "Gaug/B",
+          "Am7(9)",
+          "G7sus(9)"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Tension and inversion colors; source lists inversion, dominant seventh substitute and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-002",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Dm7(9) → Fm7 → Bb/C → Db/Eb",
+      "summary": "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "tension",
+        "modal-interchange",
+        "hybrid-chord",
+        "sub-five",
+        "Dm7(9) → Fm7 → Bb/C → Db/Eb"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C reference context to verify",
+        "example": [
+          "Dm7(9)",
+          "Fm7",
+          "Bb/C",
+          "Db/Eb"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Source labels tension, modal interchange, hybrid chord and sub-five. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-003",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "CM7 → FM7/C → BbM7/C → EbM7/C",
+      "summary": "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "constant-structure",
+        "pedal-point",
+        "hybrid-chord",
+        "CM7 → FM7/C → BbM7/C → EbM7/C"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C",
+        "example": [
+          "CM7",
+          "FM7/C",
+          "BbM7/C",
+          "EbM7/C"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "C pedal point under changing upper structures. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-004",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "FM7 → Bm7 → E7(b9) → Am7(11) omit3",
+      "summary": "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "ii-v",
+        "tension",
+        "omit-chord-tone",
+        "FM7 → Bm7 → E7(b9) → Am7(11) omit3"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C / A minor arrival",
+        "example": [
+          "FM7",
+          "Bm7",
+          "E7(b9)",
+          "Am7(11)omit3"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Source labels ii-V, tension and omit chord. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-005",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Bb7sus/C → Eb7sus/F → Ab7sus/Bb → Db7sus/Eb",
+      "summary": "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "quartal",
+        "constant-structure",
+        "Bb7sus/C → Eb7sus/F → Ab7sus/Bb → Db7sus/Eb"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C-sharp / Db tonal center to verify",
+        "example": [
+          "Bb7sus/C",
+          "Eb7sus/F",
+          "Ab7sus/Bb",
+          "Db7sus/Eb"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Quartal harmony and constant structure; key center should be verified by ear. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-006",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Am7(9) → BbM7(9) → Gm7(11) → C7(9)",
+      "summary": "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "borrowed-chord",
+        "tension",
+        "Am7(9) → BbM7(9) → Gm7(11) → C7(9)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C / modal color to verify",
+        "example": [
+          "Am7(9)",
+          "BbM7(9)",
+          "Gm7(11)",
+          "C7(9)"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Source labels borrowed chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SRM-CH-007",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "FM7 → F#M7 → Gm7 → F#/G# → C7sus(9)",
+      "summary": "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "keywords": [
+        "bass-motion",
+        "voicing",
+        "hybrid-chord",
+        "tension",
+        "FM7 → F#M7 → Gm7 → F#/G# → C7sus(9)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C / chromatic approach to verify",
+        "example": [
+          "FM7",
+          "F#M7",
+          "Gm7",
+          "F#/G#",
+          "C7sus(9)"
+        ],
+        "harmonicRhythm": "not specified in source; determine by listening"
+      },
+      "constraints": [
+        "Source labels bass motion and voicing, hybrid chord and tension. 出典PDF／記事の該当箇所を直接照合するまでAIの提案根拠には使わない。"
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "low",
+        "source": {
+          "title": "SRM Music — おしゃれコード一覧 PDF",
+          "author": "SRM.",
+          "url": "https://srm-music.com/wp-content/uploads/2025/02/%E4%B8%80%E8%A6%A7-1.pdf",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "POP-005",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Dominant-motion chain",
+      "summary": "SRM describes successive ascending-fourth root motion as strongly connected and useful before an important section such as a chorus. This is the source's pedagogical framing, not a universal rule.",
+      "keywords": [
+        "pop",
+        "j-pop",
+        "forward-motion",
+        "cadence",
+        "Dominant-motion chain"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM describes successive ascending-fourth root motion as strongly connected and useful before an important section such as a chorus. This is the source's pedagogical framing, not a universal rule.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "vi",
+          "ii",
+          "V",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Am7",
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "SRM describes successive ascending-fourth root motion as strongly connected and useful before an important section such as a chorus. This is the source's pedagogical framing, not a universal rule."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "作曲初心者が知るべき3つのコード進行のパターン",
+          "author": "SRM.",
+          "url": "https://srm-music.com/3motions/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "POP-006",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Diatonic scale-motion ascent",
+      "summary": "SRM describes adjacent diatonic chord movement as smooth and familiar, with relatively little dramatic change; suggests use near the beginning of a song or verse.",
+      "keywords": [
+        "pop",
+        "verse",
+        "stepwise",
+        "natural-flow",
+        "Diatonic scale-motion ascent"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM describes adjacent diatonic chord movement as smooth and familiar, with relatively little dramatic change; suggests use near the beginning of a song or verse.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "ii",
+          "iii",
+          "IV",
+          "V"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Dm7",
+          "Em7",
+          "Fmaj7",
+          "G7"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "SRM describes adjacent diatonic chord movement as smooth and familiar, with relatively little dramatic change; suggests use near the beginning of a song or verse."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "作曲初心者が知るべき3つのコード進行のパターン",
+          "author": "SRM.",
+          "url": "https://srm-music.com/3motions/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "POP-007",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–subdominant–subdominant–dominant",
+      "summary": "The source labels this T–S–S–D and uses repetition to create forward motion.",
+      "keywords": [
+        "pop",
+        "j-pop",
+        "functional-harmony",
+        "build",
+        "Tonic–subdominant–subdominant–dominant"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source labels this T–S–S–D and uses repetition to create forward motion.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "IV",
+          "ii",
+          "V"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Cmaj7",
+          "Fmaj7",
+          "Dm7",
+          "G7"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The source labels this T–S–S–D and uses repetition to create forward motion."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "作曲初心者が知るべき3つのコード進行のパターン",
+          "author": "SRM.",
+          "url": "https://srm-music.com/3motions/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–relative-minor alternation",
+      "summary": "The author describes I and vi as tonic-function chords and this alternation as stable/calm. Treat mood as the author's interpretation; voicing, melody and rhythm still matter.",
+      "keywords": [
+        "calm",
+        "stable",
+        "tonic",
+        "pop",
+        "Tonic–relative-minor alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The author describes I and vi as tonic-function chords and this alternation as stable/calm. Treat mood as the author's interpretation; voicing, melody and rhythm still matter.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "vi",
+          "I",
+          "vi"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Am",
+          "C",
+          "Am"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The author describes I and vi as tonic-function chords and this alternation as stable/calm. Treat mood as the author's interpretation; voicing, melody and rhythm still matter."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-002",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–iii–vi cycle",
+      "summary": "The source uses iii alongside I and vi as a tonic-like color to vary a stable progression.",
+      "keywords": [
+        "calm",
+        "stable",
+        "tonic",
+        "pop",
+        "Tonic–iii–vi cycle"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source uses iii alongside I and vi as a tonic-like color to vary a stable progression.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "iii",
+          "vi",
+          "iii"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Em",
+          "Am",
+          "Em"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The source uses iii alongside I and vi as a tonic-like color to vary a stable progression."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-003",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic and subdominant mixture",
+      "summary": "The author groups tonic and subdominant functions to produce a calm overall flow.",
+      "keywords": [
+        "calm",
+        "stable",
+        "subdominant",
+        "pop",
+        "Tonic and subdominant mixture"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The author groups tonic and subdominant functions to produce a calm overall flow.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "IV",
+          "iii",
+          "vi"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "F",
+          "Em",
+          "Am"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The author groups tonic and subdominant functions to produce a calm overall flow."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-004",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Subdominant-minor return",
+      "summary": "The source presents iv (Fm) as a borrowed subdominant-minor color that can still be used in a calm progression.",
+      "keywords": [
+        "soft",
+        "bittersweet",
+        "borrowed-chord",
+        "calm",
+        "Subdominant-minor return"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source presents iv (Fm) as a borrowed subdominant-minor color that can still be used in a calm progression.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "IV",
+          "iv",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The source presents iv (Fm) as a borrowed subdominant-minor color that can still be used in a calm progression."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-005",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic chromatic-line cliché",
+      "summary": "The source example moves one chord tone C–B–Bb–A while retaining the C-root identity.",
+      "keywords": [
+        "calm",
+        "cliche",
+        "chromatic-line",
+        "pop",
+        "Tonic chromatic-line cliché"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source example moves one chord tone C–B–Bb–A while retaining the C-root identity.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "Imaj7",
+          "I7",
+          "I6"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Cmaj7",
+          "C7",
+          "C6"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The source example moves one chord tone C–B–Bb–A while retaining the C-root identity."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "POP-013",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "J-pop chorus with first-inversion bass",
+      "summary": "SRM cites this as the chorus progression of Aimyon's Marigold to illustrate inversion in pop. Treat as a cited song-analysis example, not a genre-wide template.",
+      "keywords": [
+        "j-pop",
+        "pop",
+        "smooth-bass",
+        "inversion",
+        "J-pop chorus with first-inversion bass"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM cites this as the chorus progression of Aimyon's Marigold to illustrate inversion in pop. Treat as a cited song-analysis example, not a genre-wide template.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "V6",
+          "vi",
+          "V"
+        ],
+        "exampleKey": "D",
+        "example": [
+          "Dmaj7",
+          "A/C#",
+          "Bm7",
+          "A"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "SRM cites this as the chorus progression of Aimyon's Marigold to illustrate inversion in pop. Treat as a cited song-analysis example, not a genre-wide template."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-song-analysis",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "JAZZ-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Jazz-colored subV example",
+      "summary": "SRM uses the chorus ending of Fujii Kaze's Nan-Nan as an example of a subV color. Key/degree interpretation is intentionally left unspecified.",
+      "keywords": [
+        "jazz",
+        "sub-five",
+        "tension",
+        "slash-chord",
+        "Jazz-colored subV example"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM uses the chorus ending of Fujii Kaze's Nan-Nan as an example of a subV color. Key/degree interpretation is intentionally left unspecified.",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": null,
+        "example": [
+          "Em7(9)",
+          "Bb7(9)",
+          "Am7",
+          "Am7/D"
+        ],
+        "harmonicRhythm": "not specified in source"
+      },
+      "constraints": [
+        "SRM uses the chorus ending of Fujii Kaze's Nan-Nan as an example of a subV color. Key/degree interpretation is intentionally left unspecified."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-song-analysis",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "NEOSOUL-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Major-seventh constant structure",
+      "summary": "SRM describes the repeated major-seventh chord quality across changing roots as a constant-structure example from Anderson .Paak's TINTS. Mood tags are descriptive, not deterministic.",
+      "keywords": [
+        "r-and-b",
+        "neo-soul",
+        "constant-structure",
+        "floating",
+        "Major-seventh constant structure"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM describes the repeated major-seventh chord quality across changing roots as a constant-structure example from Anderson .Paak's TINTS. Mood tags are descriptive, not deterministic.",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": null,
+        "example": [
+          "Dmaj7",
+          "Amaj7",
+          "Emaj7",
+          "Bmaj7"
+        ],
+        "harmonicRhythm": "not specified in source"
+      },
+      "constraints": [
+        "SRM describes the repeated major-seventh chord quality across changing roots as a constant-structure example from Anderson .Paak's TINTS. Mood tags are descriptive, not deterministic."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-song-analysis",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CITYPOP-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "City-pop modal-color example",
+      "summary": "SRM cites this chorus segment from Miki Matsubara's Mayonaka no Door as a modal-interchange example. Exact global key is not assigned here.",
+      "keywords": [
+        "city-pop",
+        "modal-interchange",
+        "chromatic",
+        "j-pop",
+        "City-pop modal-color example"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "SRM cites this chorus segment from Miki Matsubara's Mayonaka no Door as a modal-interchange example. Exact global key is not assigned here.",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": null,
+        "example": [
+          "Bbmaj7",
+          "Am7",
+          "A7"
+        ],
+        "harmonicRhythm": "not specified in source"
+      },
+      "constraints": [
+        "SRM cites this chorus segment from Miki Matsubara's Mayonaka no Door as a modal-interchange example. Exact global key is not assigned here."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-song-analysis",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-006",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–subdominant alternation",
+      "summary": "The author describes I and IV alternation as a calm/still color; this is the author's listening interpretation.",
+      "keywords": [
+        "calm",
+        "stable",
+        "tonic",
+        "subdominant",
+        "Tonic–subdominant alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The author describes I and IV alternation as a calm/still color; this is the author's listening interpretation.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "IV",
+          "I",
+          "IV"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "F",
+          "C",
+          "F"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The author describes I and IV alternation as a calm/still color; this is the author's listening interpretation."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-007",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–supertonic alternation",
+      "summary": "The source groups ii with subdominant function and describes the repeated I–ii alternation as calm.",
+      "keywords": [
+        "calm",
+        "stable",
+        "tonic",
+        "subdominant",
+        "Tonic–supertonic alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source groups ii with subdominant function and describes the repeated I–ii alternation as calm.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "ii",
+          "I",
+          "ii"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Dm",
+          "C",
+          "Dm"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The source groups ii with subdominant function and describes the repeated I–ii alternation as calm."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-008",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–stepwise subdominant ascent",
+      "summary": "The source describes a mixture of tonic and subdominant-function chords as calm despite changing colors.",
+      "keywords": [
+        "calm",
+        "stepwise",
+        "subdominant",
+        "pop",
+        "Tonic–stepwise subdominant ascent"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source describes a mixture of tonic and subdominant-function chords as calm despite changing colors.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "ii",
+          "iii",
+          "IV"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Dm",
+          "Em",
+          "F"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The source describes a mixture of tonic and subdominant-function chords as calm despite changing colors."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-009",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Subdominant-led alternation",
+      "summary": "The source recommends a subdominant-to-tonic direction to settle the progression.",
+      "keywords": [
+        "calm",
+        "subdominant-led",
+        "stable",
+        "Subdominant-led alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source recommends a subdominant-to-tonic direction to settle the progression.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "IV",
+          "I",
+          "IV",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "F",
+          "C",
+          "F",
+          "C"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The source recommends a subdominant-to-tonic direction to settle the progression."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-010",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Supertonic-led alternation",
+      "summary": "Source example of beginning with a subdominant-function chord and moving to tonic.",
+      "keywords": [
+        "calm",
+        "subdominant-led",
+        "stable",
+        "Supertonic-led alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source example of beginning with a subdominant-function chord and moving to tonic.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "ii",
+          "I",
+          "ii",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Dm",
+          "C",
+          "Dm",
+          "C"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "Source example of beginning with a subdominant-function chord and moving to tonic."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-011",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Subdominant–iii–vi approach",
+      "summary": "Source example of a subdominant-led progression settling into tonic-function vi.",
+      "keywords": [
+        "calm",
+        "subdominant-led",
+        "tonic-arrival",
+        "Subdominant–iii–vi approach"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Source example of a subdominant-led progression settling into tonic-function vi.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "IV",
+          "iii",
+          "vi"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "F",
+          "Em",
+          "Am"
+        ],
+        "harmonicRhythm": "not specified in source"
+      },
+      "constraints": [
+        "Source example of a subdominant-led progression settling into tonic-function vi."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-012",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Subdominant-minor substitute",
+      "summary": "The source describes Dm(b5) as a substitute for subdominant-minor color in this context; keep this interpretation tied to the example.",
+      "keywords": [
+        "calm",
+        "borrowed-color",
+        "subdominant-minor-substitute",
+        "Subdominant-minor substitute"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source describes Dm(b5) as a substitute for subdominant-minor color in this context; keep this interpretation tied to the example.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "I",
+          "ii",
+          "iiø",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "Dm",
+          "Dm(b5)",
+          "C"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The source describes Dm(b5) as a substitute for subdominant-minor color in this context; keep this interpretation tied to the example."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-013",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic pedal with changing upper chords",
+      "summary": "The bass remains C while upper harmony changes; source explains that retaining tonic bass sustains a stable impression.",
+      "keywords": [
+        "calm",
+        "pedal-point",
+        "tonic-bass",
+        "slash-chord",
+        "Tonic pedal with changing upper chords"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The bass remains C while upper harmony changes; source explains that retaining tonic bass sustains a stable impression.",
+      "operations": [],
+      "example": {
+        "degrees": null,
+        "exampleKey": "C",
+        "example": [
+          "C",
+          "F/C",
+          "G/C",
+          "F/C"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "The bass remains C while upper harmony changes; source explains that retaining tonic bass sustains a stable impression."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-014",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Major-seventh tonic–subdominant alternation",
+      "summary": "Seventh-chord reading of the source's I–IV alternation.",
+      "keywords": [
+        "calm",
+        "stable",
+        "maj7",
+        "pop",
+        "Major-seventh tonic–subdominant alternation"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Seventh-chord reading of the source's I–IV alternation.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "Imaj7",
+          "IVmaj7",
+          "Imaj7",
+          "IVmaj7"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Cmaj7",
+          "Fmaj7",
+          "Cmaj7",
+          "Fmaj7"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "Seventh-chord reading of the source's I–IV alternation."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-015",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Major-seventh subdominant-led cadence",
+      "summary": "Seventh-chord reading of the source's F–Em–Am example.",
+      "keywords": [
+        "calm",
+        "subdominant-led",
+        "maj7",
+        "Major-seventh subdominant-led cadence"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Seventh-chord reading of the source's F–Em–Am example.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "IVmaj7",
+          "iii7",
+          "vi7"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Fmaj7",
+          "Em7",
+          "Am7"
+        ],
+        "harmonicRhythm": "not specified in source"
+      },
+      "constraints": [
+        "Seventh-chord reading of the source's F–Em–Am example."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-016",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–subdominant-minor seventh return",
+      "summary": "Seventh-chord version of the source's C–F–Fm–C example.",
+      "keywords": [
+        "soft",
+        "calm",
+        "borrowed-chord",
+        "maj7",
+        "Tonic–subdominant-minor seventh return"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Seventh-chord version of the source's C–F–Fm–C example.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "Imaj7",
+          "IVmaj7",
+          "ivm7",
+          "Imaj7"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Cmaj7",
+          "Fmaj7",
+          "Fm7",
+          "Cmaj7"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "Seventh-chord version of the source's C–F–Fm–C example."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "CALM-017",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "Tonic–supertonic diminished approach",
+      "summary": "Seventh-chord version of the source's C–Dm–Dm(b5)–C example.",
+      "keywords": [
+        "calm",
+        "passing-color",
+        "diminished",
+        "maj7",
+        "Tonic–supertonic diminished approach"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Seventh-chord version of the source's C–Dm–Dm(b5)–C example.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "Imaj7",
+          "ii7",
+          "iiø7",
+          "Imaj7"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Cmaj7",
+          "Dm7",
+          "Dm7b5",
+          "Cmaj7"
+        ],
+        "harmonicRhythm": "one chord per bar in source example"
+      },
+      "constraints": [
+        "Seventh-chord version of the source's C–Dm–Dm(b5)–C example."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SQ-SEC-001",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "vi7–II7–V–I secondary-dominant chain",
+      "summary": "The source compares vi7–ii7–V–I with vi7–II7–V–I. Raising ii to II7 introduces the secondary dominant of V and a leading-tone semitone into G. Chord spellings here are transposed to C major.",
+      "keywords": [
+        "secondary-dominant",
+        "dominant-chain",
+        "j-pop",
+        "functional-harmony",
+        "vi7–II7–V–I secondary-dominant chain"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source compares vi7–ii7–V–I with vi7–II7–V–I. Raising ii to II7 introduces the secondary dominant of V and a leading-tone semitone into G. Chord spellings here are transposed to C major.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "vi7",
+          "II7",
+          "V",
+          "I"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Am7",
+          "D7",
+          "G",
+          "C"
+        ],
+        "harmonicRhythm": "one chord per bar; source uses the sequence as a comparison example"
+      },
+      "constraints": [
+        "The source compares vi7–ii7–V–I with vi7–II7–V–I. Raising ii to II7 introduces the secondary dominant of V and a leading-tone semitone into G. Chord spellings here are transposed to C major."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "二次ドミナント",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "SQ-SEC-002",
+      "library": "progressions",
+      "kind": "progression_pattern",
+      "title": "IVmaj7–V–III7–vi secondary dominant to vi",
+      "summary": "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings.",
+      "keywords": [
+        "secondary-dominant",
+        "j-pop",
+        "emotional-build",
+        "tonic-arrival",
+        "IVmaj7–V–III7–vi secondary dominant to vi"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings.",
+      "operations": [],
+      "example": {
+        "degrees": [
+          "IVmaj7",
+          "V",
+          "III7",
+          "vi"
+        ],
+        "exampleKey": "C",
+        "example": [
+          "Fmaj7",
+          "G",
+          "E7",
+          "Am"
+        ],
+        "harmonicRhythm": "one chord per bar in the source example"
+      },
+      "constraints": [
+        "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "二次ドミナント",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-001",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Secondary dominant",
+      "summary": "Temporarily tonicize a diatonic chord by preceding it with its dominant seventh.",
+      "keywords": [
+        "dominant",
+        "tension",
+        "resolution",
+        "pop",
+        "jazz",
+        "Secondary dominant"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A target chord needs stronger arrival or a short lift into a section.",
+      "operations": [
+        "Temporarily tonicize a diatonic chord by preceding it with its dominant seventh."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "Am"
+        ],
+        "after": [
+          "E7",
+          "Am"
+        ]
+      },
+      "constraints": [
+        "Check melody notes against the altered leading tone; use sparingly in a simple pop arrangement."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-theory-to-review",
+        "confidence": "high",
+        "source": {
+          "title": "SoundQuest — 二次ドミナント",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-002",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Modal interchange",
+      "summary": "Borrow a chord from a parallel mode while retaining the same tonic.",
+      "keywords": [
+        "color",
+        "bittersweet",
+        "cinematic",
+        "pop",
+        "Modal interchange"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A familiar progression needs a brief darker or wistful color.",
+      "operations": [
+        "Borrow a chord from a parallel mode while retaining the same tonic."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "F",
+          "G",
+          "C"
+        ],
+        "after": [
+          "C",
+          "Fm",
+          "G",
+          "C"
+        ]
+      },
+      "constraints": [
+        "Keep the borrowed chord's voice leading smooth and avoid overuse."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-theory-to-review",
+        "confidence": "high",
+        "source": {
+          "title": "SoundQuest — パラレル・マイナー ❶",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv2/parallel-minor/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-003",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Tritone substitution / subV (裏コード)",
+      "summary": "Replace a dominant-seventh chord with another dominant seventh whose root is a tritone away; the two chords share the guide-tone tritone enharmonically.",
+      "keywords": [
+        "jazz",
+        "neo-soul",
+        "chromatic",
+        "voice-leading",
+        "sub-five",
+        "tritone-substitution",
+        "Tritone substitution / subV (裏コード)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A chromatic bass approach or alternate dominant color is desired, especially when resolving to the tonic.",
+      "operations": [
+        "Replace a dominant-seventh chord with another dominant seventh whose root is a tritone away; the two chords share the guide-tone tritone enharmonically."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ]
+      },
+      "constraints": [
+        "The source describes this as a distinctive, jazz-associated color. Check melody compatibility and avoid treating every flat-II chord as a tritone substitute."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-theory-to-review",
+        "confidence": "high",
+        "source": {
+          "title": "SoundQuest — トライトーン代理",
+          "author": "plugmon",
+          "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-004",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Passing diminished chord",
+      "summary": "Insert a diminished seventh chord between two chords to connect voices chromatically.",
+      "keywords": [
+        "passing-chord",
+        "chromatic",
+        "jazz",
+        "pop",
+        "Passing diminished chord"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A brief passing motion connects neighboring chord tones.",
+      "operations": [
+        "Insert a diminished seventh chord between two chords to connect voices chromatically."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "Dm"
+        ],
+        "after": [
+          "C",
+          "C#dim7",
+          "Dm"
+        ]
+      },
+      "constraints": [
+        "Keep duration short and ensure bass and upper voices lead into destination."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-theory-to-review",
+        "confidence": "high",
+        "source": {
+          "title": "SoundQuest — パッシング・ディミニッシュ",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-005",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Related II (リレイテッド・ツー)",
+      "summary": "Precede a secondary dominant with its related minor-seventh ii chord, forming a short ii–V approach to the target chord.",
+      "keywords": [
+        "ii-v",
+        "secondary-dominant",
+        "forward-motion",
+        "pop",
+        "jazz",
+        "Related II (リレイテッド・ツー)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A target chord needs a little more approach and forward motion; shorten the inserted ii and V to avoid overcrowding.",
+      "operations": [
+        "Precede a secondary dominant with its related minor-seventh ii chord, forming a short ii–V approach to the target chord."
+      ],
+      "example": {
+        "before": [
+          "Am7",
+          "FM7"
+        ],
+        "after": [
+          "Am7",
+          "Gm7",
+          "C7",
+          "FM7"
+        ]
+      },
+      "constraints": [
+        "The source recommends balancing density; applying the technique everywhere may make the progression too busy."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "SRM Music — オシャレなコード進行をつくるための２つのテクニック",
+          "author": "SRM.",
+          "url": "https://srm-music.com/two-five/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-006",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Common-tone and shortest-motion voice leading",
+      "summary": "Retain shared chord tones where practical and move remaining voices by the shortest musically appropriate interval; inspect parallel, oblique and contrary motion.",
+      "keywords": [
+        "voice-leading",
+        "common-tone",
+        "smooth-connection",
+        "harmony",
+        "Common-tone and shortest-motion voice leading"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Connecting chords smoothly, especially when changing voicings or inserting a passing chord.",
+      "operations": [
+        "Retain shared chord tones where practical and move remaining voices by the shortest musically appropriate interval; inspect parallel, oblique and contrary motion."
+      ],
+      "example": {
+        "before": [
+          "Cmaj7",
+          "Fmaj7"
+        ],
+        "after": [
+          "Cmaj7",
+          "Fmaj7"
+        ]
+      },
+      "constraints": [
+        "Shortest motion is a useful guideline, not an absolute rule; melody, register, doubling and stylistic context can justify larger leaps."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "SoundQuest — 和声 : 標準連結と原則",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-principles/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-007",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "First inversion for a stepwise bass",
+      "summary": "Place the chord's third in the bass while the upper voices retain the chord identity; use the inversion to connect a bass line smoothly.",
+      "keywords": [
+        "inversion",
+        "slash-chord",
+        "bass",
+        "voice-leading",
+        "First inversion for a stepwise bass"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A G–F#–E bass descent connects the same chords more smoothly than root jumps.",
+      "operations": [
+        "Place the chord's third in the bass while the upper voices retain the chord identity; use the inversion to connect a bass line smoothly."
+      ],
+      "example": {
+        "before": [
+          "G",
+          "D",
+          "Em"
+        ],
+        "after": [
+          "G",
+          "D/F#",
+          "Em"
+        ]
+      },
+      "constraints": [
+        "The bass note determines the inversion. In four-part major triads, avoid doubling the third in the upper voices; SoundQuest discusses different doubling conventions for minor chords.",
+        "Chord sequence is an independently written sketchpad example; theory summary is paraphrased from the cited lesson."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source+project-example",
+        "confidence": "high",
+        "source": {
+          "title": "和声 : 第一転回形",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-008",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Cadential six-four (I6/4 before V)",
+      "summary": "In a classical cadence, place the tonic triad in second inversion over the dominant bass, then move to V before resolving to I.",
+      "keywords": [
+        "second-inversion",
+        "cadence",
+        "dominant",
+        "classical",
+        "Cadential six-four (I6/4 before V)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A tonal phrase needs a prepared cadence and a clear dominant arrival.",
+      "operations": [
+        "In a classical cadence, place the tonic triad in second inversion over the dominant bass, then move to V before resolving to I."
+      ],
+      "example": {
+        "before": [
+          "Bb",
+          "C7",
+          "F"
+        ],
+        "after": [
+          "Bb",
+          "F/C",
+          "C7",
+          "F"
+        ]
+      },
+      "constraints": [
+        "The cadential context matters. Do not treat every second-inversion chord as a free-standing tonic or interchangeable sus chord.",
+        "The F-major example is independently written from the lesson's I6/4–V–I explanation."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source+project-example",
+        "confidence": "high",
+        "source": {
+          "title": "和声 : 第二・第三転回形",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-009",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Dominant seventh third inversion resolving to tonic first inversion",
+      "summary": "Place the dominant seventh's seventh in the bass; resolve that bass note down by step into the third of the tonic chord, producing I6.",
+      "keywords": [
+        "third-inversion",
+        "dominant-seventh",
+        "resolution",
+        "voice-leading",
+        "Dominant seventh third inversion resolving to tonic first inversion"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A bass line needs a smooth semitone descent from the dominant into a tonic first inversion.",
+      "operations": [
+        "Place the dominant seventh's seventh in the bass; resolve that bass note down by step into the third of the tonic chord, producing I6."
+      ],
+      "example": {
+        "before": [
+          "Bb",
+          "C7",
+          "F"
+        ],
+        "after": [
+          "Bb",
+          "C7/Bb",
+          "F/A"
+        ]
+      },
+      "constraints": [
+        "The dominant seventh's seventh is a tendency tone and should resolve down by step in the cited classical context.",
+        "Example in F major; the cited lesson specifically explains V7 third inversion resolving to I first inversion."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source+project-example",
+        "confidence": "high",
+        "source": {
+          "title": "和声 : 第二・第三転回形",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-010",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Common-tone and stepwise voice-leading",
+      "summary": "Retain common tones in the same voice where practical; move remaining voices by step, with small leaps used when the musical context calls for them.",
+      "keywords": [
+        "voice-leading",
+        "common-tone",
+        "stepwise-motion",
+        "smooth-connection",
+        "Common-tone and stepwise voice-leading"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A chord progression sounds jumpy or a Pad voicing needs a smoother connection.",
+      "operations": [
+        "Retain common tones in the same voice where practical; move remaining voices by step, with small leaps used when the musical context calls for them."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "F"
+        ],
+        "after": [
+          "C/E",
+          "F/A"
+        ]
+      },
+      "constraints": [
+        "Berklee presents these as practical guidelines. Do not force every voice to move by step if it damages the melody, register or desired style.",
+        "Berklee lists common-tone retention, stepwise motion and avoiding large leaps as core voice-leading guidelines; this record paraphrases them."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-educational-source",
+        "confidence": "high",
+        "source": {
+          "title": "Voice Leading Paradigms for Harmony in Music Composition",
+          "author": "Berklee Online; course material by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+          "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-011",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Guide-tone voicing for seventh chords",
+      "summary": "For a seventh chord, the third and seventh define much of its quality and function; keep them clear in the Pad voicing, with the bass supplying the root when present.",
+      "keywords": [
+        "guide-tones",
+        "seventh-chord",
+        "voicing",
+        "jazz",
+        "pop",
+        "Guide-tone voicing for seventh chords"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A Pad or keyboard voicing is muddy or the chord function is unclear.",
+      "operations": [
+        "For a seventh chord, the third and seventh define much of its quality and function; keep them clear in the Pad voicing, with the bass supplying the root when present."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Dm7(3,7)",
+          "G7(3,7)",
+          "Cmaj7(3,7)"
+        ]
+      },
+      "constraints": [
+        "The fifth can be omitted in many seventh-chord voicings, but altered fifths and melody notes may require it. This is a voicing guideline, not a universal chord spelling."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-educational-source",
+        "confidence": "high",
+        "source": {
+          "title": "Piano Voicing Techniques",
+          "author": "Berklee Online; excerpted from Randy Felts, Reharmonization Techniques",
+          "url": "https://online.berklee.edu/takenote/basic-piano-voicing-techniques/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-012",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Pedal point",
+      "summary": "Keep one bass note fixed while the upper chord changes, creating continuity beneath changing harmony.",
+      "keywords": [
+        "pedal-point",
+        "bass",
+        "continuity",
+        "floating",
+        "Pedal point"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A section needs a stable low anchor while the Pad changes color.",
+      "operations": [
+        "Keep one bass note fixed while the upper chord changes, creating continuity beneath changing harmony."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "Em7",
+          "Am7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Dm7",
+          "Em7/D",
+          "Am7/D",
+          "Cmaj7/D"
+        ]
+      },
+      "constraints": [
+        "Check that upper voices remain compatible with the pedal and that the sustained bass does not obscure the intended chord function."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-013",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Hybrid chord / tension bass",
+      "summary": "Use a bass note outside the upper chord's basic triad, often a tension, to create a slash or hybrid sonority.",
+      "keywords": [
+        "hybrid-chord",
+        "slash-chord",
+        "tension",
+        "voicing",
+        "Hybrid chord / tension bass"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The upper chord should stay recognizable while the bass adds a different color or pedal-like connection.",
+      "operations": [
+        "Use a bass note outside the upper chord's basic triad, often a tension, to create a slash or hybrid sonority."
+      ],
+      "example": {
+        "before": [
+          "Cmaj7"
+        ],
+        "after": [
+          "Cmaj7/D"
+        ]
+      },
+      "constraints": [
+        "The bass note changes the total sonority; check the combined intervals rather than assuming the upper chord label describes the whole sound."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-014",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Quartal voicing",
+      "summary": "Build a chord stack from fourths rather than thirds; the resulting voicing can sound open and less clearly major/minor.",
+      "keywords": [
+        "quartal",
+        "floating",
+        "modern",
+        "voicing",
+        "Quartal voicing"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A Pad needs a more open or ambiguous texture than conventional tertian voicings.",
+      "operations": [
+        "Build a chord stack from fourths rather than thirds; the resulting voicing can sound open and less clearly major/minor."
+      ],
+      "example": {
+        "before": [
+          "Cm7"
+        ],
+        "after": [
+          "C-F-Bb-Eb"
+        ]
+      },
+      "constraints": [
+        "The chord label may be ambiguous; specify actual notes and register when sending it to MIDI generation."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-015",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Constant structure",
+      "summary": "Move the same chord quality or voicing shape to different roots, preserving its interval structure while changing the harmonic center.",
+      "keywords": [
+        "constant-structure",
+        "neo-soul",
+        "jazz",
+        "floating",
+        "Constant structure"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A section needs a consistent color across a non-diatonic root sequence.",
+      "operations": [
+        "Move the same chord quality or voicing shape to different roots, preserving its interval structure while changing the harmonic center."
+      ],
+      "example": {
+        "before": [
+          "Dmaj7"
+        ],
+        "after": [
+          "Dmaj7",
+          "Amaj7",
+          "Emaj7",
+          "Bmaj7"
+        ]
+      },
+      "constraints": [
+        "The sequence may not imply a single conventional key; check melody and bass independently."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source+song-analysis",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-016",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Cliché / chromatic inner-line motion",
+      "summary": "Retain a chord's basic root identity while moving one chord tone chromatically through successive chord qualities.",
+      "keywords": [
+        "cliche",
+        "chromatic-line",
+        "inner-voice",
+        "pop",
+        "calm",
+        "Cliché / chromatic inner-line motion"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A stable harmony needs a small, audible inner-line movement without a full progression change.",
+      "operations": [
+        "Retain a chord's basic root identity while moving one chord tone chromatically through successive chord qualities."
+      ],
+      "example": {
+        "before": [
+          "C"
+        ],
+        "after": [
+          "C",
+          "Cmaj7",
+          "C7",
+          "C6"
+        ]
+      },
+      "constraints": [
+        "C7 introduces a dominant-seventh color; omit it or use C6 if the extra dominant tension is not wanted.",
+        "The source's C–Cmaj7–C7–C6 example moves one voice C–B–Bb–A while retaining the C-root family."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-017",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Subdominant minor (IV–iv–I)",
+      "summary": "Borrow the minor subdominant from the parallel minor before returning to the tonic.",
+      "keywords": [
+        "modal-interchange",
+        "borrowed-chord",
+        "subdominant-minor",
+        "bittersweet",
+        "soft",
+        "Subdominant minor (IV–iv–I)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A familiar major-key progression needs a brief softer or wistful color before tonic return.",
+      "operations": [
+        "Borrow the minor subdominant from the parallel minor before returning to the tonic."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "F",
+          "C"
+        ],
+        "after": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ]
+      },
+      "constraints": [
+        "Check the melody against Ab in Fm; keep the borrowed chord's duration appropriate to the phrase.",
+        "The cited author presents Fm (iv) as a subdominant-minor color that can still be used in a calm progression."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-018",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Secondary dominant (V of a target chord)",
+      "summary": "Temporarily treat a diatonic target chord as a tonic and precede it with its own dominant seventh, usually a perfect fifth above the target root.",
+      "keywords": [
+        "secondary-dominant",
+        "V-of",
+        "dominant-seventh",
+        "chromatic",
+        "voice-leading",
+        "Secondary dominant (V of a target chord)"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A target chord needs stronger forward pull or a chromatic approach tone.",
+      "operations": [
+        "Temporarily treat a diatonic target chord as a tonic and precede it with its own dominant seventh, usually a perfect fifth above the target root."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Dm7",
+          "D7",
+          "G7",
+          "Cmaj7"
+        ]
+      },
+      "constraints": [
+        "The target chord and melody must support the altered scale tone. Do not label every non-diatonic dominant as a secondary dominant without checking its resolution.",
+        "Paraphrase of SoundQuest's explanation and examples. The D7→G movement is the secondary dominant of V in C major."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "二次ドミナント",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-019",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Tritone substitution of a dominant seventh",
+      "summary": "Replace a dominant seventh with another dominant seventh whose root is a tritone away; the two chords share the same guide-tone tritone enharmonically.",
+      "keywords": [
+        "tritone-substitution",
+        "subV",
+        "dominant",
+        "chromatic-bass",
+        "jazz",
+        "Tritone substitution of a dominant seventh"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A dominant approach should have a chromatic bass descent into the target chord.",
+      "operations": [
+        "Replace a dominant seventh with another dominant seventh whose root is a tritone away; the two chords share the same guide-tone tritone enharmonically."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ]
+      },
+      "constraints": [
+        "The substitute dominant's resolution and melody compatibility matter. SoundQuest notes that the common ♭II7 use has a focused resolution context; do not substitute indiscriminately.",
+        "In C major, G7 and Db7 share the F–B tritone (enharmonically respelled). This is a paraphrase, not a claim that every dominant substitution works in every context."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "トライトーン代理",
+          "author": "plugmon",
+          "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-020",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Modal interchange from a parallel scale",
+      "summary": "Borrow a chord from a scale or mode with the same tonic while keeping the tonal center; the borrowed chord introduces one or more non-diatonic notes.",
+      "keywords": [
+        "modal-interchange",
+        "parallel-scale",
+        "borrowed-chord",
+        "chromatic",
+        "mood-color",
+        "Modal interchange from a parallel scale"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A familiar progression needs a borrowed chord color without changing the tonic center.",
+      "operations": [
+        "Borrow a chord from a scale or mode with the same tonic while keeping the tonal center; the borrowed chord introduces one or more non-diatonic notes."
+      ],
+      "example": {
+        "before": [
+          "C",
+          "F",
+          "G",
+          "C"
+        ],
+        "after": [
+          "C",
+          "Fm",
+          "G",
+          "C"
+        ]
+      },
+      "constraints": [
+        "Specify the source mode/scale and check the melody against the borrowed notes. The term can refer to scale-level borrowing or chord-level borrowing depending on the explanatory framework.",
+        "SoundQuest describes modal interchange as borrowing from a parallel scale with the same tonic, and discusses both scale and chord perspectives."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "モーダル・インターチェンジ",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-021",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Substitution within a harmonic-function family",
+      "summary": "Replace a chord with another chord that serves a similar phrase function, while checking shared chord tones and the target melody.",
+      "keywords": [
+        "chord-substitution",
+        "reharmonization",
+        "tonic-family",
+        "subdominant-family",
+        "dominant-family",
+        "Substitution within a harmonic-function family"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "A progression needs a different harmonic color without completely changing its functional direction.",
+      "operations": [
+        "Replace a chord with another chord that serves a similar phrase function, while checking shared chord tones and the target melody."
+      ],
+      "example": {
+        "before": [
+          "Cmaj7",
+          "Fmaj7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "Am7",
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ]
+      },
+      "constraints": [
+        "Function families are useful models, not universal categories. Confirm the melody, bass line and local style; do not assume a substitution is interchangeable in every voicing.",
+        "Berklee's lesson describes tonic, subdominant and dominant chord families and substitution by similar function."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-educational-source",
+        "confidence": "high",
+        "source": {
+          "title": "Chord Substitution and Reharmonization",
+          "author": "Berklee Online; based on Randy Felts, Reharmonization Techniques",
+          "url": "https://online.berklee.edu/takenote/reharmonization-simple-substitution/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "HARM-022",
+      "library": "harmony-techniques",
+      "kind": "harmony_technique",
+      "title": "Guide-tone voice leading with common-tone retention",
+      "summary": "For successive chords, keep common tones in the same voice where possible and move remaining voices by step or small intervals. In seventh chords, the 3rd and 7th often define chord quality and function.",
+      "keywords": [
+        "voice-leading",
+        "guide-tones",
+        "common-tone",
+        "stepwise-motion",
+        "seventh-chord",
+        "Guide-tone voice leading with common-tone retention"
+      ],
+      "applies_to": [
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "Pad voicings jump too much or chord changes sound disconnected.",
+      "operations": [
+        "For successive chords, keep common tones in the same voice where possible and move remaining voices by step or small intervals. In seventh chords, the 3rd and 7th often define chord quality and function."
+      ],
+      "example": {
+        "before": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "after": [
+          "F-C-E-A",
+          "F-B-E-A",
+          "E-B-D-G"
+        ]
+      },
+      "constraints": [
+        "Berklee's voice-leading suggestions are practical guidelines, not immutable rules. Keep register, melody and instrument range in view.",
+        "Berklee lists common-tone retention, stepwise motion and limited leaps as voice-leading principles; guide tones for seventh chords are 3rd and 7th."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-educational-source",
+        "confidence": "high",
+        "source": {
+          "title": "Voice Leading Paradigms for Harmony in Music Composition",
+          "author": "Berklee Online; courses by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+          "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-001",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Kawaii Future Bass",
+      "summary": "Production and rhythm matter at least as much as chord choice.",
+      "keywords": [
+        "cute",
+        "bright",
+        "playful",
+        "sparkling",
+        "uplifting",
+        "Kawaii Future Bass"
+      ],
+      "applies_to": [],
+      "when_to_use": "Production and rhythm matter at least as much as chord choice.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Production and rhythm matter at least as much as chord choice."
+      ],
+      "provenance": {
+        "evidence_type": "project-heuristic",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "STYLE-002",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Math Rock",
+      "summary": "Do not equate genre with unplayable virtuosity; specify register and technique.",
+      "keywords": [
+        "angular",
+        "playful",
+        "technical",
+        "rhythmic",
+        "Math Rock"
+      ],
+      "applies_to": [],
+      "when_to_use": "Do not equate genre with unplayable virtuosity; specify register and technique.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Do not equate genre with unplayable virtuosity; specify register and technique."
+      ],
+      "provenance": {
+        "evidence_type": "project-heuristic",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "STYLE-003",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Riddim-inspired drop",
+      "summary": "Broad arrangement heuristic, not a universal definition of Riddim.",
+      "keywords": [
+        "heavy",
+        "hypnotic",
+        "groovy",
+        "minimal",
+        "Riddim-inspired drop"
+      ],
+      "applies_to": [],
+      "when_to_use": "Broad arrangement heuristic, not a universal definition of Riddim.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Broad arrangement heuristic, not a universal definition of Riddim."
+      ],
+      "provenance": {
+        "evidence_type": "project-heuristic",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "STYLE-004",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Pop harmony tendency (SRM)",
+      "summary": "This is SRM's description of common pop practice, not a rule for every pop song.",
+      "keywords": [
+        "pop",
+        "j-pop",
+        "familiar",
+        "accessible",
+        "Pop harmony tendency (SRM)"
+      ],
+      "applies_to": [],
+      "when_to_use": "This is SRM's description of common pop practice, not a rule for every pop song.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "This is SRM's description of common pop practice, not a rule for every pop song."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-genre-description",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-005",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Jazz harmony tendency (SRM)",
+      "summary": "SRM's qualitative genre description; not a universal definition of jazz.",
+      "keywords": [
+        "jazz",
+        "rich",
+        "deep",
+        "tension",
+        "Jazz harmony tendency (SRM)"
+      ],
+      "applies_to": [],
+      "when_to_use": "SRM's qualitative genre description; not a universal definition of jazz.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "SRM's qualitative genre description; not a universal definition of jazz."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-genre-description",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-006",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "R&B / Neo-soul harmony tendency (SRM)",
+      "summary": "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe.",
+      "keywords": [
+        "r-and-b",
+        "neo-soul",
+        "warm",
+        "soft",
+        "floating",
+        "R&B / Neo-soul harmony tendency (SRM)"
+      ],
+      "applies_to": [],
+      "when_to_use": "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-genre-description",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-007",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "City-pop harmony tendency (SRM)",
+      "summary": "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication.",
+      "keywords": [
+        "city-pop",
+        "j-pop",
+        "polished",
+        "sophisticated",
+        "City-pop harmony tendency (SRM)"
+      ],
+      "applies_to": [],
+      "when_to_use": "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-genre-description",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-008",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Calm / stable harmony",
+      "summary": "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone.",
+      "keywords": [
+        "calm",
+        "stable",
+        "settled",
+        "quiet",
+        "Calm / stable harmony"
+      ],
+      "applies_to": [],
+      "when_to_use": "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-mood-description",
+        "confidence": "medium",
+        "source": {
+          "title": "落ち着いた雰囲気を持つコード進行を考える",
+          "author": "内山敦支",
+          "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-009",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Chord progression affect and groove (research)",
+      "summary": "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener.",
+      "keywords": [
+        "groove",
+        "happy",
+        "sad",
+        "chord-progression",
+        "research",
+        "Chord progression affect and groove (research)"
+      ],
+      "applies_to": [],
+      "when_to_use": "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "high",
+        "source": {
+          "title": "Is happier music groovier? The influence of emotional characteristics of musical chord progressions on groove",
+          "author": "Satoshi Kawase",
+          "url": "https://link.springer.com/article/10.1007/s00426-023-01869-x",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-010",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Swing and microtiming are style-dependent (research)",
+      "summary": "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets.",
+      "keywords": [
+        "swing",
+        "microtiming",
+        "groove",
+        "jazz",
+        "timing",
+        "Swing and microtiming are style-dependent (research)"
+      ],
+      "applies_to": [],
+      "when_to_use": "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "The study found quantized versions rated slightly higher for swing than originals across the tested jazz recordings, while expanded microtiming deviations rated lower. This does not mean quantization always grooves better; it cautions against exaggerating timing offsets."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "high",
+        "source": {
+          "title": "Microtiming Deviations and Swing Feel in Jazz",
+          "author": "George Datseris et al.",
+          "url": "https://www.nature.com/articles/s41598-019-55981-3",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-011",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Tonic-relative interval color map",
+      "summary": "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context.",
+      "keywords": [
+        "scale",
+        "tonic",
+        "interval",
+        "mood",
+        "harmony",
+        "visualization",
+        "Tonic-relative interval color map"
+      ],
+      "applies_to": [],
+      "when_to_use": "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context."
+      ],
+      "provenance": {
+        "evidence_type": "project-interpretation",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "STYLE-012",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Consonance and dissonance are context-dependent",
+      "summary": "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping.",
+      "keywords": [
+        "interval",
+        "consonance",
+        "dissonance",
+        "perception",
+        "culture",
+        "timbre",
+        "Consonance and dissonance are context-dependent"
+      ],
+      "applies_to": [],
+      "when_to_use": "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping."
+      ],
+      "provenance": {
+        "evidence_type": "academic-review",
+        "confidence": "high",
+        "source": {
+          "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+          "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+          "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "STYLE-013",
+      "library": "style-moods",
+      "kind": "style_profile",
+      "title": "Timbre can reshape perceived consonance",
+      "summary": "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes.",
+      "keywords": [
+        "timbre",
+        "consonance",
+        "dissonance",
+        "interval",
+        "sound-design",
+        "perception",
+        "Timbre can reshape perceived consonance"
+      ],
+      "applies_to": [],
+      "when_to_use": "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes.",
+      "operations": [],
+      "example": null,
+      "constraints": [
+        "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "high",
+        "source": {
+          "title": "Timbral effects on consonance disentangle psychoacoustic mechanisms and suggest perceptual origins for musical scales",
+          "author": "Raja Marjieh, Peter M. C. Harrison, Harin Lee, Fotini Deligiannaki, Nori Jacoby et al.",
+          "url": "https://www.nature.com/articles/s41467-024-45812-z",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RID-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Riddim-inspired half-time flow",
+      "summary": "Initial heuristic for first MVP milestone; human listening tests required.",
+      "keywords": [
+        "riddim",
+        "dubstep",
+        "half-time",
+        "syncopation",
+        "Riddim-inspired half-time flow"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Initial heuristic for first MVP milestone; human listening tests required.",
+      "operations": [
+        "Keep tempo and meter unchanged.",
+        "Preserve pitches for rhythm-only transformations.",
+        "Use a half-time backbeat with snare on beat 3 in 4/4.",
+        "Shorten or reposition existing bass notes to make motifs with deliberate rests, without adding notes.",
+        "Use offbeat and triplet placements as variations, not on every note.",
+        "Leave space for pad stabs and fills."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/8 straight foundation",
+          "1/8 triplet shuffle accents",
+          "1/16 occasional pickup"
+        ],
+        "variation": "Create subtle and strong variants; vary every 2 or 4 bars."
+      },
+      "constraints": [
+        "Initial heuristic for first MVP milestone; human listening tests required."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-POP-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Sustained pad chord foundation",
+      "summary": "Baseline pattern for comparison.",
+      "keywords": [
+        "pop",
+        "future-bass",
+        "pad",
+        "Sustained pad chord foundation"
+      ],
+      "applies_to": [
+        "Pad"
+      ],
+      "when_to_use": "Baseline pattern for comparison.",
+      "operations": [
+        "Hold chord tones for most of the bar.",
+        "Use sparse offbeat chord stabs as a variation.",
+        "Do not alter pitch content in rhythm-only edits."
+      ],
+      "example": null,
+      "constraints": [
+        "Baseline pattern for comparison."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-METER-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "7/8 groove in 2+2+3",
+      "summary": "Mark an uneven meter by spacing three accents across the bar rather than moving the 4/4 backbeat unchanged.",
+      "keywords": [
+        "7/8",
+        "odd-meter",
+        "accent",
+        "7/8 groove in 2+2+3"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Mark an uneven meter by spacing three accents across the bar rather than moving the 4/4 backbeat unchanged.",
+      "operations": [
+        "In this example, accent offsets 0, 1 and 2 quarter-note beats within a 3.5-beat bar.",
+        "Try kick at 0 and 1, snare at 2, and lighter existing hi-hats at 0.5, 1.5, 2.5 or 3 as available.",
+        "Keep the first bass attack clear and let the longer final group create space before the next bar."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "0.5 quarter-note beats per eighth-note step"
+        ]
+      },
+      "constraints": [
+        "A sketchpad example, not a universal 7/8 grouping. For rhythm-only edits, move existing notes only."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-BASS-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Kick and bass attack spacing",
+      "summary": "Separate some kick and bass attacks with a short rhythmic gap to make both easier to hear.",
+      "keywords": [
+        "bass",
+        "kick",
+        "space",
+        "syncopation",
+        "Kick and bass attack spacing"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums"
+      ],
+      "when_to_use": "Separate some kick and bass attacks with a short rhythmic gap to make both easier to hear.",
+      "operations": [
+        "Keep the kick as the reference; try delaying an existing bass attack after a kick and shorten it if needed to keep the next note clear.",
+        "Keep other shared attacks where a strong downbeat is useful. Compare with the original at the same tempo."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "Try a 0.25 or 0.5 quarter-note beat offset"
+        ]
+      },
+      "constraints": [
+        "This is an arrangement choice, not sidechain compression. Results depend on the intended groove."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-SRM-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Syncopation / anticipation in chord attacks",
+      "summary": "SRM explicitly describes moving chord attacks before/after the beat; this record turns that explanation into a conservative MIDI-editing procedure.",
+      "keywords": [
+        "syncopation",
+        "anticipation",
+        "offbeat",
+        "pop",
+        "r-and-b",
+        "Syncopation / anticipation in chord attacks"
+      ],
+      "applies_to": [
+        "Pad"
+      ],
+      "when_to_use": "SRM explicitly describes moving chord attacks before/after the beat; this record turns that explanation into a conservative MIDI-editing procedure.",
+      "operations": [
+        "Move selected chord attacks slightly before or after the expected beat rather than shifting every chord.",
+        "Use half-beat anticipation as a starting example, then listen against the drum groove.",
+        "Keep other chord hits on the beat so the syncopated attacks have contrast."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "0.5 quarter-note beat anticipation",
+          "1/8 offbeat"
+        ]
+      },
+      "constraints": [
+        "SRM explicitly describes moving chord attacks before/after the beat; this record turns that explanation into a conservative MIDI-editing procedure."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-arrangement-technique",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SRM-002",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Polyrhythmic chord-change cycle",
+      "summary": "SRM describes changing chord timing in a 3-beat cycle against 4/4 to create a polyrhythmic effect, then realigning it with the bar. The exact source diagram should be checked before reproducing a specific note pattern.",
+      "keywords": [
+        "polyrhythm",
+        "chord-rhythm",
+        "3-over-4",
+        "math-rock",
+        "Polyrhythmic chord-change cycle"
+      ],
+      "applies_to": [
+        "Pad"
+      ],
+      "when_to_use": "SRM describes changing chord timing in a 3-beat cycle against 4/4 to create a polyrhythmic effect, then realigning it with the bar. The exact source diagram should be checked before reproducing a specific note pattern.",
+      "operations": [
+        "Keep the meter fixed while allowing chord changes to follow a different repeating cycle.",
+        "Do not change every track at once; begin with Pad chord-change positions.",
+        "Choose a cycle that eventually realigns with the bar grid, and mark the realignment point."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "3-quarter-note chord-change cycle over 4/4; test alignment after 3 bars"
+        ]
+      },
+      "constraints": [
+        "SRM describes changing chord timing in a 3-beat cycle against 4/4 to create a polyrhythmic effect, then realigning it with the bar. The exact source diagram should be checked before reproducing a specific note pattern."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-arrangement-technique",
+        "confidence": "medium",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SRM-003",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Stop-time chord hits",
+      "summary": "SRM defines stop-time as coordinated 'kime' hits and links chord changes to those hits.",
+      "keywords": [
+        "stop-time",
+        "hits",
+        "arrangement",
+        "drop",
+        "Stop-time chord hits"
+      ],
+      "applies_to": [
+        "Drums",
+        "Pad",
+        "Bass"
+      ],
+      "when_to_use": "SRM defines stop-time as coordinated 'kime' hits and links chord changes to those hits.",
+      "operations": [
+        "Create a coordinated hit on a chosen accent, then leave a deliberate gap.",
+        "Let the next bass or drum attack restart the groove rather than filling every subdivision.",
+        "Use sparingly at section boundaries or as a drop variation."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "bar downbeat",
+          "beat 4 pickup",
+          "one-beat rest after hit"
+        ]
+      },
+      "constraints": [
+        "SRM defines stop-time as coordinated 'kime' hits and links chord changes to those hits."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-arrangement-technique",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SRM-004",
+      "library": "arrangements",
+      "kind": "harmonic_arrangement",
+      "title": "Harmonic rhythm follows phrase density",
+      "summary": "Paraphrases SRM's harmonic-rhythm discussion; adjust by listening rather than treating tempo as the only factor.",
+      "keywords": [
+        "harmonic-rhythm",
+        "phrase",
+        "pop",
+        "arrangement",
+        "Harmonic rhythm follows phrase density"
+      ],
+      "applies_to": [
+        "Pad",
+        "Bass"
+      ],
+      "when_to_use": "Paraphrases SRM's harmonic-rhythm discussion; adjust by listening rather than treating tempo as the only factor.",
+      "operations": [
+        "Longer melodic phrases can sit over longer chord holds.",
+        "For faster or denser sections, try shorter chord durations or a two-beat harmonic rhythm.",
+        "Short inserted chords such as subV or ii–V should usually be shorter than the target chord they approach."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "4 beats per chord",
+          "2 beats per chord",
+          "1 beat for passing ii or V"
+        ]
+      },
+      "constraints": [
+        "Paraphrases SRM's harmonic-rhythm discussion; adjust by listening rather than treating tempo as the only factor."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-arrangement-technique",
+        "confidence": "high",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RESEARCH-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Conservative microtiming",
+      "summary": "The source studies jazz swing, not Riddim. Apply the general caution against exaggerated offsets, but do not transfer jazz timing values as a Riddim recipe.",
+      "keywords": [
+        "microtiming",
+        "swing",
+        "groove",
+        "humanization",
+        "Conservative microtiming"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "The source studies jazz swing, not Riddim. Apply the general caution against exaggerated offsets, but do not transfer jazz timing values as a Riddim recipe.",
+      "operations": [
+        "Do not add random timing offsets to every note.",
+        "Compare the straight version with small, track-specific timing changes.",
+        "Avoid exaggerating microtiming; the cited jazz study found expanded deviations reduced swing ratings relative to the original performances.",
+        "Treat swing ratio and tempo as separate parameters."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "start with quantized grid",
+          "test subtle offsets only on selected voices"
+        ]
+      },
+      "constraints": [
+        "The source studies jazz swing, not Riddim. Apply the general caution against exaggerated offsets, but do not transfer jazz timing values as a Riddim recipe."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "high",
+        "source": {
+          "title": "Microtiming Deviations and Swing Feel in Jazz",
+          "author": "George Datseris et al.",
+          "url": "https://www.nature.com/articles/s41598-019-55981-3",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RESEARCH-002",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Groove and microtiming research overview",
+      "summary": "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern.",
+      "keywords": [
+        "groove",
+        "microtiming",
+        "rhythm",
+        "research",
+        "Groove and microtiming research overview"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums"
+      ],
+      "when_to_use": "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern.",
+      "operations": [
+        "Treat groove as more than a swing ratio: timing deviations, rhythmic pattern and body-movement response are studied together.",
+        "When designing a transformation, record which track is moved and by how much so candidates can be compared."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "record onset offsets in milliseconds and beat fractions"
+        ]
+      },
+      "constraints": [
+        "Japanese-language review article surveying psychological research on microtiming and groove; it is a research overview, not a genre-specific MIDI pattern."
+      ],
+      "provenance": {
+        "evidence_type": "academic-review",
+        "confidence": "high",
+        "source": {
+          "title": "マイクロタイミングに着目したグルーヴ研究の展望",
+          "author": "惠谷隆英・三浦哲都・河瀬諭・工藤和俊・藤井進也",
+          "url": "https://doi.org/10.24602/sjpr.66.1_37",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RID-002",
+      "library": "arrangements",
+      "kind": "learning_resource",
+      "title": "Riddim drop flow — producer tutorial reference",
+      "summary": "The creator describes the video as a lesson on rhythm in drops, song arrangement and creating flow in dubstep/tearout. No exact MIDI pattern has been transcribed here.",
+      "keywords": [
+        "riddim",
+        "dubstep",
+        "drop-flow",
+        "arrangement",
+        "Riddim drop flow — producer tutorial reference"
+      ],
+      "applies_to": [
+        "Drums",
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The creator describes the video as a lesson on rhythm in drops, song arrangement and creating flow in dubstep/tearout. No exact MIDI pattern has been transcribed here.",
+      "operations": [
+        "Study the drum groove, bass placement and drop arrangement as separate layers.",
+        "Transcribe the actual note placements from the tutorial before treating them as a reusable MIDI pattern.",
+        "Do not assume one universal Riddim pattern; compare multiple examples."
+      ],
+      "example": null,
+      "constraints": [
+        "The creator describes the video as a lesson on rhythm in drops, song arrangement and creating flow in dubstep/tearout. No exact MIDI pattern has been transcribed here."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-video-resource",
+        "confidence": "medium",
+        "source": {
+          "title": "How To FLOW & SONG ARRANGEMENT (BASS Music/DUBSTEP)",
+          "author": "Dripment",
+          "url": "https://www.youtube.com/watch?v=Eav24crUwrY",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RID-003",
+      "library": "arrangements",
+      "kind": "learning_resource",
+      "title": "Riddim drop layer study: drums, synth flow and sub bass",
+      "summary": "The chapter list separates Drums (0:51–1:59), Synths & Flow (2:00–2:46) and Sub Bass (4:25–5:37). The database records the lesson structure, not a copied project or sample.",
+      "keywords": [
+        "riddim",
+        "dubstep",
+        "drums",
+        "synth-flow",
+        "sub-bass",
+        "Riddim drop layer study: drums, synth flow and sub bass"
+      ],
+      "applies_to": [
+        "Drums",
+        "Bass",
+        "Pad"
+      ],
+      "when_to_use": "The chapter list separates Drums (0:51–1:59), Synths & Flow (2:00–2:46) and Sub Bass (4:25–5:37). The database records the lesson structure, not a copied project or sample.",
+      "operations": [
+        "Study the drum pattern first, then the synth-flow role, then the sub-bass role.",
+        "Keep the rhythmic role of each layer distinct when adapting the groove to a three-track sketch.",
+        "Treat sound-design demonstrations separately from MIDI timing instructions."
+      ],
+      "example": null,
+      "constraints": [
+        "The chapter list separates Drums (0:51–1:59), Synths & Flow (2:00–2:46) and Sub Bass (4:25–5:37). The database records the lesson structure, not a copied project or sample."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-video-resource",
+        "confidence": "medium",
+        "source": {
+          "title": "How to RIDDIM — Dubstep Tutorial by Dack Janiels",
+          "author": "Dack Janiels / Avant Samples",
+          "url": "https://www.youtube.com/watch?v=G2Y1uGkndjk",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-RESEARCH-003",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Chord emotion and drum-break contribution to groove",
+      "summary": "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule.",
+      "keywords": [
+        "groove",
+        "drum-break",
+        "chord-progression",
+        "emotion",
+        "research",
+        "Chord emotion and drum-break contribution to groove"
+      ],
+      "applies_to": [
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule.",
+      "operations": [
+        "When comparing groove candidates, test the chord progression with and without the drum pattern.",
+        "Do not attribute a groove change to harmony alone; the study evaluates chord progression characteristics together with rhythmic accompaniment."
+      ],
+      "example": null,
+      "constraints": [
+        "Study-specific finding: drum-break accompaniment increased groove ratings for both happy and sad progressions; happier progressions were more likely to elicit groove in the tested stimuli. Not a genre rule."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "high",
+        "source": {
+          "title": "Is happier music groovier? The influence of emotional characteristics of musical chord progressions on groove",
+          "author": "Satoshi Kawase",
+          "url": "https://link.springer.com/article/10.1007/s00426-023-01869-x",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-STRAIGHT-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Straight pop backbeat",
+      "summary": "Starter arrangement heuristic for the app; not a transcription of a particular recording.",
+      "keywords": [
+        "straight-pop",
+        "pop",
+        "backbeat",
+        "eighth-note",
+        "Straight pop backbeat"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Starter arrangement heuristic for the app; not a transcription of a particular recording.",
+      "operations": [
+        "Keep the main pulse straight; do not apply swing globally.",
+        "Use a clear kick foundation and snare backbeat, with hi-hat subdivisions carrying motion.",
+        "Create interest with pickups, rests and occasional offbeat chord stabs rather than constant fills."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/4 pulse",
+          "1/8 hi-hat",
+          "occasional 1/16 pickup"
+        ],
+        "variation": "Change one layer at a time; keep the backbeat recognizable."
+      },
+      "constraints": [
+        "Starter arrangement heuristic for the app; not a transcription of a particular recording."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-SHUFFLE-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Selective triplet shuffle",
+      "summary": "General shuffle-arrangement heuristic. Swing ratios vary by genre, performance and tempo.",
+      "keywords": [
+        "shuffle",
+        "swing",
+        "triplet",
+        "groove",
+        "Selective triplet shuffle"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "General shuffle-arrangement heuristic. Swing ratios vary by genre, performance and tempo.",
+      "operations": [
+        "Use a long-short subdivision based on triplets for selected voices.",
+        "Do not swing every track by the same amount; let kick and snare anchor the pulse while hats, bass or chord attacks provide the shuffle.",
+        "Mix straight attacks with shuffled responses so the groove can breathe."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/8 triplet pair",
+          "1/8 straight anchor",
+          "occasional 1/16 pickup"
+        ],
+        "variation": "Apply the shuffle to one or two layers first, then compare a stronger version."
+      },
+      "constraints": [
+        "General shuffle-arrangement heuristic. Swing ratios vary by genre, performance and tempo."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-HALFTIME-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Half-time backbeat",
+      "summary": "Basic half-time arrangement concept; exact patterns depend on style.",
+      "keywords": [
+        "half-time",
+        "dubstep",
+        "trap",
+        "slow-feel",
+        "Half-time backbeat"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Basic half-time arrangement concept; exact patterns depend on style.",
+      "operations": [
+        "In 4/4, place the principal snare or clap on beat 3 to create a half-time backbeat.",
+        "Keep the actual BPM unchanged; create the slower feel through backbeat placement and note density.",
+        "Use kick syncopation and short fills to connect phrases."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "quarter-note pulse",
+          "1/8 hats",
+          "triplet or 1/16 pickups"
+        ],
+        "variation": "Keep the snare anchor stable while varying kick and bass placements."
+      },
+      "constraints": [
+        "Basic half-time arrangement concept; exact patterns depend on style."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-BREAKBEAT-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Syncopated breakbeat",
+      "summary": "Starter breakbeat arrangement heuristic; not tied to a single breakbeat subgenre.",
+      "keywords": [
+        "breakbeat",
+        "syncopation",
+        "drum-loop",
+        "electronic",
+        "Syncopated breakbeat"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "Starter breakbeat arrangement heuristic; not tied to a single breakbeat subgenre.",
+      "operations": [
+        "Use syncopated kick and snare placements rather than a uniform four-on-the-floor pulse.",
+        "Create a recognizable one- or two-bar motif, then vary only selected hits at phrase endings.",
+        "Let hi-hat subdivisions and bass pickups answer the main drum accents."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/8 foundation",
+          "1/16 syncopation",
+          "short 1/32-style pickup only when needed"
+        ],
+        "variation": "Use a stable core loop with small two-bar and four-bar changes."
+      },
+      "constraints": [
+        "Starter breakbeat arrangement heuristic; not tied to a single breakbeat subgenre."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-FUNK-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Sixteenth-note funk pocket",
+      "summary": "General funk-inspired MIDI heuristic; humanize and adjust by ear.",
+      "keywords": [
+        "funk",
+        "sixteenth-note",
+        "ghost-notes",
+        "syncopation",
+        "Sixteenth-note funk pocket"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "General funk-inspired MIDI heuristic; humanize and adjust by ear.",
+      "operations": [
+        "Use a 1/16 grid as a placement reference, not as a requirement to fill every slot.",
+        "Build the pocket from short notes, rests and accents around the kick/snare relationship.",
+        "Allow bass and chord stabs to answer one another; avoid making all parts equally busy."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/16 grid",
+          "offbeat 1/8 accents",
+          "sparse ghost-note events"
+        ],
+        "variation": "Keep the main groove stable and vary one pickup or response per two bars."
+      },
+      "constraints": [
+        "General funk-inspired MIDI heuristic; humanize and adjust by ear."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-MATH-001",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Displaced-accent math-rock pulse",
+      "summary": "A compositional starting point for displaced accents, not a definition of all math rock.",
+      "keywords": [
+        "math-rock",
+        "displaced-accent",
+        "polyrhythm",
+        "odd-grouping",
+        "Displaced-accent math-rock pulse"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "A compositional starting point for displaced accents, not a definition of all math rock.",
+      "operations": [
+        "Keep the chosen meter stable while placing accents in repeating groups that cross the beat grouping.",
+        "Use a short repeating cell such as 3+3+2 eighth-note accents over 4/4.",
+        "Keep the bass part playable and let Pad attacks reinforce only selected accents."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/8 grid",
+          "3+3+2 accent grouping",
+          "short 3:4 overlay"
+        ],
+        "variation": "Return to a clear downbeat every two or four bars so the listener can reorient."
+      },
+      "constraints": [
+        "A compositional starting point for displaced accents, not a definition of all math rock."
+      ],
+      "provenance": {
+        "evidence_type": "project-original",
+        "confidence": "medium",
+        "source": null
+      }
+    },
+    {
+      "id": "ARR-SQ-005",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Shuffle subdivision: triplet 2:1",
+      "summary": "SoundQuest explains shuffle as triplet subdivision with a typical 2:1 long-short weighting, sometimes mixed with equal triplets. It distinguishes straight/square from shuffle and notes swing has broader jazz-specific uses.",
+      "keywords": [
+        "shuffle",
+        "swing",
+        "triplet",
+        "subdivision",
+        "groove",
+        "Shuffle subdivision: triplet 2:1"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "SoundQuest explains shuffle as triplet subdivision with a typical 2:1 long-short weighting, sometimes mixed with equal triplets. It distinguishes straight/square from shuffle and notes swing has broader jazz-specific uses.",
+      "operations": [
+        "Keep the quarter-note pulse and BPM unchanged; divide each beat into three equal triplet slots.",
+        "Use the first and third triplet slots for a long-short 2:1 feel; occasionally use all three slots for a triplet fill.",
+        "Do not force every instrument to play every triplet slot. Let kick/snare anchor the pulse while selected hats, bass or chord attacks carry the bounce."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "triplet grid: 0, 1/3, 2/3 of a beat",
+          "long-short pair: first and third triplet slots"
+        ],
+        "variation": "Compare straight and shuffled versions at the same BPM. Add equal-triplet fills sparingly."
+      },
+      "constraints": [
+        "SoundQuest explains shuffle as triplet subdivision with a typical 2:1 long-short weighting, sometimes mixed with equal triplets. It distinguishes straight/square from shuffle and notes swing has broader jazz-specific uses."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "シャッフルビート",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/rhythm/rhythm-mv2/shuffle-beat/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SQ-006",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Syncopation by offbeat displacement",
+      "summary": "SoundQuest describes offbeat accents and kick displacement on 1/8 and 1/16 grids, as well as anticipation and its forward/laid-back effects.",
+      "keywords": [
+        "syncopation",
+        "offbeat",
+        "anticipation",
+        "kick",
+        "snare",
+        "16th-note",
+        "Syncopation by offbeat displacement"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "SoundQuest describes offbeat accents and kick displacement on 1/8 and 1/16 grids, as well as anticipation and its forward/laid-back effects.",
+      "operations": [
+        "Start with a stable pulse and backbeat, then move selected attacks to eighth-note or sixteenth-note offbeats.",
+        "Use offbeat kick or chord attacks to create forward pull or laid-back tension; do not shift every hit.",
+        "Treat anticipation as an early attack that leads into the next beat or chord. Keep enough strong-beat information for the listener to retain the meter."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "1/8 offbeat",
+          "1/16 offbeat",
+          "one 1/8 anticipation before a chord change"
+        ],
+        "variation": "Create sparse, medium and dense variants by moving only a subset of attacks."
+      },
+      "constraints": [
+        "SoundQuest describes offbeat accents and kick displacement on 1/8 and 1/16 grids, as well as anticipation and its forward/laid-back effects."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "シンコペーション",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/rhythm/rhythm-mv1/syncopation/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SQ-007",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Polyrhythm by independent cycle lengths",
+      "summary": "SoundQuest distinguishes polyrhythm from ordinary simultaneous rhythmic variety: the independent part implies a different beat framework or cycle.",
+      "keywords": [
+        "polyrhythm",
+        "cross-rhythm",
+        "cycle",
+        "math-rock",
+        "repeating-cell",
+        "Polyrhythm by independent cycle lengths"
+      ],
+      "applies_to": [
+        "Bass",
+        "Drums",
+        "Pad"
+      ],
+      "when_to_use": "SoundQuest distinguishes polyrhythm from ordinary simultaneous rhythmic variety: the independent part implies a different beat framework or cycle.",
+      "operations": [
+        "Give one part a repeating cell with a different number of subdivisions from the main meter, while the other parts keep the main pulse.",
+        "Distinguish a true independent rhythmic cycle from ordinary syncopation or different accents over the same meter.",
+        "Choose a cell length whose alignment point can be calculated; explain when the parts realign."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "4/4 main pulse with a 3-event repeating cell",
+          "3:4 cycle or other explicitly stated ratio"
+        ],
+        "variation": "Keep the drum meter clear and let only Bass or Pad carry the independent cycle at first."
+      },
+      "constraints": [
+        "SoundQuest distinguishes polyrhythm from ordinary simultaneous rhythmic variety: the independent part implies a different beat framework or cycle."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "ポリリズム",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/rhythm/rhythm-mv2/polyrhythm/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "ARR-SQ-008",
+      "library": "arrangements",
+      "kind": "rhythm_pattern",
+      "title": "Half-time / double-time feel without changing tempo",
+      "summary": "SoundQuest explains time-feel as a perceptual interpretation shaped by the listener's chosen pulse, with half-time and double-time examples. Do not confuse it with changing the MIDI tempo.",
+      "keywords": [
+        "half-time",
+        "double-time",
+        "time-feel",
+        "backbeat",
+        "tempo-illusion",
+        "Half-time / double-time feel without changing tempo"
+      ],
+      "applies_to": [
+        "Drums",
+        "Bass"
+      ],
+      "when_to_use": "SoundQuest explains time-feel as a perceptual interpretation shaped by the listener's chosen pulse, with half-time and double-time examples. Do not confuse it with changing the MIDI tempo.",
+      "operations": [
+        "Keep the project BPM unchanged and alter the perceived pulse through kick/snare spacing and subdivision density.",
+        "For a half-time feel in 4/4, move the main snare backbeat to beat 3 while maintaining the underlying count.",
+        "For a double-time feel, increase the subdivision activity while the bar and tempo remain the same."
+      ],
+      "example": {
+        "grid_suggestions": [
+          "half-time snare on beat 3",
+          "double-time eighth/sixteenth subdivision"
+        ],
+        "variation": "Compare the same melody and chord-change rate over half-time and double-time drum interpretations."
+      },
+      "constraints": [
+        "SoundQuest explains time-feel as a perceptual interpretation shaped by the listener's chosen pulse, with half-time and double-time examples. Do not confuse it with changing the MIDI tempo."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "high",
+        "source": {
+          "title": "タイム・フィール",
+          "author": "yuta",
+          "url": "https://soundquest.jp/quest/rhythm/rhythm-mv1/timefeel/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-001",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Keep the sketch small",
+      "summary": "Generate no more than 16 bars and exactly three tracks: Bass, Drums and Pad.",
+      "keywords": [
+        "Keep the sketch small"
+      ],
+      "applies_to": [],
+      "when_to_use": "",
+      "operations": [
+        "Generate no more than 16 bars and exactly three tracks: Bass, Drums and Pad."
+      ],
+      "example": null,
+      "constraints": [],
+      "provenance": {
+        "evidence_type": "product-requirement",
+        "confidence": "unspecified",
+        "source": null
+      }
+    },
+    {
+      "id": "RULE-002",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Separate harmony and rhythm edits",
+      "summary": "Separate harmony and rhythm edits. Harmony suggestions may alter chord pitches or voicings. Rhythm-only suggestions may add, retrigger, omit or reposition note events, but must reuse only pitches already present in the same original bar for Bass and Pad, and existing drum note types for Drums. Preserve BPM, meter and bar boundaries.",
+      "keywords": [
+        "Separate harmony and rhythm edits"
+      ],
+      "applies_to": [],
+      "when_to_use": "Rhythm edits are not required to preserve note count or velocity. Velocity may change moderately for accents. No new pitch content is allowed in rhythm-only mode.",
+      "operations": [
+        "Separate harmony and rhythm edits. Harmony suggestions may alter chord pitches or voicings. Rhythm-only suggestions may add, retrigger, omit or reposition note events, but must reuse only pitches already present in the same original bar for Bass and Pad, and existing drum note types for Drums. Preserve BPM, meter and bar boundaries."
+      ],
+      "example": null,
+      "constraints": [
+        "Rhythm edits are not required to preserve note count or velocity. Velocity may change moderately for accents. No new pitch content is allowed in rhythm-only mode."
+      ],
+      "provenance": {
+        "evidence_type": "product-requirement",
+        "confidence": "unspecified",
+        "source": null
+      }
+    },
+    {
+      "id": "RULE-003",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Resolve intentionally",
+      "summary": "When a progression loops, provide a clear return to tonic or explain the non-tonic loop.",
+      "keywords": [
+        "Resolve intentionally"
+      ],
+      "applies_to": [],
+      "when_to_use": "",
+      "operations": [
+        "When a progression loops, provide a clear return to tonic or explain the non-tonic loop."
+      ],
+      "example": null,
+      "constraints": [],
+      "provenance": {
+        "evidence_type": "project-rule",
+        "confidence": "unspecified",
+        "source": null
+      }
+    },
+    {
+      "id": "RULE-004",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Offer alternatives, do not overwrite",
+      "summary": "Return at least two candidates when practical. Preserve original until explicit apply.",
+      "keywords": [
+        "Offer alternatives, do not overwrite"
+      ],
+      "applies_to": [],
+      "when_to_use": "",
+      "operations": [
+        "Return at least two candidates when practical. Preserve original until explicit apply."
+      ],
+      "example": null,
+      "constraints": [],
+      "provenance": {
+        "evidence_type": "product-requirement",
+        "confidence": "unspecified",
+        "source": null
+      }
+    },
+    {
+      "id": "RULE-005",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Source-aware recommendations",
+      "summary": "Cite knowledge record IDs. Distinguish sourced theory from project heuristics and generated suggestions.",
+      "keywords": [
+        "Source-aware recommendations"
+      ],
+      "applies_to": [],
+      "when_to_use": "",
+      "operations": [
+        "Cite knowledge record IDs. Distinguish sourced theory from project heuristics and generated suggestions."
+      ],
+      "example": null,
+      "constraints": [],
+      "provenance": {
+        "evidence_type": "data-governance",
+        "confidence": "unspecified",
+        "source": null
+      }
+    },
+    {
+      "id": "RULE-006",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Do not map chord progressions to mood as fixed rules",
+      "summary": "Treat genre and mood tags as tendencies tied to a cited source or listening example. A chord progression alone does not guarantee a mood or genre.",
+      "keywords": [
+        "Do not map chord progressions to mood as fixed rules"
+      ],
+      "applies_to": [],
+      "when_to_use": "Genre descriptions in SRM are qualitative; the Kawase study also tests chord progression, tempo and rhythmic patterns together rather than treating harmony alone as the full cause.",
+      "operations": [
+        "Treat genre and mood tags as tendencies tied to a cited source or listening example. A chord progression alone does not guarantee a mood or genre."
+      ],
+      "example": null,
+      "constraints": [
+        "Genre descriptions in SRM are qualitative; the Kawase study also tests chord progression, tempo and rhythmic patterns together rather than treating harmony alone as the full cause."
+      ],
+      "provenance": {
+        "evidence_type": "data-governance",
+        "confidence": "unspecified",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-007",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Avoid arbitrary microtiming",
+      "summary": "For rhythm transformations, preserve a straight baseline and create controlled, track-specific timing variants. Do not randomize all note onsets or exaggerate swing without a listening comparison.",
+      "keywords": [
+        "Avoid arbitrary microtiming"
+      ],
+      "applies_to": [],
+      "when_to_use": "Research is about jazz swing; use it as a caution about timing exaggeration, not as a universal genre formula.",
+      "operations": [
+        "For rhythm transformations, preserve a straight baseline and create controlled, track-specific timing variants. Do not randomize all note onsets or exaggerate swing without a listening comparison."
+      ],
+      "example": null,
+      "constraints": [
+        "Research is about jazz swing; use it as a caution about timing exaggeration, not as a universal genre formula."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "unspecified",
+        "source": {
+          "title": "Microtiming Deviations and Swing Feel in Jazz",
+          "author": "George Datseris et al.",
+          "url": "https://www.nature.com/articles/s41598-019-55981-3",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-008",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Specify harmonic rhythm as well as chord identity",
+      "summary": "When proposing a progression, state how long each chord lasts and where changes occur. A passing ii or subV should be shorter than the chord it approaches when that is the intended effect.",
+      "keywords": [
+        "Specify harmonic rhythm as well as chord identity"
+      ],
+      "applies_to": [],
+      "when_to_use": "Based on SRM's discussion of harmonic rhythm and short inserted chords.",
+      "operations": [
+        "When proposing a progression, state how long each chord lasts and where changes occur. A passing ii or subV should be shorter than the chord it approaches when that is the intended effect."
+      ],
+      "example": null,
+      "constraints": [
+        "Based on SRM's discussion of harmonic rhythm and short inserted chords."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "unspecified",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-009",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Keep reharmonization selective",
+      "summary": "Start from a clear diatonic or familiar progression. Add only the substitutions, borrowed chords or passing chords that serve the section's purpose; compare against the unmodified version.",
+      "keywords": [
+        "Keep reharmonization selective"
+      ],
+      "applies_to": [],
+      "when_to_use": "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base.",
+      "operations": [
+        "Start from a clear diatonic or familiar progression. Add only the substitutions, borrowed chords or passing chords that serve the section's purpose; compare against the unmodified version."
+      ],
+      "example": null,
+      "constraints": [
+        "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base."
+      ],
+      "provenance": {
+        "evidence_type": "human-authored-source",
+        "confidence": "unspecified",
+        "source": {
+          "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+          "author": "SRM.",
+          "url": "https://srm-music.com/stylish-chord/",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-010",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Separate interval role from emotional label",
+      "summary": "The wheel may show scale membership, chord-tone membership and conventional interval role, but must not claim that a pitch or interval always produces a specific emotion. Context, timbre, culture, register and progression affect perception.",
+      "keywords": [
+        "Separate interval role from emotional label"
+      ],
+      "applies_to": [],
+      "when_to_use": "Based on the critical review of consonance/dissonance perception; the review emphasizes multiple interacting explanations and limitations.",
+      "operations": [
+        "The wheel may show scale membership, chord-tone membership and conventional interval role, but must not claim that a pitch or interval always produces a specific emotion. Context, timbre, culture, register and progression affect perception."
+      ],
+      "example": null,
+      "constraints": [
+        "Based on the critical review of consonance/dissonance perception; the review emphasizes multiple interacting explanations and limitations."
+      ],
+      "provenance": {
+        "evidence_type": "academic-research",
+        "confidence": "unspecified",
+        "source": {
+          "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+          "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+          "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+          "accessed": "2026-11-26"
+        }
+      }
+    },
+    {
+      "id": "RULE-011",
+      "library": "composition-rules",
+      "kind": "composition_rule",
+      "title": "Use independent instructions for harmony and rhythm",
+      "summary": "The arranger accepts harmony and rhythm requests separately and may apply both in one generation. If only harmony is requested, preserve Drum events. If only rhythm is requested, preserve pitch vocabulary per bar while allowing note count changes. If both are requested, apply harmony first conceptually, then design rhythm around the resulting notes.",
+      "keywords": [
+        "Use independent instructions for harmony and rhythm"
+      ],
+      "applies_to": [],
+      "when_to_use": "Implementation contract for combined edits.",
+      "operations": [
+        "The arranger accepts harmony and rhythm requests separately and may apply both in one generation. If only harmony is requested, preserve Drum events. If only rhythm is requested, preserve pitch vocabulary per bar while allowing note count changes. If both are requested, apply harmony first conceptually, then design rhythm around the resulting notes."
+      ],
+      "example": null,
+      "constraints": [
+        "Implementation contract for combined edits."
+      ],
+      "provenance": {
+        "evidence_type": "product-requirement",
+        "confidence": "unspecified",
+        "source": null
+      }
+    }
+  ]
+}

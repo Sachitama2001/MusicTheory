@@ -1,6 +1,6 @@
 # Knowledge Base Data Model
 
-Five JSON libraries live under data/.
+Five canonical JSON libraries live under data/. A generated `data/ai-index.json` is a compact retrieval index, not a sixth theory library. It normalizes the five libraries into AI cards.
 
 ## Shared record fields
 - id: stable identifier
@@ -12,6 +12,7 @@ Five JSON libraries live under data/.
 - evidence_type: human-authored, academic, observed-example, project-original
 - confidence: high, medium, low
 - notes: limitations, caveats and licensing notes
+- normalized AI card: `kind`, `keywords`, `applies_to`, `when_to_use`, `operations`, `example`, `constraints`, `provenance`
 
 ## Libraries
 1. Progression Library — scale-degree patterns, reference-key examples, harmonic rhythm and section use.
@@ -19,6 +20,12 @@ Five JSON libraries live under data/.
 3. Style & Mood Library — descriptive traits and associations; these are tendencies, not rules.
 4. Arrangement Library — track role, rhythmic grid, onset/duration patterns and genre context.
 5. Composition Rules — constraints, priorities, resolution and variation rules.
+
+## AI retrieval index
+- `data/ai-index.json` is generated from the five canonical libraries; it stores IDs and compact paraphrased cards rather than replacing source records.
+- Each card identifies its library and concept kind (progression pattern, harmony technique, rhythm pattern, style profile, composition rule, etc.).
+- Retrieval filters by edit intent (harmony, rhythm, combined), tags, aliases and user wording, then sends only a small ranked subset to the model.
+- Keep source URLs and evidence type on every card. Do not merge a project heuristic into a source-backed claim.
 
 ## Provenance and updates
 - Never present AI-generated interpretations as source facts.

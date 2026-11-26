@@ -26,7 +26,7 @@ Static app, scale-aware Roman numeral progression, three MIDI tracks, preview pl
 ### M1 — Arrangement suggestions
 Harmony: voicing alternatives, chord substitution and passing chords.
 Rhythm: timing and articulation transformations that may add, re-trigger or omit note events while preserving the original pitch vocabulary.
-With the local API, apply the first valid candidate automatically, retain the original for undo, and allow the user to switch to another returned candidate. Harmony edits must leave Drums unchanged; rhythm-only edits preserve all pitches and velocities.
+With the local API, apply the first valid candidate automatically, retain the original for undo, and allow the user to switch to another returned candidate. Harmony edits must leave Drums unchanged; rhythm-only edits preserve the existing pitch vocabulary per bar; note count may change and velocity may vary modestly.
 
 ### M2 — Groove engine
 Input sustained or repetitive Bass / Drums / Pad MIDI. Offer selectable rhythm directions such as straight pop, shuffle, half-time, breakbeat, funk, math-rock and Riddim. Allow note re-triggers, additions and omissions. Preserve the pitch vocabulary within each bar, track identity, tempo, meter and bar boundaries. Compare subtle and stronger candidates.
